@@ -1,0 +1,158 @@
+/* Information page */
+
+.info-main {
+  padding-top: var(--header-height);
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* Active nav link */
+.site-nav a.is-current {
+  color: var(--text);
+}
+
+/* Shared section spacing */
+.info-section {
+  padding: 5rem var(--pwx);
+  border-top: 1px solid var(--border);
+}
+
+.info-section:first-child {
+  border-top: none;
+  padding-top: 8rem;
+}
+
+/* Label */
+.info-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+/* ── Bio section ─────────────────────────────────────── */
+.info-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 3rem;
+  max-width: 900px;
+}
+
+.info-lead {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: var(--text);
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+}
+
+.info-body p:not(.info-lead) {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ── Three-column section ────────────────────────────── */
+.info-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Lists */
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-list li {
+  font-size: 0.9375rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Contact list */
+.info-contact li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.contact-type {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.contact-link {
+  font-size: 0.9375rem;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.contact-link:hover {
+  color: var(--text-muted);
+}
+
+/* Experience list */
+.info-experience li {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.exp-year {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-width: 2.5rem;
+  padding-top: 0.2rem;
+}
+
+.exp-name {
+  font-size: 0.9375rem;
+  color: var(--text);
+}
+
+/* ── Tools section ───────────────────────────────────── */
+.info-tools .info-row {
+  max-width: 900px;
+}
+
+.info-tools .info-body p {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .info-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .info-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .info-columns {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .info-section {
+    padding: 3rem var(--pwx);
+  }
+
+  .info-section:first-child {
+    padding-top: 5rem;
+  }
+}

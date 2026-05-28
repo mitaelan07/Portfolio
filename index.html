@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mita Elan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor-dot" id="cursorDot">Explore</div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Torn edge filter definition -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="torn-edge" x="-4%" y="-4%" width="108%" height="108%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="4" seed="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Envelope Homepage -->
+  <div class="env-page">
+
+<p class="env-headline">Greetings from Mita!</p>
+
+    <div class="env-stage">
+
+      <!-- Postcard -->
+      <div class="postcard" id="postcard">
+        <div class="postcard-flipper">
+
+          <!-- Front face -->
+          <div class="postcard-front">
+            <div class="postcard-body">
+
+              <!-- Left: photo + address + message -->
+              <div class="postcard-left">
+                <div class="pc-photo">
+                  <div class="pc-photo-inner">
+                    <img src="Profile pic.png" alt="Mita" draggable="false">
+                  </div>
+                </div>
+                <p class="pc-message">Thanks for stopping by! I design AI-native products. Based in SF, looking for my next role. Let's talk.</p>
+              </div>
+
+              <!-- Vertical divider -->
+              <div class="postcard-divider-v"></div>
+
+              <!-- Right: name + stamp + work list -->
+              <div class="postcard-right">
+                <div class="pc-name-row">
+                  <div>
+                    <span class="postcard-name">Mita Elan</span>
+                    <p class="postcard-intro">Currently designing at Ideate.<br>Previously @ Apple &amp; LinkedIn</p>
+                  </div>
+                  <div class="stamp-box"></div>
+                </div>
+
+                <div class="postcard-divider"></div>
+                <span class="work-label">Work</span>
+
+                <div class="work-list">
+
+                  <div class="work-row" data-card="card-3">
+                    <img src="sage icon.png" alt="" class="work-icon" draggable="false">
+                    <span class="work-name-group"><span class="work-title">Ideate-Sage</span><span class="work-year">2026 – Present</span></span>
+                    <span class="work-role">Founding Designer</span>
+                  </div>
+
+                  <div class="work-row" data-card="card-1">
+                    <img src="Synthesis_Logo.png" alt="" class="work-icon" draggable="false">
+                    <span class="work-name-group"><span class="work-title">Ideate-Synthesis</span><span class="work-year">2025 – Present</span></span>
+                    <span class="work-role">Founding Designer</span>
+                  </div>
+
+                  <div class="work-row" data-card="card-4">
+                    <img src="Achilles Icon.png" alt="" class="work-icon" draggable="false">
+                    <span class="work-name-group"><span class="work-title">Achilles</span><span class="work-year">2025</span></span>
+                    <span class="work-role">Founding Designer</span>
+                  </div>
+
+                  <div class="work-row" data-card="card-2">
+                    <img src="ampcontrol_io_logo 1.png" alt="" class="work-icon" draggable="false">
+                    <span class="work-name-group"><span class="work-title">Ampcontrol</span><span class="work-year">2024</span></span>
+                    <span class="work-role">Product Design</span>
+                  </div>
+
+                  <div class="work-row" data-card="card-9">
+                    <svg width="15" height="15" viewBox="0 0 24 24" class="work-icon work-icon--svg" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0a66c2"/></svg>
+                    <span class="work-name-group"><span class="work-title">LinkedIn</span><span class="work-year">2022</span></span>
+                    <span class="work-role">Growth Design</span>
+                  </div>
+
+                  <div class="work-row" data-card="card-8">
+                    <svg width="13" height="15" viewBox="0 0 814 1000" class="work-icon work-icon--svg" xmlns="http://www.w3.org/2000/svg"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 491.3 8.5 357.9 8.5 226.3c0-86.1 16.9-170.2 52.4-242.1C109.5-105.5 195.2-160 289.7-160c74.2 0 133.8 50.8 177.7 50.8 42 0 109.6-53.5 193.5-53.5 34.4 0 130.9 3.2 198.5 98.5zm-234-181.5c35.8-43.8 61.5-104.4 61.5-165s-1.9-12.5-3.2-17.5c-57.8 2-126.5 38.5-168.5 87.3-33.2 37.5-61.5 97.4-61.5 160 0 6.4 1.3 12.8 1.9 14.5 3.2.6 8.4 1.3 13.6 1.3 51.6 0 115.3-35.2 156.2-80.6z" fill="currentColor"/></svg>
+                    <span class="work-name-group"><span class="work-title">Apple</span><span class="work-year">2021</span></span>
+                    <span class="work-role">UX Research + Design</span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Back face -->
+          <div class="postcard-back">
+            <img src="postcard back.png" alt="Postcard back" draggable="false">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Open flap — triangle pointing up, sits above card -->
+      <div class="env-flap">
+        <svg viewBox="0 0 640 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Flap fill -->
+          <path d="M 0,200 L 310,6 Q 320,0 330,6 L 640,200 Z" fill="rgba(245,240,232,0.86)"/>
+          <!-- Flap edge lines for depth -->
+          <line x1="0" y1="200" x2="310" y2="6" stroke="rgba(140,110,70,0.18)" stroke-width="1"/>
+          <line x1="640" y1="200" x2="330" y2="6" stroke="rgba(140,110,70,0.18)" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <!-- Left gusset -->
+      <div class="env-gusset env-gusset--left">
+        <svg viewBox="0 0 320 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="0,0 320,350 0,700" fill="rgba(228,220,210,0.80)"/>
+        </svg>
+      </div>
+
+      <!-- Right gusset -->
+      <div class="env-gusset env-gusset--right">
+        <svg viewBox="0 0 320 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="320,0 0,350 320,700" fill="rgba(228,220,210,0.80)"/>
+        </svg>
+      </div>
+
+      <!-- Envelope body — rectangle with fold lines, bleeds off screen -->
+      <div class="envelope">
+        <svg class="env-body-svg" viewBox="0 0 640 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Body fill -->
+          <rect width="640" height="600" fill="rgba(245,240,232,0.82)"/>
+          <!-- Side folds: from top-opening corners toward center -->
+          <line x1="0"   y1="0"   x2="320" y2="300" stroke="rgba(140,110,70,0.13)" stroke-width="1.2"/>
+          <line x1="640" y1="0"   x2="320" y2="300" stroke="rgba(140,110,70,0.13)" stroke-width="1.2"/>
+          <!-- Bottom V fold: corners meeting above the bottom -->
+          <line x1="0"   y1="600" x2="320" y2="420" stroke="rgba(140,110,70,0.13)" stroke-width="1.2"/>
+          <line x1="640" y1="600" x2="320" y2="420" stroke="rgba(140,110,70,0.13)" stroke-width="1.2"/>
+        </svg>
+      </div>
+
+    </div><!-- /.env-stage -->
+  </div><!-- /.env-page -->
+
+  <!-- Hobbies overlay -->
+  <div class="projects-overlay" id="hobbiesOverlay">
+    <button class="projects-close" id="hobbiesClose" aria-label="Close">✕</button>
+    <div class="projects-grid">
+      <div class="grid-card-wrapper">
+        <article class="project-card"><div class="card-image"></div></article>
+        <div class="card-meta">
+          <h2 class="card-title">Hobbies</h2>
+          <p class="card-desc">Things I enjoy outside of work.</p>
+          <div class="card-tags"><span class="tag">PERSONAL</span></div>
+        </div>
+      </div>
+      <div class="grid-card-wrapper">
+        <article class="project-card"><div class="card-image"></div></article>
+        <div class="card-meta">
+          <h2 class="card-title">Hobbies</h2>
+          <p class="card-desc">Things I enjoy outside of work.</p>
+          <div class="card-tags"><span class="tag">CREATIVE</span></div>
+        </div>
+      </div>
+      <div class="grid-card-wrapper">
+        <article class="project-card"><div class="card-image"></div></article>
+        <div class="card-meta">
+          <h2 class="card-title">Hobbies</h2>
+          <p class="card-desc">Things I enjoy outside of work.</p>
+          <div class="card-tags"><span class="tag">PERSONAL</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects overlay -->
+  <div class="projects-overlay" id="projectsOverlay">
+    <button class="projects-close" id="projectsClose" aria-label="Close">✕</button>
+    <div class="projects-grid">
+      <div class="grid-card-wrapper">
+        <article class="project-card"><div class="card-image"></div></article>
+        <div class="card-meta">
+          <h2 class="card-title">Project One</h2>
+          <p class="card-desc">A short description of what this project is about.</p>
+          <div class="card-tags"><span class="tag">WEBSITES</span><span class="tag">UI/UX</span></div>
+        </div>
+      </div>
+      <div class="grid-card-wrapper">
+        <article class="project-card"><div class="card-image"></div></article>
+        <div class="card-meta">
+          <h2 class="card-title">AmpControl</h2>
+          <p class="card-desc">A short description of what this project is about.</p>
+          <div class="card-tags"><span class="tag">DEVELOPMENT</span><span class="tag">UI/UX</span></div>
+        </div>
+      </div>
+      <div class="grid-card-wrapper">
+        <article class="project-card"><div class="card-image"></div></article>
+        <div class="card-meta">
+          <h2 class="card-title">Project Three</h2>
+          <p class="card-desc">A short description of what this project is about.</p>
+          <div class="card-tags"><span class="tag">BRANDING</span><span class="tag">DESIGN</span></div>
+        </div>
+      </div>
+      <div class="grid-card-wrapper">
+        <article class="project-card"><div class="card-image"></div></article>
+        <div class="card-meta">
+          <h2 class="card-title">Project Four</h2>
+          <p class="card-desc">A short description of what this project is about.</p>
+          <div class="card-tags"><span class="tag">WEBSITES</span><span class="tag">DEVELOPMENT</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project detail modal -->
+  <div class="project-detail-overlay" id="projectDetailOverlay">
+    <div class="project-detail-modal">
+      <button class="project-detail-expand" id="projectDetailExpand" aria-label="Expand">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M1 5V1h4M11 7v4H7M1 5l4-4M11 7l-4 4"/>
+        </svg>
+      </button>
+      <button class="project-detail-close" id="projectDetailClose" aria-label="Close">✕</button>
+      <div class="project-detail-image" id="projectDetailImage"></div>
+      <div class="project-detail-body">
+
+        <!-- Custom content slot (used for template-based projects like IDEATE) -->
+        <div id="projectDetailCustom" style="display:none"></div>
+
+        <!-- Standard content (used for data-driven projects like AmpControl) -->
+        <div id="projectDetailStandard">
+          <div class="card-tags" id="projectDetailTags"></div>
+          <h1 class="project-detail-title" id="projectDetailTitle"></h1>
+
+          <div class="project-detail-section">
+            <h2 class="project-detail-section-title">Overview</h2>
+            <p class="project-detail-section-text" id="projectDetailOverview"></p>
+          </div>
+
+          <div class="project-detail-stats" id="projectDetailStats">
+            <div class="project-stat">
+              <span class="project-stat-label">Timeline</span>
+              <span class="project-stat-value" id="projectDetailTimeline"></span>
+            </div>
+            <div class="project-stat">
+              <span class="project-stat-label">Teammates</span>
+              <span class="project-stat-value" id="projectDetailTeammates"></span>
+            </div>
+            <div class="project-stat">
+              <span class="project-stat-label">Contributions</span>
+              <span class="project-stat-value" id="projectDetailContributions"></span>
+            </div>
+          </div>
+
+          <div class="project-detail-impact" id="projectDetailImpact">
+            <h2 class="project-detail-section-title">Impact</h2>
+            <div class="impact-metrics" id="projectDetailMetrics"></div>
+          </div>
+
+          <div class="project-detail-initial-problem" id="projectDetailInitialProblem"></div>
+          <div class="project-detail-hmw" id="projectDetailHmw"></div>
+          <div class="project-detail-features" id="projectDetailFeatures"></div>
+          <div class="project-detail-research" id="projectDetailResearch"></div>
+          <div class="project-detail-design-explorations" id="projectDetailDesignExplorations"></div>
+          <div class="project-detail-design-constraints" id="projectDetailDesignConstraints"></div>
+          <div class="project-detail-reflections" id="projectDetailReflections"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- About me modal -->
+  <div class="about-overlay" id="aboutOverlay">
+    <div class="about-modal">
+      <button class="about-close" id="aboutClose" aria-label="Close">✕</button>
+      <div class="about-content">
+        <div class="about-avatar">
+          <img src="Profile pic.png" alt="Mita Elan"/>
+        </div>
+        <h2 class="about-name">Mita Elan</h2>
+        <p class="about-bio">Hi! I'm Mita — a designer and developer who loves building thoughtful digital experiences. I'm passionate about clean interfaces, creative interactions, and bringing ideas to life on the web.</p>
+        <div class="about-links">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="mailto:your@email.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACHILLES case study template -->
+  <template id="achilles-content">
+    <div class="cs-wrap">
+
+      <!-- Left scroll-spy nav -->
+      <nav class="cs-sidenav" aria-label="Page sections">
+        <a class="cs-nav-item" data-target="achilles-overview">Overview</a>
+        <a class="cs-nav-item" data-target="achilles-impact">Impact</a>
+        <a class="cs-nav-item" data-target="achilles-mission">Mission</a>
+        <a class="cs-nav-item" data-target="achilles-solutions">Solutions</a>
+        <a class="cs-nav-item" data-target="achilles-reflections">Reflections</a>
+      </nav>
+
+      <!-- Main content -->
+      <div class="cs-content">
+
+        <!-- Overview -->
+        <div id="achilles-overview" class="cs-header">
+          <img src="Achilles Icon.png" alt="Achilles logo" class="cs-product-logo">
+          <div class="cs-header-row">
+            <div class="cs-header-left">
+              <p class="cs-title">Achilles</p>
+              <p class="cs-subtitle" style="color:#000;">Give every runner access to coaching that actually adapts to them — turning biometric data, injury history, and how you feel on any given day into guidance that gets smarter over time.</p>
+            </div>
+            <div class="cs-header-meta">
+              <div class="cs-meta-block">
+                <span class="cs-meta-label cs-meta-label--title">Team</span>
+                <span class="cs-meta-value">1 Designer (Me)<br>CEO<br>CTO</span>
+              </div>
+              <div class="cs-meta-block">
+                <span class="cs-meta-label cs-meta-label--title">Timeline</span>
+                <span class="cs-meta-value">March 2025 – July 2025<br>Freelance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Impact -->
+        <section id="achilles-impact" class="cs-section">
+          <span class="cs-label">Impact</span>
+          <div class="cs-impact-list">
+            <p class="cs-impact-item"><strong>50</strong> runners onboarded across NYC run club beta</p>
+            <p class="cs-impact-item"><strong>30%</strong> of beta users returned weekly for insights and recommendations</p>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Background</span></div>
+
+        <!-- Background -->
+        <section id="achilles-mission" class="cs-section">
+          <span class="cs-label">Background</span>
+          <p class="cs-body" style="color:#000;">Half marathon finishers are up 20.9% year-on-year and Gen Z is the fastest-growing demographic. But 57.6% of runners sustain an injury within their first 1,000km — novice runners at 2.3x the rate of experienced ones.</p>
+          <p class="cs-body" style="color:#000;">Most are going it alone. They sign up for a race, get a generic PDF, and figure out the rest themselves. Good coaching exists but it's expensive and out of reach for most.</p>
+          <p class="cs-body" style="color:#000;">Achilles was built to close that gap.</p>
+        </section>
+
+
+        <!-- The Design Challenge -->
+        <section class="cs-section">
+          <span class="cs-label">The Design Challenge</span>
+          <p class="cs-body" style="color:#000;">A hard question emerged: what does it actually take to make data feel like coaching?</p>
+          <div class="cs-compare-table">
+            <div class="cs-compare-col cs-compare-col--no">
+              <p class="cs-compare-col-header">What we didn't want</p>
+              <p class="cs-compare-item">Just a dashboard that showed you numbers</p>
+              <p class="cs-compare-item">AI that completely replaces the need for coaches</p>
+            </div>
+            <div class="cs-compare-col cs-compare-col--yes">
+              <p class="cs-compare-col-header">What we wanted</p>
+              <p class="cs-compare-item">A coach that interprets your data — and knows when to speak up, when to ask a question, and when to just let you run.</p>
+            </div>
+          </div>
+          <p class="cs-body" style="color:#000;">Designing Achilles meant solving that problem across every touchpoint: how you get started, how your plan is built, how the system learns from your runs, and how it talks to you about what it finds.</p>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Solutions</span></div>
+
+        <!-- Solutions -->
+        <section id="achilles-solutions" class="cs-section">
+          <div class="cs-solution">
+            <span class="cs-label">From generic plan to personalized program</span>
+            <h3 class="cs-solution-title">Getting Started</h3>
+            <p class="cs-body" style="color:#000;">Most runners start with a generic PDF — mileage targets with no context for how to execute them. Achilles transforms that plan into a structured week-by-week program with real workouts and personalized pace targets. Not just '6 miles tempo run' — but exactly how to run it, and at what pace, to hit their goal.</p>
+            <div class="cs-img-placeholder"></div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Knowing what to say — and when not to</span>
+            <h3 class="cs-solution-title">The Insight System</h3>
+            <p class="cs-body" style="color:#000;">An insight isn't a data point — it's the connection between two things a runner couldn't make themselves. Slower pace + 88°F outside = not a fitness drop. Heart rate spike + three hard days = accumulated fatigue. When the system has enough signal, it surfaces the insight. When it doesn't, it asks. The coach never guesses.</p>
+            <div class="cs-img-placeholder"></div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Proactive care, not reactive damage control</span>
+            <h3 class="cs-solution-title">Injury and Plan Adjustment</h3>
+            <p class="cs-body" style="color:#000;">Injury is the moment a runner most needs support — and when a system can lose their trust fastest if it gets it wrong. Achilles draws on effort ratings, wearable data, and training load to catch warning signs early. And it remembers — if a runner had a prior injury and mileage spikes, it checks in. Not as a notification, but as a conversation.</p>
+            <div class="cs-img-placeholder"></div>
+            <p class="cs-body" style="color:#000; margin-top: 2rem;">When an injury is flagged, Achilles presents options — a few ways to adjust, with a clear recommendation. The runner chooses, the plan updates automatically. The system errs toward caution, but never takes the decision away from the runner.</p>
+            <div class="cs-img-placeholder"></div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Reflections</span></div>
+
+        <!-- Reflections -->
+        <section id="achilles-reflections" class="cs-section">
+          <span class="cs-label">Reflections</span>
+          <div class="cs-reflections">
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">Data is only useful when it's interpreted.</h3>
+              <p class="cs-body" style="color:#000;">The design work wasn't adding more numbers — it was figuring out which signal mattered right now, for this person, and saying it in a way that felt like a coach, not a report.</p>
+            </div>
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">The system needs to know its limits.</h3>
+              <p class="cs-body" style="color:#000;">An AI that guesses is worse than one that asks. Every time Achilles didn't have enough context, we designed it to open a conversation instead of fill in the blank. That restraint is what makes the difference between a tool runners trust and one they ignore.</p>
+            </div>
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">Where I'd take it next.</h3>
+              <p class="cs-body" style="color:#000;">Some injuries — the ones runners downplay — need a human in the loop. The next step is connecting runners with real coaches when the system flags something serious enough to warrant it. Not replacing the AI layer, but knowing when to escalate beyond it.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="cs-section cs-closing">
+          <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
+        </section>
+
+        <!-- Next -->
+        <section class="cs-section cs-next">
+          <span class="cs-label">Next</span>
+          <div class="cs-next-card" data-next-card="card-2" style="background-image: url('Chaotic Gradients - 50.jpg'); background-size: cover; background-position: center;">
+            <div class="cs-next-overlay">
+              <h3 class="cs-next-title">Ampcontrol</h3>
+              <p class="cs-next-desc">Designing operational visibility tools for EV charging management.</p>
+            </div>
+            <img src="ampcontrolheroimage.png" alt="" style="position:absolute; top:42%; left:50%; transform:translate(-50%, -50%); width:65%; object-fit:contain; pointer-events:none; z-index:1; border-radius:8px;">
+          </div>
+        </section>
+
+      </div><!-- /.cs-content -->
+    </div><!-- /.cs-wrap -->
+  </template>
+
+  <!-- AMPCONTROL case study template -->
+  <template id="ampcontrol-content">
+    <div class="cs-wrap">
+
+      <!-- Left scroll-spy nav -->
+      <nav class="cs-sidenav" aria-label="Page sections">
+        <a class="cs-nav-item" data-target="amp-overview">Overview</a>
+        <a class="cs-nav-item" data-target="amp-impact">Impact</a>
+        <a class="cs-nav-item" data-target="amp-background">Background</a>
+        <a class="cs-nav-item" data-target="amp-solutions">Solutions</a>
+        <a class="cs-nav-item" data-target="amp-reflections">Reflections</a>
+      </nav>
+
+      <!-- Main content -->
+      <div class="cs-content">
+
+        <!-- Overview -->
+        <div id="amp-overview" class="cs-header">
+          <img src="ampcontrol_io_logo 1.png" alt="Ampcontrol logo" class="cs-product-logo">
+          <div class="cs-header-row">
+            <div class="cs-header-left">
+              <p class="cs-title">Ampcontrol</p>
+              <p class="cs-subtitle" style="color:#000;">Redesigning the landing page to serve as the single source of truth for ground operators — enabling real-time visibility across entire EV charging networks.</p>
+            </div>
+            <div class="cs-header-meta">
+              <div class="cs-meta-block">
+                <span class="cs-meta-label cs-meta-label--title">Team</span>
+                <span class="cs-meta-value">1 Designer (Me)<br>TPM<br>Engineering</span>
+              </div>
+              <div class="cs-meta-block">
+                <span class="cs-meta-label cs-meta-label--title">Timeline</span>
+                <span class="cs-meta-value">5 weeks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Impact -->
+        <section id="amp-impact" class="cs-section">
+          <span class="cs-label">Impact</span>
+          <div class="cs-impact-list">
+            <p class="cs-impact-item"><strong>—</strong> Placeholder impact stat</p>
+            <p class="cs-impact-item"><strong>—</strong> Placeholder impact stat</p>
+            <p class="cs-impact-item"><strong>—</strong> Placeholder impact stat</p>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Background</span></div>
+
+        <!-- Background -->
+        <section id="amp-background" class="cs-section">
+          <span class="cs-label">Background</span>
+          <p class="cs-body" style="color:#000;">Placeholder — add background context here.</p>
+        </section>
+
+        <!-- Design Challenge -->
+        <section class="cs-section">
+          <span class="cs-label">The Design Challenge</span>
+          <p class="cs-body" style="color:#000;">Placeholder — describe the design challenge here.</p>
+          <div class="cs-compare-table">
+            <div class="cs-compare-col cs-compare-col--no">
+              <p class="cs-compare-col-header">What we didn't want</p>
+              <p class="cs-compare-item">Placeholder item</p>
+              <p class="cs-compare-item">Placeholder item</p>
+            </div>
+            <div class="cs-compare-col cs-compare-col--yes">
+              <p class="cs-compare-col-header">What we wanted</p>
+              <p class="cs-compare-item">Placeholder item</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Solutions</span></div>
+
+        <!-- Solutions -->
+        <section id="amp-solutions" class="cs-section">
+          <div class="cs-solution">
+            <span class="cs-label">Placeholder label</span>
+            <h3 class="cs-solution-title">Solution One</h3>
+            <p class="cs-body" style="color:#000;">Placeholder — describe this solution here.</p>
+            <div class="cs-img-placeholder"></div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Placeholder label</span>
+            <h3 class="cs-solution-title">Solution Two</h3>
+            <p class="cs-body" style="color:#000;">Placeholder — describe this solution here.</p>
+            <div class="cs-img-placeholder"></div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Placeholder label</span>
+            <h3 class="cs-solution-title">Solution Three</h3>
+            <p class="cs-body" style="color:#000;">Placeholder — describe this solution here.</p>
+            <div class="cs-img-placeholder"></div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Reflections</span></div>
+
+        <!-- Reflections -->
+        <section id="amp-reflections" class="cs-section">
+          <span class="cs-label">Reflections</span>
+          <div class="cs-reflections">
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">Placeholder reflection title.</h3>
+              <p class="cs-body" style="color:#000;">Placeholder — add reflection here.</p>
+            </div>
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">Placeholder reflection title.</h3>
+              <p class="cs-body" style="color:#000;">Placeholder — add reflection here.</p>
+            </div>
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">Placeholder reflection title.</h3>
+              <p class="cs-body" style="color:#000;">Placeholder — add reflection here.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="cs-section cs-closing">
+          <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
+        </section>
+
+        <!-- Next -->
+        <section class="cs-section cs-next">
+          <span class="cs-label">Next</span>
+          <div class="cs-next-card" data-next-card="card-3" style="background-image: url('sage background.png'); background-size: cover; background-position: center;">
+            <div class="cs-next-overlay">
+              <h3 class="cs-next-title">Ideate — Sage</h3>
+              <p class="cs-next-desc">Designing an AI assistant that lives inside the design workflow — not outside it.</p>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /.cs-content -->
+    </div><!-- /.cs-wrap -->
+  </template>
+
+  <!-- SAGE case study template -->
+  <template id="sage-content">
+    <div class="cs-wrap">
+
+      <!-- Left scroll-spy nav -->
+      <nav class="cs-sidenav" aria-label="Page sections">
+        <a class="cs-nav-item" data-target="sage-overview">Overview</a>
+        <a class="cs-nav-item" data-target="sage-impact">Impact</a>
+        <a class="cs-nav-item" data-target="sage-mission">Mission</a>
+        <a class="cs-nav-item" data-target="sage-solutions">Solutions</a>
+        <a class="cs-nav-item" data-target="sage-reflections">Reflections</a>
+      </nav>
+
+      <!-- Main content -->
+      <div class="cs-content">
+
+        <!-- Overview -->
+        <div id="sage-overview" class="cs-header">
+          <img src="sage icon.png" alt="Sage logo" class="cs-product-logo">
+          <div class="cs-header-row">
+            <div class="cs-header-left">
+              <p class="cs-title">Ideate - Sage</p>
+              <p class="cs-subtitle" style="color:#000;">Designing an agentic layer that eliminates ambiguity, surfaces client context, and optimizes the creative process from first brief to final handoff.</p>
+              <p class="cs-subtitle">Currently in active development — core features are live with pilot teams, with additional capabilities shipping soon.</p>
+            </div>
+            <div class="cs-header-meta">
+              <div class="cs-meta-block">
+                <span class="cs-meta-label cs-meta-label--title">Team</span>
+                <span class="cs-meta-value">1 Designer (Me)<br>CEO<br>CTO</span>
+              </div>
+              <div class="cs-meta-block">
+                <span class="cs-meta-value">2026 – Present</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Impact -->
+        <section id="sage-impact" class="cs-section">
+          <span class="cs-label">Impact</span>
+          <div class="cs-impact-list">
+            <p class="cs-impact-item">+70% of Sage generated insights rated actionable by designers</p>
+            <p class="cs-impact-item">60% pilot activation rate, 3 weeks post-onboarding</p>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Background</span></div>
+
+        <!-- Research stat -->
+        <section class="cs-section cs-section--tight">
+          <p class="cs-insight-title" style="line-height: 1.5;">Designers spend roughly 34% of total project time on client communication. The biggest time sink? Decoding vague client feedback.</p>
+        </section>
+
+        <!-- Background body copy -->
+        <section class="cs-section">
+          <p class="cs-body">Designers spend too much time decoding what clients actually mean. Vague feedback, misaligned briefs, wasted revisions — it's constant friction. Research pointed to one clear fix: a feedback translator. So that's where we started.</p>
+          <p class="cs-body">But the more we built, the more a different problem surfaced.</p>
+        </section>
+
+        <!-- First version -->
+        <section class="cs-section">
+          <h3 class="cs-solution-title">First version</h3>
+          <div class="cs-img-placeholder" style="background: #f8f8f8; border: none; display: flex; align-items: center; justify-content: center; aspect-ratio: unset; padding: calc(2rem - 6px);">
+            <img src="sage first version.png" alt="Sage first version" style="width: 100%; border-radius: 8px; display: block;">
+          </div>
+          <h3 class="cs-solution-title" style="margin-top: 2rem;">The Problem We Didn't See Coming</h3>
+          <p class="cs-body">The feedback translator worked. But nobody wanted to use it the way we'd built it.</p>
+          <p class="cs-body"><span style="font-weight: 500; color: #000;">It lived on its own screen — isolated from everything else.</span> If you got a confusing client comment mid-review, you had to stop, navigate to Sage, get a response, then find your way back. The round-trip killed the value. We'd built the right thing in the wrong place.</p>
+        </section>
+
+        <!-- How Sage Evolved -->
+        <section class="cs-section" style="margin-top: 6rem;">
+          <h3 class="cs-solution-title">How Sage Evolved</h3>
+          <p class="cs-body">Once we made Sage persistent across the product suite — accessible over any tool, always there without interrupting — the question changed. It was no longer "how do we get designers to use this?" It became "what else can we do for them while we're already here?"</p>
+          <p class="cs-body">That shift <span style="font-weight: 500; color: #000;">pushed us from building a translator to building an assistant.</span> And the more we leaned into that, the more we realized the highest-value version of Sage <span style="font-weight: 500; color: #000;">wasn't one that waited to be asked — it was one that intervened at the right moment</span>, before the designer even had to think about it.</p>
+        </section>
+
+        <!-- Mission -->
+        <section id="sage-mission" class="cs-section">
+          <span class="cs-label">So the mission became</span>
+          <p class="cs-statement">Remove every layer of friction between a designer and clarity.</p>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Solutions</span></div>
+
+        <!-- Solutions -->
+        <section id="sage-solutions" class="cs-section">
+          <div class="cs-solution">
+            <span class="cs-label">Where it started.</span>
+            <h3 class="cs-solution-title">Feedback Translation</h3>
+            <p class="cs-body">Sage reads your client feedback and turns it into actionable insights and next steps — not a rewrite, an interpretation of what the client actually means. This is still the entry point for most designers. The feature that earns trust before the others can do their job.</p>
+            <div class="cs-video-wrap">
+              <video src="Sage-Feedback Translator.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">What made it smarter over time.</span>
+            <h3 class="cs-solution-title">Client Memory</h3>
+            <p class="cs-body">The original plan was passive — let Sage learn through chat history. But chatbot memory has real constraints, so I designed around it instead. Designers create a client profile at the start of each project and Sage anchors every conversation to it. Each session opens with: who are you working with today? Turns out explicit context a designer builds intentionally is more reliable than anything a system tries to infer.</p>
+            <div class="cs-video-wrap cs-video-wrap--sm">
+              <video src="Sage - Client Memory.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Proactive by design.</span>
+            <h3 class="cs-solution-title">Writing Assistance</h3>
+            <p class="cs-body">This is where Sage stopped being reactive. When a designer is writing a comment or drafting a brief, Sage is already reviewing it — surfacing suggestions in real time, before anything gets sent. The design challenge was restraint. Proactive AI that's too eager becomes noise, so we had to be deliberate about when it speaks up and how it shows up without making the designer feel second-guessed.</p>
+            <div class="cs-video-wrap">
+              <video src="Sage - Writing Assistance.mov" autoplay muted loop playsinline></video>
+            </div>
+            <div class="cs-video-wrap">
+              <video src="Sage - Proactive Assistance.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">The layer that ties it together.</span>
+            <h3 class="cs-solution-title">Sage Chat</h3>
+            <p class="cs-body">Persistent, context-aware, always accessible. Sage is now a presence across the entire suite — not a screen you navigate to. The chat isn't the product. It's the interface through which everything else is accessible — usable on top of any tool, without ever breaking flow.</p>
+            <div class="cs-video-wrap">
+              <video src="Sage Chat.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Reflections</span></div>
+
+        <!-- Reflections -->
+        <section id="sage-reflections" class="cs-section">
+          <span class="cs-label">Reflections</span>
+          <div class="cs-reflections">
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">The default AI pattern is a chatbot. That's not always wrong — but it's rarely enough.</h3>
+              <p class="cs-body">When we started, a standalone chat felt like the natural shape for an AI feature. It's easy to scope, easy to ship, and it's what users expect. But easy to ship and actually useful aren't the same thing. The chatbot screen taught me that the most important design decision for an AI feature isn't what it does — it's where it lives and when it shows up.</p>
+            </div>
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">Constraints forced better decisions.</h3>
+              <p class="cs-body">The client memory limitation was frustrating at first. We wanted passive learning; we got structured onboarding instead. But the forced explicitness turned out to produce something more reliable and more trustworthy. The designer built the context intentionally, so they trust it. That's worth more than a system that inferred something and might have gotten it wrong. I've started thinking about technical constraints less as blockers and more as redirects — they push you toward solutions you wouldn't have considered otherwise.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="cs-section cs-closing">
+          <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
+        </section>
+
+        <!-- Next -->
+        <section class="cs-section cs-next">
+          <span class="cs-label">Next</span>
+          <div class="cs-next-card" data-next-card="card-1" style="background-image: url('Synthesis hero image.png'); background-size: cover; background-position: center;">
+            <div class="cs-next-overlay">
+              <h3 class="cs-next-title">Ideate - Synthesis</h3>
+              <p class="cs-next-desc">Turning a passive moodboarding / inspiration gathering tool into a collaborative, decision-making workflow for designers.</p>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /.cs-content -->
+    </div><!-- /.cs-wrap -->
+  </template>
+
+  <!-- IDEATE case study template -->
+  <template id="ideate-content">
+    <div class="cs-wrap">
+
+      <!-- Left scroll-spy nav -->
+      <nav class="cs-sidenav" aria-label="Page sections">
+        <a class="cs-nav-item" data-target="cs-overview">Overview</a>
+        <a class="cs-nav-item" data-target="cs-impact">Impact</a>
+        <a class="cs-nav-item" data-target="cs-mission">Mission</a>
+        <a class="cs-nav-item" data-target="cs-research">Research</a>
+        <a class="cs-nav-item" data-target="cs-activation">Activation</a>
+        <a class="cs-nav-item" data-target="cs-collaboration">Collaboration</a>
+        <a class="cs-nav-item" data-target="cs-reflections">Reflections</a>
+      </nav>
+
+      <!-- Main content -->
+      <div class="cs-content">
+
+        <!-- Overview -->
+        <div id="cs-overview" class="cs-header">
+          <img src="Synthesis_Logo.png" alt="Synthesis logo" class="cs-product-logo">
+          <div class="cs-header-row">
+            <div class="cs-header-left">
+              <p class="cs-title">Ideate - Synthesis</p>
+              <p class="cs-subtitle">Ideate is building a suite of tools for design agencies to streamline creative workflows and manage operations end-to-end, from early concepting to execution.</p>
+              <p class="cs-role-desc">I led the redesign of Synthesis as the founding designer — turning a passive moodboarding / inspiration gathering tool into a collaborative, decision-making workflow for designers.</p>
+            </div>
+            <div class="cs-header-meta">
+              <div class="cs-meta-block">
+                <span class="cs-meta-label cs-meta-label--title">Team</span>
+                <span class="cs-meta-value">1 Designer (Me)<br>CEO<br>CTO<br>1 Design Intern</span>
+              </div>
+              <div class="cs-meta-block">
+                <span class="cs-meta-value">2025 – Present</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Impact -->
+        <section id="cs-impact" class="cs-section">
+          <span class="cs-label">Impact</span>
+          <div class="cs-impact-list">
+            <p class="cs-impact-item"><strong>+40%</strong> First Board Creation</p>
+            <p class="cs-impact-item"><strong>+30%</strong> Weekly Returning Users</p>
+            <p class="cs-impact-item"><strong>4</strong> pilot agencies signed so far</p>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Background</span></div>
+
+        <!-- Mission -->
+        <section id="cs-mission" class="cs-section">
+          <span class="cs-label">The Mission</span>
+          <p class="cs-statement">Improve activation and retention — give designers enough structure and value to move from first session to habit. Users were dropping off early and teams weren't returning to collaborate or iterate.</p>
+          <p class="cs-body">When I joined, the team had just shipped an MVP — of the initial signups, only 32% created a board, and most dropped off before uploading content or returning to collaborate.</p>
+        </section>
+
+        <!-- Research Insights -->
+        <section id="cs-research" class="cs-section">
+          <div class="cs-two-col">
+            <div>
+              <span class="cs-label">Research Insight 1</span>
+              <h3 class="cs-insight-title">Friction to getting started</h3>
+              <p class="cs-body">Between blank canvas paralysis and no built-in content discovery within Ideate, designers were defaulting to Pinterest before ever getting started.</p>
+            </div>
+            <div>
+              <span class="cs-label">Research Insight 2</span>
+              <h3 class="cs-insight-title">Alignment happening outside</h3>
+              <p class="cs-body">Teams relied on meetings and external docs to make decisions, even after the moodboard was built.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Solutions</span></div>
+
+        <!-- Improving Activation -->
+        <section id="cs-activation" class="cs-section">
+          <h2 class="cs-chapter">Improving Activation</h2>
+          <p class="cs-chapter-sub">To address early drop-off, the work focused on two things: reducing the friction to getting started and helping users understand the value of the platform before they gave up on it.</p>
+
+          <div class="cs-solution">
+            <span class="cs-label">Solution 1</span>
+            <h3 class="cs-solution-title">Browser Extension</h3>
+            <p class="cs-body">The first step was making it easier to pull content from the web without the download-and-reupload loop. A browser extension let designers grab content directly from any site, which increased uploads but also made it clear that native content within the platform was the real need.</p>
+            <div class="cs-video-wrap">
+              <video src="Synthesis - Plugin.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Solution 2</span>
+            <h3 class="cs-solution-title">Public Feed</h3>
+            <p class="cs-body">To bring content fully into the platform, a curated public feed let users discover and save inspiration without leaving Ideate. Quality was a deliberate choice — content was sourced from trusted design publications, museum archives, and public libraries, giving it a clear edge over Pinterest's repetitive algorithm.</p>
+            <div class="cs-video-wrap">
+              <video src="Synthesis - Public Feed.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Solution 3</span>
+            <h3 class="cs-solution-title">Onboarding</h3>
+            <p class="cs-body">I wanted an onboarding experience that eliminated blank canvas paralysis and helped designers discover Ideate's full range of offerings before they dropped off. Swipe through to see my iterations below.</p>
+            <div class="cs-carousel">
+              <div class="cs-carousel-track">
+                <img class="cs-carousel-slide" src="Onboarding-pt1.png" alt="Onboarding iteration 1">
+                <img class="cs-carousel-slide" src="onboarding-pt2.png" alt="Onboarding iteration 2">
+              </div>
+              <div class="cs-carousel-controls">
+                <div class="cs-carousel-dots">
+                  <span class="cs-carousel-dot is-active"></span>
+                  <span class="cs-carousel-dot"></span>
+                </div>
+              </div>
+            </div>
+            <div class="cs-video-wrap">
+              <video src="Synthesis - Onboarding.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-design-decision">
+            <span class="cs-decision-label">Design decision: </span>The first two iterations pulled in opposite directions — one created friction, the other took away control. V3 combined the best of both: content scraping to remove the blank canvas problem, paired with action-triggered tooltips that guided without prescribing.
+          </div>
+        </section>
+
+        <!-- Improving Collaboration -->
+        <section id="cs-collaboration" class="cs-section">
+          <h2 class="cs-chapter">Improving Collaboration</h2>
+          <p class="cs-chapter-sub">Since feedback was scattered and decisions were happening outside the tool, I wanted to bring alignment directly onto the board — giving teams the tools to give feedback, track decisions, and move forward without ever leaving Ideate.</p>
+
+          <div class="cs-solution">
+            <span class="cs-label">Solution 1</span>
+            <h3 class="cs-solution-title">Freeform Canvas</h3>
+            <p class="cs-body">Inspired by Figma's canvas, this mode brought real-time collaboration directly onto the board — letting teams see where collaborators were focusing, whether working live in a meeting or asynchronously. It built on Ideate's existing commenting feature, giving teams a familiar and fluid way to work together.</p>
+            <div class="cs-video-wrap">
+              <img src="synthesis-freeform canvas.png" alt="Freeform Canvas" style="width:85%;max-height:572px;border-radius:8px;display:block;object-fit:contain;margin:0 auto;">
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Solution 2</span>
+            <h3 class="cs-solution-title">Commenting and Activity Feed</h3>
+            <p class="cs-body">A centralized feed that surfaced incoming comments and feedback in one place, helping teams spot trends, stay aligned, and respond without digging through the board.</p>
+            <div class="cs-video-wrap">
+              <video src="Synthesis - Commenting.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Solution 3</span>
+            <h3 class="cs-solution-title">Likes and Approval Sorting</h3>
+            <p class="cs-body">Liking content translated directly to approval — a core part of how design teams align. Teams could see who was approving what and sort content by most liked, making it easy to identify what to move forward with.</p>
+            <div class="cs-video-wrap">
+              <video src="Synthesis - Liking & Sorting.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Solution 4</span>
+            <h3 class="cs-solution-title">Pinning Content</h3>
+            <p class="cs-body">A dedicated top-of-board area where teams could surface priority items and create a shared focal point for what mattered most.</p>
+            <div class="cs-video-wrap">
+              <video src="Synthesis - Pinning.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <span class="cs-label">Solution 5</span>
+            <h3 class="cs-solution-title">Presentation Mode</h3>
+            <p class="cs-body">A clean, distraction-free view that let teams walk clients through the board in a focused, presentation-ready format.</p>
+            <div class="cs-video-wrap">
+              <video src="Synthesis - Presentation Mode.mov" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Reflections</span></div>
+
+        <!-- Reflections -->
+        <section id="cs-reflections" class="cs-section">
+          <span class="cs-label">Reflections</span>
+          <div class="cs-reflections">
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">Navigating ambiguity without a PM</h3>
+              <p class="cs-body">Without a roadmap or dedicated PM, I stepped into that role — scoping features, driving prioritization, and aligning the founding team around product decisions amid a lot of competing viewpoints.</p>
+            </div>
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">Using AI to move faster</h3>
+              <p class="cs-body">This project pushed me to lean into AI tools to fill gaps and accelerate the process — from drafting wireframes to rapid concept testing — fundamentally changing how I approach early-stage design work.</p>
+            </div>
+            <div class="cs-reflection">
+              <h3 class="cs-reflection-title">Growing as a lead</h3>
+              <p class="cs-body">Mentoring a marketing intern transitioning into product design helped me develop as a leader — delegating work, collaborating cross-functionally, and co-leading a redesign of our design system documentation.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="cs-section cs-closing">
+          <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
+        </section>
+
+        <!-- Next -->
+        <section class="cs-section cs-next">
+          <span class="cs-label">Next</span>
+          <div class="cs-next-card" data-next-card="card-4" style="background-image: url('achilles background.png'); background-size: cover; background-position: center;">
+            <img src="aAchilles Hero Image.png" alt="Achilles" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;height:auto;object-fit:contain;">
+            <div class="cs-next-overlay">
+              <h3 class="cs-next-title">Achilles</h3>
+              <p class="cs-next-desc">Placeholder — add a teaser for Achilles.</p>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /.cs-content -->
+    </div><!-- /.cs-wrap -->
+  </template>
+
+  <!-- Video lightbox -->
+  <div class="cs-video-lightbox" id="csVideoLightbox">
+    <button class="cs-video-lightbox-close" id="csVideoLightboxClose" aria-label="Close">✕</button>
+    <div class="cs-video-lightbox-block">
+      <video id="csVideoLightboxVideo" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
