@@ -5,23 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mita Elan</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="minimal.css">
 </head>
 <body>
   <div class="cursor-dot" id="cursorDot">Explore</div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <!-- Torn edge filter definition -->
-  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
-    <defs>
-      <filter id="torn-edge" x="-4%" y="-4%" width="108%" height="108%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="4" seed="3" result="noise"/>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
-      </filter>
-    </defs>
-  </svg>
+  <!-- Hidden stub so postcard JS doesn't throw -->
+  <div id="postcard" style="display:none"></div>
 
-  <!-- Envelope Homepage -->
-  <div class="env-page">
+  <!-- Minimal homepage -->
+  <div class="min-wrap">
+
+    <nav class="min-nav">
+      <span class="min-logo">Mita Elan</span>
+      <span class="min-time" id="liveTime"></span>
+    </nav>
+
+    <section class="min-about">
+      <p>I'm a product designer working across design, product, and engineering. Currently the founding product designer at Ideate — building AI-native tools for design workflows. Previously at Apple and LinkedIn. I prototype with code, using Claude Code and Cursor to move faster than Figma alone. Based in San Francisco, looking for my next role.</p>
+    </section>
+
+    <hr class="min-rule">
+
+    <section class="min-work">
+      <p class="min-work-intro">Selected work</p>
+      <div class="min-grid">
+
+        <div class="min-card work-row" data-card="card-4">
+          <div class="min-card-img" style="background-image: url('achilles background.png');">
+            <img src="aAchilles Hero Image.png" alt="">
+          </div>
+          <div class="min-card-info">
+            <span class="min-card-title">Achilles</span>
+            <span class="min-card-tags">AI · Product Design</span>
+          </div>
+        </div>
+
+        <div class="min-card work-row" data-card="card-3">
+          <div class="min-card-img" style="background-image: url('sage background.png');">
+            <img src="sage hero image.png" alt="">
+          </div>
+          <div class="min-card-info">
+            <span class="min-card-title">Ideate — Sage</span>
+            <span class="min-card-tags">AI · Product Design</span>
+          </div>
+        </div>
+
+        <div class="min-card work-row" data-card="card-1">
+          <div class="min-card-img" style="background-image: url('Synthesis hero image.png'); background-size: cover;">
+          </div>
+          <div class="min-card-info">
+            <span class="min-card-title">Ideate — Synthesis</span>
+            <span class="min-card-tags">Product Design</span>
+          </div>
+        </div>
+
+        <div class="min-card work-row" data-card="card-2">
+          <div class="min-card-img" style="background-image: url('Chaotic Gradients - 50.jpg');">
+            <img src="ampcontrolheroimage.png" alt="">
+          </div>
+          <div class="min-card-info">
+            <span class="min-card-title">Ampcontrol</span>
+            <span class="min-card-tags">B2B · Dashboard Design</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /.min-wrap -->
+
+  <!-- Hidden elements required by JS -->
+  <div class="env-page" style="display:none">
 
 <p class="env-headline">Greetings from Mita!</p>
 
@@ -989,5 +1045,33 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    (function () {
+      const ordinals = ['first','second','third','fourth','fifth','sixth','seventh','eighth',
+        'ninth','tenth','eleventh','twelfth','thirteenth','fourteenth','fifteenth','sixteenth',
+        'seventeenth','eighteenth','nineteenth','twentieth','twenty-first','twenty-second',
+        'twenty-third','twenty-fourth','twenty-fifth','twenty-sixth','twenty-seventh',
+        'twenty-eighth','twenty-ninth','thirtieth','thirty-first'];
+      const months = ['january','february','march','april','may','june','july','august',
+        'september','october','november','december'];
+      function timeOfDay(h) {
+        if (h < 5)  return 'night';
+        if (h < 12) return 'morning';
+        if (h < 17) return 'afternoon';
+        if (h < 20) return 'evening';
+        return 'night';
+      }
+      function update() {
+        const now = new Date();
+        const el = document.getElementById('liveTime');
+        if (el) el.textContent =
+          timeOfDay(now.getHours()) + ' of the ' +
+          ordinals[now.getDate() - 1] + ' of ' +
+          months[now.getMonth()];
+      }
+      update();
+      setInterval(update, 60000);
+    })();
+  </script>
 </body>
 </html>

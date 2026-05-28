@@ -1,0 +1,143 @@
+/* ── Minimal redesign — homepage only ─────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Caveat:wght@500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: #fff;
+  color: #111;
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Container ────────────────────────────────────────── */
+.min-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* ── Nav ──────────────────────────────────────────────── */
+.min-nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 2.75rem 0 0;
+}
+
+.min-logo {
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.min-time {
+  font-size: 0.75rem;
+  color: #999;
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+
+/* ── About ────────────────────────────────────────────── */
+.min-about {
+  padding: 4.5rem 0 4rem;
+  max-width: 600px;
+}
+
+.min-about p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* ── Rule ─────────────────────────────────────────────── */
+.min-rule {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+}
+
+/* ── Work ─────────────────────────────────────────────── */
+.min-work {
+  padding: 3rem 0 7rem;
+}
+
+.min-work-intro {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #aaa;
+  margin-bottom: 2.25rem;
+}
+
+.min-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.5rem;
+  row-gap: 3rem;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.min-card {
+  cursor: pointer;
+}
+
+.min-card-img {
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  position: relative;
+}
+
+.min-card-img img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  object-fit: contain;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.min-card:hover .min-card-img {
+  transform: scale(1.015);
+  opacity: 0.92;
+}
+
+.min-card-info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 0.9rem;
+}
+
+.min-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #111;
+}
+
+.min-card-tags {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #bbb;
+}
+
+/* ── Hide original homepage elements ─────────────────── */
+.env-page,
+.project-grid,
+.postcard-backdrop {
+  display: none !important;
+}
