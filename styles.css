@@ -90,6 +90,10 @@ body.is-dark {
   --surface: #2a2a2a;
 }
 
+html {
+  font-size: 11px;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
@@ -162,7 +166,7 @@ body.cursor-hover .cursor-dot {
 body {
   font-family: "TT Commons", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 12px;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.5;
@@ -809,6 +813,10 @@ body.is-dark .site-header {
   margin-bottom: 0;
 }
 
+#amp-overview.cs-header {
+  padding-bottom: 40px;
+}
+
 .cs-header-row {
   display: flex;
   gap: 4rem;
@@ -1162,7 +1170,7 @@ body.is-dark .site-header {
   border-radius: 8px;
   object-fit: contain;
   display: block;
-  clip-path: inset(4px);
+  clip-path: inset(4px 14px);
 }
 
 .cs-video-lightbox-close {
@@ -1193,11 +1201,15 @@ body.is-dark .site-header {
   border-radius: 8px;
   display: block;
   object-fit: contain;
-  clip-path: inset(4px);
+  clip-path: inset(4px 14px);
 }
 
 .cs-video-wrap--sm video {
   width: 40%;
+}
+
+[id^="achilles"] .cs-video-wrap video {
+  clip-path: inset(10px 20px);
 }
 
 .cs-compare-table {
@@ -1503,7 +1515,7 @@ body {
 
 /* ── Headline ─────────────────────────────────────────── */
 .env-headline {
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 400;
   color: #3a3530;
   letter-spacing: -0.01em;
@@ -1702,16 +1714,16 @@ body {
 }
 
 .pc-address-line {
-  font-size: 19px;
+  font-size: 13px;
   color: #888;
 }
 
 .pc-address-label {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .pc-message {
-  font-size: 19px;
+  font-size: 13px;
   color: #555;
   line-height: 1.55;
   width: 75%;
@@ -1744,7 +1756,7 @@ body {
 }
 
 .postcard-name {
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 400;
   color: #1a1a1a;
   display: block;
@@ -1753,7 +1765,7 @@ body {
 }
 
 .postcard-intro {
-  font-size: 19px;
+  font-size: 13px;
   color: #555;
   line-height: 1.5;
   font-weight: 400;
@@ -1786,7 +1798,7 @@ body {
 }
 
 .work-label {
-  font-size: 19px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1838,18 +1850,18 @@ body {
 }
 
 .work-title {
-  font-size: 19px;
+  font-size: 13px;
   color: #222;
   font-weight: 500;
 }
 
 .work-year {
-  font-size: 19px;
+  font-size: 13px;
   color: #c0b8ae;
 }
 
 .work-role {
-  font-size: 19px;
+  font-size: 13px;
   color: #aaa49e;
   text-align: right;
   margin-left: auto;
@@ -2068,7 +2080,7 @@ body.is-dark .canvas-viewport {
   top: 390px;
   transform: translate(-50%, -50%);
   font-style: italic;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: normal;
   color: var(--text);
   line-height: 1.15;

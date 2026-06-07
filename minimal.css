@@ -1,23 +1,43 @@
 /* ── Minimal redesign — homepage only ─────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Caveat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Caveat:wght@500&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 16px; }
+html { font-size: 11px; }
 
 body {
   background: #fff;
   color: #111;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Container ────────────────────────────────────────── */
+/* ── Two-column layout ────────────────────────────────── */
+html { overflow: auto; }
+
 .min-wrap {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 3rem;
+  min-height: 100vh;
+}
+
+.min-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 33.333%;
+  height: 100vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+.min-right {
+  margin-left: 33.333%;
+  width: 66.667%;
+  padding: 3rem;
+  min-height: 100vh;
 }
 
 /* ── Nav ──────────────────────────────────────────────── */
@@ -25,12 +45,12 @@ body {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: 2.75rem 0 0;
+  padding: 0 0 2rem;
 }
 
 .min-logo {
   font-family: 'Caveat', cursive;
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   font-weight: 500;
   color: #111;
   text-decoration: none;
@@ -38,22 +58,33 @@ body {
 }
 
 .min-time {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #999;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   font-style: italic;
 }
 
 /* ── About ────────────────────────────────────────────── */
 .min-about {
-  padding: 4.5rem 0 4rem;
-  max-width: 600px;
+  padding: 0 0 2rem;
+  max-width: 100%;
+  flex: 1;
 }
 
-.min-about p {
+.min-section-label {
+  font-size: 0.9285rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #111;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.min-about p:not(.min-section-label) {
   font-size: 1.05rem;
-  line-height: 1.9;
+  line-height: 1.6;
   color: #333;
+  max-width: 100%;
 }
 
 /* ── Rule ─────────────────────────────────────────────── */
@@ -64,75 +95,290 @@ body {
 
 /* ── Work ─────────────────────────────────────────────── */
 .min-work {
-  padding: 3rem 0 7rem;
+  padding: 0;
 }
 
 .min-work-intro {
-  font-size: 0.7rem;
+  font-size: 0.6428rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: #aaa;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
 }
 
-.min-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1.5rem;
-  row-gap: 3rem;
-}
-
-/* ── Card ─────────────────────────────────────────────── */
-.min-card {
+/* ── Project list ─────────────────────────────────────── */
+.min-project {
   cursor: pointer;
+  display: block !important;
+  border-top: none;
+  padding-top: 1.25rem;
+  padding-bottom: 8rem;
+  width: 100%;
+  gap: unset !important;
+  background: none !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-radius: 0 !important;
+  transition: transform 0.3s ease;
 }
 
-.min-card-img {
-  aspect-ratio: 16 / 10;
+.min-project:hover {
+  transform: scale(1.015);
+}
+
+/* Row 1: title + description */
+.min-project-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.min-project-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9285rem;
+  font-weight: 600;
+  color: #111;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.min-project:hover .min-project-title {
+  color: #888;
+}
+
+.min-project-desc {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9285rem;
+  color: #999;
+  line-height: 1.5;
+  text-align: right;
+}
+
+/* Row 2: role · company · year */
+.min-project-meta {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9285rem;
+  color: #bbb;
+  margin-bottom: 1.25rem;
+}
+
+/* Row 3: hero thumbnail */
+.min-project-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
   background-size: cover;
   background-position: center;
-  border-radius: 6px;
-  overflow: hidden;
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  border-radius: 5px;
   position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition: opacity 0.3s ease;
 }
 
-.min-card-img img {
+.min-project-thumb img {
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 80%;
   object-fit: contain;
-  border-radius: 4px;
-  pointer-events: none;
 }
 
-.min-card:hover .min-card-img {
-  transform: scale(1.015);
-  opacity: 0.92;
+.min-project:hover .min-project-thumb {
+  opacity: 0.9;
 }
 
-.min-card-info {
+[data-card="card-2"] .min-project-thumb {
+  overflow: visible;
+}
+
+[data-card="card-2"] .min-project-thumb img {
+  border-radius: 8px;
+}
+
+/* ── Footer ───────────────────────────────────────────── */
+.min-footer {
+  padding: 0;
+  margin-top: auto;
+}
+
+.min-footer-about {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.min-footer-contact {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-top: 0.9rem;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
 }
 
-.min-card-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-style: italic;
-  font-size: 1.2rem;
-  font-weight: 400;
+.min-footer-link {
+  font-size: 1.05rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.min-footer-link:hover {
   color: #111;
 }
 
-.min-card-tags {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.min-footer-linkedin {
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.min-footer-linkedin:hover {
+  opacity: 1;
+}
+
+.min-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.85rem;
   color: #bbb;
+}
+
+.min-footer-updated {
+  font-style: italic;
+}
+
+/* ── Modal nav (case study pages) ────────────────────── */
+.cs-modal-nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 0 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cs-modal-nav .min-logo {
+  cursor: pointer;
+}
+
+/* ── Hide modal chrome buttons ───────────────────────── */
+#projectDetailClose,
+#projectDetailExpand {
+  display: none !important;
+}
+
+
+/* ── Widen case study content to match homepage width ── */
+.project-detail-modal.is-expanded .project-detail-body {
+  padding: 2.5rem max(3rem, calc(50% - 500px));
+}
+
+.project-detail-modal.is-expanded .cs-section--bg {
+  margin-left: calc(-1 * max(3rem, calc(50% - 500px)));
+  margin-right: calc(-1 * max(3rem, calc(50% - 500px)));
+  padding-left: max(3rem, calc(50% - 500px));
+  padding-right: max(3rem, calc(50% - 500px));
+}
+
+.project-detail-modal.is-expanded .cs-sidenav {
+  transform: translateX(calc(-1 * max(3rem, calc(50vw - 500px)) + 2rem));
+}
+
+.cs-insight-title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+}
+
+.cs-solution-title {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+}
+
+.cs-statement {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+}
+
+.cs-label {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #111 !important;
+}
+
+.cs-solution {
+  margin-bottom: 10rem !important;
+}
+
+.cs-design-decision {
+  border-left: none !important;
+  padding-left: 0 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.cs-chapter {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  letter-spacing: 0 !important;
+}
+
+.cs-solution .cs-label {
+  font-weight: 400 !important;
+  color: #666 !important;
+}
+
+#sage-mission .cs-label {
+  font-weight: 400 !important;
+  color: #111 !important;
+}
+
+#cs-mission .cs-label,
+#cs-research .cs-label {
+  font-weight: 400 !important;
+  color: #666 !important;
+}
+
+.cs-nav-item {
+  color: #666 !important;
+}
+
+.cs-nav-item.is-active {
+  color: #111 !important;
+}
+
+/* ── Hide original case study hero (replaced by inline hero) ── */
+#projectDetailImage {
+  display: none !important;
+}
+
+/* ── Case study inline hero ──────────────────────────── */
+.cs-modal-hero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.cs-modal-hero img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 /* ── Hide original homepage elements ─────────────────── */
@@ -141,3 +387,6 @@ body {
 .postcard-backdrop {
   display: none !important;
 }
+
+/* ── Global text scale-down ──────────────────────────── */
+:root { font-size: 11px !important; }

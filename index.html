@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mita Elan</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="minimal.css">
+  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="minimal.css?v=11">
 </head>
 <body>
   <div class="cursor-dot" id="cursorDot">Explore</div>
@@ -17,62 +17,74 @@
   <!-- Minimal homepage -->
   <div class="min-wrap">
 
-    <nav class="min-nav">
-      <span class="min-logo">Mita Elan</span>
-      <span class="min-time" id="liveTime"></span>
-    </nav>
+    <!-- Left: name, about, more info — sticky -->
+    <div class="min-left">
 
-    <section class="min-about">
-      <p>I'm a product designer working across design, product, and engineering. Currently the founding product designer at Ideate — building AI-native tools for design workflows. Previously at Apple and LinkedIn. I prototype with code, using Claude Code and Cursor to move faster than Figma alone. Based in San Francisco, looking for my next role.</p>
-    </section>
+      <nav class="min-nav">
+        <span class="min-logo">Mita Elan</span>
+        <span class="min-time live-time-el"></span>
+      </nav>
 
-    <hr class="min-rule">
+      <section class="min-about">
+        <p class="min-section-label">About</p>
+        <p>I'm a product designer and builder exploring emerging interfaces, creative tools, and playful systems for learning and mindfulness. Currently building AI design tools for design teams at Ideate. I specialize in product strategy, systems thinking, and rapidly prototyping ideas across Figma and code.<br><br>Open to new roles in health tech, consumer apps, and AI-native products.</p>
+      </section>
 
-    <section class="min-work">
-      <p class="min-work-intro">Selected work</p>
-      <div class="min-grid">
+      <footer class="min-footer">
+        <p class="min-section-label">More Info</p>
+        <a href="about.html" class="min-footer-link min-footer-about">More about me ↗</a>
+        <div class="min-footer-contact">
+          <a href="mailto:mitaelan07@gmail.com" class="min-footer-link">mitaelan07@gmail.com</a>
+          <a href="https://www.linkedin.com/in/madhumita-elan-441276175/" target="_blank" rel="noopener" class="min-footer-link min-footer-linkedin" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#111"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+        <div class="min-footer-bottom">
+          <span>© Mita Elan 2026</span>
+          <span class="min-footer-updated">Last updated May 2026</span>
+        </div>
+      </footer>
 
-        <div class="min-card work-row" data-card="card-4">
-          <div class="min-card-img" style="background-image: url('achilles background.png');">
-            <img src="aAchilles Hero Image.png" alt="">
+    </div><!-- /.min-left -->
+
+    <!-- Right: projects — scrollable -->
+    <div class="min-right">
+
+      <section class="min-work">
+        <p class="min-section-label">Work</p>
+
+        <div class="min-project work-row" data-card="card-3">
+          <div class="min-project-thumb" style="background-image: url('sage background.png');">
+            <img src="sage hero image.png" alt="Ideate Sage">
           </div>
-          <div class="min-card-info">
-            <span class="min-card-title">Achilles</span>
-            <span class="min-card-tags">AI · Product Design</span>
+          <div class="min-project-row">
+            <span class="min-project-title">Ideate — Sage</span>
+            <span class="min-project-desc">An AI assistant embedded in the design workflow</span>
           </div>
         </div>
 
-        <div class="min-card work-row" data-card="card-3">
-          <div class="min-card-img" style="background-image: url('sage background.png');">
-            <img src="sage hero image.png" alt="">
-          </div>
-          <div class="min-card-info">
-            <span class="min-card-title">Ideate — Sage</span>
-            <span class="min-card-tags">AI · Product Design</span>
+        <div class="min-project work-row" data-card="card-1">
+          <div class="min-project-thumb" style="background-image: url('Synthesis hero image.png');"></div>
+          <div class="min-project-row">
+            <span class="min-project-title">Ideate — Synthesis</span>
+            <span class="min-project-desc">Turning moodboarding into collaborative decision-making</span>
           </div>
         </div>
 
-        <div class="min-card work-row" data-card="card-1">
-          <div class="min-card-img" style="background-image: url('Synthesis hero image.png'); background-size: cover;">
+        <div class="min-project work-row" data-card="card-4">
+          <div class="min-project-thumb" style="background-image: url('achilles background.png');">
+            <img src="aAchilles Hero Image.png" alt="Achilles">
           </div>
-          <div class="min-card-info">
-            <span class="min-card-title">Ideate — Synthesis</span>
-            <span class="min-card-tags">Product Design</span>
-          </div>
-        </div>
-
-        <div class="min-card work-row" data-card="card-2">
-          <div class="min-card-img" style="background-image: url('Chaotic Gradients - 50.jpg');">
-            <img src="ampcontrolheroimage.png" alt="">
-          </div>
-          <div class="min-card-info">
-            <span class="min-card-title">Ampcontrol</span>
-            <span class="min-card-tags">B2B · Dashboard Design</span>
+          <div class="min-project-row">
+            <span class="min-project-title">Achilles</span>
+            <span class="min-project-desc">AI coaching for runners, personalized to your data</span>
           </div>
         </div>
 
-      </div>
-    </section>
+
+      </section>
+
+    </div><!-- /.min-right -->
 
   </div><!-- /.min-wrap -->
 
@@ -135,12 +147,6 @@
                     <img src="Achilles Icon.png" alt="" class="work-icon" draggable="false">
                     <span class="work-name-group"><span class="work-title">Achilles</span><span class="work-year">2025</span></span>
                     <span class="work-role">Founding Designer</span>
-                  </div>
-
-                  <div class="work-row" data-card="card-2">
-                    <img src="ampcontrol_io_logo 1.png" alt="" class="work-icon" draggable="false">
-                    <span class="work-name-group"><span class="work-title">Ampcontrol</span><span class="work-year">2024</span></span>
-                    <span class="work-role">Product Design</span>
                   </div>
 
                   <div class="work-row" data-card="card-9">
@@ -293,6 +299,15 @@
       <div class="project-detail-image" id="projectDetailImage"></div>
       <div class="project-detail-body">
 
+        <!-- Global nav for all case study pages -->
+        <nav class="cs-modal-nav">
+          <span class="min-logo">Mita Elan</span>
+          <span class="min-time live-time-el"></span>
+        </nav>
+
+        <!-- Hero image (mirrors homepage thumbnail) -->
+        <div id="projectDetailHero" class="cs-modal-hero"></div>
+
         <!-- Custom content slot (used for template-based projects like IDEATE) -->
         <div id="projectDetailCustom" style="display:none"></div>
 
@@ -420,15 +435,12 @@
         <section class="cs-section">
           <span class="cs-label">The Design Challenge</span>
           <p class="cs-body" style="color:#000;">A hard question emerged: what does it actually take to make data feel like coaching?</p>
-          <div class="cs-compare-table">
-            <div class="cs-compare-col cs-compare-col--no">
-              <p class="cs-compare-col-header">What we didn't want</p>
-              <p class="cs-compare-item">Just a dashboard that showed you numbers</p>
-              <p class="cs-compare-item">AI that completely replaces the need for coaches</p>
+          <div style="display:flex; gap:3rem; align-items:flex-start; margin-top:2.5rem; margin-bottom:2.5rem;">
+            <div style="flex:1;">
+              <p class="cs-body" style="color:#000;"><strong>What we didn't want</strong><br>Just a dashboard that showed you numbers.<br>AI that completely replaces the need for coaches.</p>
             </div>
-            <div class="cs-compare-col cs-compare-col--yes">
-              <p class="cs-compare-col-header">What we wanted</p>
-              <p class="cs-compare-item">A coach that interprets your data — and knows when to speak up, when to ask a question, and when to just let you run.</p>
+            <div style="flex:1;">
+              <p class="cs-body" style="color:#000;"><strong>What we wanted</strong><br>A coach that interprets your data — and knows when to speak up and when to ask a question.</p>
             </div>
           </div>
           <p class="cs-body" style="color:#000;">Designing Achilles meant solving that problem across every touchpoint: how you get started, how your plan is built, how the system learns from your runs, and how it talks to you about what it finds.</p>
@@ -443,23 +455,28 @@
             <span class="cs-label">From generic plan to personalized program</span>
             <h3 class="cs-solution-title">Getting Started</h3>
             <p class="cs-body" style="color:#000;">Most runners start with a generic PDF — mileage targets with no context for how to execute them. Achilles transforms that plan into a structured week-by-week program with real workouts and personalized pace targets. Not just '6 miles tempo run' — but exactly how to run it, and at what pace, to hit their goal.</p>
-            <div class="cs-img-placeholder"></div>
+            <div class="cs-video-wrap">
+              <video src="Getting Started-Achilles.mov" autoplay muted loop playsinline></video>
+            </div>
           </div>
 
           <div class="cs-solution">
             <span class="cs-label">Knowing what to say — and when not to</span>
             <h3 class="cs-solution-title">The Insight System</h3>
             <p class="cs-body" style="color:#000;">An insight isn't a data point — it's the connection between two things a runner couldn't make themselves. Slower pace + 88°F outside = not a fitness drop. Heart rate spike + three hard days = accumulated fatigue. When the system has enough signal, it surfaces the insight. When it doesn't, it asks. The coach never guesses.</p>
-            <div class="cs-img-placeholder"></div>
+            <div class="cs-video-wrap">
+              <video src="Insights-Achilles.mov" autoplay muted loop playsinline></video>
+            </div>
           </div>
 
           <div class="cs-solution">
             <span class="cs-label">Proactive care, not reactive damage control</span>
             <h3 class="cs-solution-title">Injury and Plan Adjustment</h3>
             <p class="cs-body" style="color:#000;">Injury is the moment a runner most needs support — and when a system can lose their trust fastest if it gets it wrong. Achilles draws on effort ratings, wearable data, and training load to catch warning signs early. And it remembers — if a runner had a prior injury and mileage spikes, it checks in. Not as a notification, but as a conversation.</p>
-            <div class="cs-img-placeholder"></div>
+            <div class="cs-video-wrap">
+              <video src="Injury-Achilles.mov" autoplay muted loop playsinline></video>
+            </div>
             <p class="cs-body" style="color:#000; margin-top: 2rem;">When an injury is flagged, Achilles presents options — a few ways to adjust, with a clear recommendation. The runner chooses, the plan updates automatically. The system errs toward caution, but never takes the decision away from the runner.</p>
-            <div class="cs-img-placeholder"></div>
           </div>
         </section>
 
@@ -490,159 +507,6 @@
           <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
         </section>
 
-        <!-- Next -->
-        <section class="cs-section cs-next">
-          <span class="cs-label">Next</span>
-          <div class="cs-next-card" data-next-card="card-2" style="background-image: url('Chaotic Gradients - 50.jpg'); background-size: cover; background-position: center;">
-            <div class="cs-next-overlay">
-              <h3 class="cs-next-title">Ampcontrol</h3>
-              <p class="cs-next-desc">Designing operational visibility tools for EV charging management.</p>
-            </div>
-            <img src="ampcontrolheroimage.png" alt="" style="position:absolute; top:42%; left:50%; transform:translate(-50%, -50%); width:65%; object-fit:contain; pointer-events:none; z-index:1; border-radius:8px;">
-          </div>
-        </section>
-
-      </div><!-- /.cs-content -->
-    </div><!-- /.cs-wrap -->
-  </template>
-
-  <!-- AMPCONTROL case study template -->
-  <template id="ampcontrol-content">
-    <div class="cs-wrap">
-
-      <!-- Left scroll-spy nav -->
-      <nav class="cs-sidenav" aria-label="Page sections">
-        <a class="cs-nav-item" data-target="amp-overview">Overview</a>
-        <a class="cs-nav-item" data-target="amp-impact">Impact</a>
-        <a class="cs-nav-item" data-target="amp-background">Background</a>
-        <a class="cs-nav-item" data-target="amp-solutions">Solutions</a>
-        <a class="cs-nav-item" data-target="amp-reflections">Reflections</a>
-      </nav>
-
-      <!-- Main content -->
-      <div class="cs-content">
-
-        <!-- Overview -->
-        <div id="amp-overview" class="cs-header">
-          <img src="ampcontrol_io_logo 1.png" alt="Ampcontrol logo" class="cs-product-logo">
-          <div class="cs-header-row">
-            <div class="cs-header-left">
-              <p class="cs-title">Ampcontrol</p>
-              <p class="cs-subtitle" style="color:#000;">Redesigning the landing page to serve as the single source of truth for ground operators — enabling real-time visibility across entire EV charging networks.</p>
-            </div>
-            <div class="cs-header-meta">
-              <div class="cs-meta-block">
-                <span class="cs-meta-label cs-meta-label--title">Team</span>
-                <span class="cs-meta-value">1 Designer (Me)<br>TPM<br>Engineering</span>
-              </div>
-              <div class="cs-meta-block">
-                <span class="cs-meta-label cs-meta-label--title">Timeline</span>
-                <span class="cs-meta-value">5 weeks</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Impact -->
-        <section id="amp-impact" class="cs-section">
-          <span class="cs-label">Impact</span>
-          <div class="cs-impact-list">
-            <p class="cs-impact-item"><strong>—</strong> Placeholder impact stat</p>
-            <p class="cs-impact-item"><strong>—</strong> Placeholder impact stat</p>
-            <p class="cs-impact-item"><strong>—</strong> Placeholder impact stat</p>
-          </div>
-        </section>
-
-        <!-- Section divider -->
-        <div class="cs-divider"><span>Background</span></div>
-
-        <!-- Background -->
-        <section id="amp-background" class="cs-section">
-          <span class="cs-label">Background</span>
-          <p class="cs-body" style="color:#000;">Placeholder — add background context here.</p>
-        </section>
-
-        <!-- Design Challenge -->
-        <section class="cs-section">
-          <span class="cs-label">The Design Challenge</span>
-          <p class="cs-body" style="color:#000;">Placeholder — describe the design challenge here.</p>
-          <div class="cs-compare-table">
-            <div class="cs-compare-col cs-compare-col--no">
-              <p class="cs-compare-col-header">What we didn't want</p>
-              <p class="cs-compare-item">Placeholder item</p>
-              <p class="cs-compare-item">Placeholder item</p>
-            </div>
-            <div class="cs-compare-col cs-compare-col--yes">
-              <p class="cs-compare-col-header">What we wanted</p>
-              <p class="cs-compare-item">Placeholder item</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section divider -->
-        <div class="cs-divider"><span>Solutions</span></div>
-
-        <!-- Solutions -->
-        <section id="amp-solutions" class="cs-section">
-          <div class="cs-solution">
-            <span class="cs-label">Placeholder label</span>
-            <h3 class="cs-solution-title">Solution One</h3>
-            <p class="cs-body" style="color:#000;">Placeholder — describe this solution here.</p>
-            <div class="cs-img-placeholder"></div>
-          </div>
-
-          <div class="cs-solution">
-            <span class="cs-label">Placeholder label</span>
-            <h3 class="cs-solution-title">Solution Two</h3>
-            <p class="cs-body" style="color:#000;">Placeholder — describe this solution here.</p>
-            <div class="cs-img-placeholder"></div>
-          </div>
-
-          <div class="cs-solution">
-            <span class="cs-label">Placeholder label</span>
-            <h3 class="cs-solution-title">Solution Three</h3>
-            <p class="cs-body" style="color:#000;">Placeholder — describe this solution here.</p>
-            <div class="cs-img-placeholder"></div>
-          </div>
-        </section>
-
-        <!-- Section divider -->
-        <div class="cs-divider"><span>Reflections</span></div>
-
-        <!-- Reflections -->
-        <section id="amp-reflections" class="cs-section">
-          <span class="cs-label">Reflections</span>
-          <div class="cs-reflections">
-            <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Placeholder reflection title.</h3>
-              <p class="cs-body" style="color:#000;">Placeholder — add reflection here.</p>
-            </div>
-            <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Placeholder reflection title.</h3>
-              <p class="cs-body" style="color:#000;">Placeholder — add reflection here.</p>
-            </div>
-            <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Placeholder reflection title.</h3>
-              <p class="cs-body" style="color:#000;">Placeholder — add reflection here.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Closing -->
-        <section class="cs-section cs-closing">
-          <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
-        </section>
-
-        <!-- Next -->
-        <section class="cs-section cs-next">
-          <span class="cs-label">Next</span>
-          <div class="cs-next-card" data-next-card="card-3" style="background-image: url('sage background.png'); background-size: cover; background-position: center;">
-            <div class="cs-next-overlay">
-              <h3 class="cs-next-title">Ideate — Sage</h3>
-              <p class="cs-next-desc">Designing an AI assistant that lives inside the design workflow — not outside it.</p>
-            </div>
-          </div>
-        </section>
 
       </div><!-- /.cs-content -->
     </div><!-- /.cs-wrap -->
@@ -800,16 +664,6 @@
           <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
         </section>
 
-        <!-- Next -->
-        <section class="cs-section cs-next">
-          <span class="cs-label">Next</span>
-          <div class="cs-next-card" data-next-card="card-1" style="background-image: url('Synthesis hero image.png'); background-size: cover; background-position: center;">
-            <div class="cs-next-overlay">
-              <h3 class="cs-next-title">Ideate - Synthesis</h3>
-              <p class="cs-next-desc">Turning a passive moodboarding / inspiration gathering tool into a collaborative, decision-making workflow for designers.</p>
-            </div>
-          </div>
-        </section>
 
       </div><!-- /.cs-content -->
     </div><!-- /.cs-wrap -->
@@ -870,7 +724,7 @@
         <!-- Mission -->
         <section id="cs-mission" class="cs-section">
           <span class="cs-label">The Mission</span>
-          <p class="cs-statement">Improve activation and retention — give designers enough structure and value to move from first session to habit. Users were dropping off early and teams weren't returning to collaborate or iterate.</p>
+          <p class="cs-statement" style="line-height:1.7;">Improve activation and retention — give designers enough structure and value to move from first session to habit. Users were dropping off early and teams weren't returning to collaborate or iterate.</p>
           <p class="cs-body">When I joined, the team had just shipped an MVP — of the initial signups, only 32% created a board, and most dropped off before uploading content or returning to collaborate.</p>
         </section>
 
@@ -935,10 +789,9 @@
             <div class="cs-video-wrap">
               <video src="Synthesis - Onboarding.mov" autoplay muted loop playsinline></video>
             </div>
-          </div>
-
-          <div class="cs-design-decision">
-            <span class="cs-decision-label">Design decision: </span>The first two iterations pulled in opposite directions — one created friction, the other took away control. V3 combined the best of both: content scraping to remove the blank canvas problem, paired with action-triggered tooltips that guided without prescribing.
+            <div class="cs-design-decision">
+              <span class="cs-decision-label">Design decision: </span>The first two iterations pulled in opposite directions — one created friction, the other took away control. V3 combined the best of both: content scraping to remove the blank canvas problem, paired with action-triggered tooltips that guided without prescribing.
+            </div>
           </div>
         </section>
 
@@ -1020,17 +873,6 @@
           <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
         </section>
 
-        <!-- Next -->
-        <section class="cs-section cs-next">
-          <span class="cs-label">Next</span>
-          <div class="cs-next-card" data-next-card="card-4" style="background-image: url('achilles background.png'); background-size: cover; background-position: center;">
-            <img src="aAchilles Hero Image.png" alt="Achilles" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;height:auto;object-fit:contain;">
-            <div class="cs-next-overlay">
-              <h3 class="cs-next-title">Achilles</h3>
-              <p class="cs-next-desc">Placeholder — add a teaser for Achilles.</p>
-            </div>
-          </div>
-        </section>
 
       </div><!-- /.cs-content -->
     </div><!-- /.cs-wrap -->
@@ -1045,6 +887,24 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.min-project.work-row[data-card]').forEach(row => {
+        row.addEventListener('click', () => {
+          setTimeout(() => {
+            const modal = document.querySelector('.project-detail-modal');
+            const expandBtn = document.getElementById('projectDetailExpand');
+            if (modal && !modal.classList.contains('is-expanded')) {
+              modal.classList.add('is-expanded');
+              if (expandBtn) {
+                expandBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 1V5H1M7 11V7h4M5 1L1 5M7 11l4-4"/></svg>`;
+              }
+            }
+          }, 0);
+        });
+      });
+    });
+  </script>
   <script>
     (function () {
       const ordinals = ['first','second','third','fourth','fifth','sixth','seventh','eighth',
@@ -1063,11 +923,10 @@
       }
       function update() {
         const now = new Date();
-        const el = document.getElementById('liveTime');
-        if (el) el.textContent =
-          timeOfDay(now.getHours()) + ' of the ' +
+        const text = timeOfDay(now.getHours()) + ' of the ' +
           ordinals[now.getDate() - 1] + ' of ' +
           months[now.getMonth()];
+        document.querySelectorAll('.live-time-el').forEach(el => el.textContent = text);
       }
       update();
       setInterval(update, 60000);

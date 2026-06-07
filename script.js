@@ -126,6 +126,14 @@ document.addEventListener('DOMContentLoaded', () => {
         heroEl.innerHTML = '';
       }
 
+      const inlineHero = document.getElementById('projectDetailHero');
+      if (inlineHero) {
+        inlineHero.style.backgroundImage = data.heroImage ? `url('${data.heroImage}')` : '';
+        inlineHero.innerHTML = data.overlayImage
+          ? `<img src="${data.overlayImage}">`
+          : '';
+      }
+
       // Carousels
       customSlot.querySelectorAll('.cs-carousel').forEach(carousel => {
         const track  = carousel.querySelector('.cs-carousel-track');
@@ -294,6 +302,14 @@ document.addEventListener('DOMContentLoaded', () => {
       heroEl.innerHTML = '';
     }
 
+    const inlineHero = document.getElementById('projectDetailHero');
+    if (inlineHero) {
+      inlineHero.style.backgroundImage = data.heroImage ? `url('${data.heroImage}')` : '';
+      inlineHero.innerHTML = data.overlayImage
+        ? `<img src="${data.overlayImage}">`
+        : '';
+    }
+
     const overview = document.getElementById('projectDetailOverview');
     const stats    = document.getElementById('projectDetailStats');
 
@@ -454,7 +470,9 @@ document.addEventListener('DOMContentLoaded', () => {
     detailExpand.innerHTML = expandIcons[expanded ? 1 : 0];
   });
 
-  detailClose.addEventListener('click', () => { detailModal.classList.remove('is-expanded'); detailExpand.innerHTML = expandIcons[0]; detailOverlay.classList.remove('is-open'); });
+  const closeDetail = () => { detailModal.classList.remove('is-expanded'); detailExpand.innerHTML = expandIcons[0]; detailOverlay.classList.remove('is-open'); };
+  detailClose.addEventListener('click', closeDetail);
+  document.querySelector('.cs-modal-nav .min-logo').addEventListener('click', closeDetail);
   detailOverlay.addEventListener('click', e => {
     if (e.target === detailOverlay) detailOverlay.classList.remove('is-open');
   });
