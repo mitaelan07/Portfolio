@@ -4,18 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mita Elan</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260930i">
 </head>
 <body>
   <div class="cursor-dot" id="cursorDot">Explore</div>
   <div class="cursor-ring" id="cursorRing"></div>
+
+  <div class="work-preview" id="workPreview"></div>
 
   <!-- Torn edge filter definition -->
   <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
     <defs>
       <filter id="torn-edge" x="-4%" y="-4%" width="108%" height="108%">
         <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="4" seed="3" result="noise"/>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
       </filter>
     </defs>
   </svg>
@@ -35,69 +40,77 @@
           <div class="postcard-front">
             <div class="postcard-body">
 
-              <!-- Left: photo + address + message -->
-              <div class="postcard-left">
-                <div class="pc-photo">
-                  <div class="pc-photo-inner">
-                    <img src="Profile pic.png" alt="Mita" draggable="false">
-                  </div>
-                </div>
-                <p class="pc-message">Thanks for stopping by! I design AI-native products. Based in SF, looking for my next role. Let's talk.</p>
-              </div>
-
-              <!-- Vertical divider -->
-              <div class="postcard-divider-v"></div>
-
               <!-- Right: name + stamp + work list -->
               <div class="postcard-right">
-                <div class="pc-name-row">
-                  <div>
-                    <span class="postcard-name">Mita Elan</span>
-                    <p class="postcard-intro">Currently designing at Ideate.<br>Previously @ Apple &amp; LinkedIn</p>
-                  </div>
-                  <div class="stamp-box"></div>
-                </div>
+                <div class="profile-content">
 
-                <div class="postcard-divider"></div>
-                <span class="work-label">Work</span>
-
-                <div class="work-list">
-
-                  <div class="work-row" data-card="card-3">
-                    <img src="sage icon.png" alt="" class="work-icon" draggable="false">
-                    <span class="work-name-group"><span class="work-title">Ideate-Sage</span><span class="work-year">2026 – Present</span></span>
-                    <span class="work-role">Founding Designer</span>
+                  <div class="pc-name-row">
+                    <div class="pc-intro">
+                      <span class="postcard-name">Mita Elan</span>
+                      <p class="postcard-intro">Currently building AI-native creative tools for design agencies @ <a class="postcard-link" href="https://ideatebetter.com/" target="_blank" rel="noopener noreferrer">Ideate</a>. Based in SF.</p>
+                      <div class="postcard-bio">
+                        <p>Previously, I designed at <a class="postcard-link" href="https://www.apple.com/" target="_blank" rel="noopener noreferrer">Apple</a> and <a class="postcard-link" href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">LinkedIn</a> and worked across early stage startups in climate tech and health tech. I'm also an ex-founder and have been part of accelerator programs at Princeton's eLab and Cornell.</p>
+                        <p>I'm drawn to emerging interfaces, wearables, health tech, and consumer apps, and I love rapidly prototyping across design and code to bring abstract ideas to life. I'm looking for my next role - you can reach me at <a class="postcard-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mitaelan07@gmail.com" target="_blank" rel="noopener noreferrer">mitaelan07@gmail.com</a> or <a class="postcard-link" href="https://www.linkedin.com/in/madhumita-elan-441276175/" target="_blank" rel="noopener noreferrer">@madhumita.elan</a>.</p>
+                      </div>
+                    </div>
+                    <div class="stamp-box"><img src="stamp.png" alt="San Francisco stamp" class="stamp-img"></div>
                   </div>
 
-                  <div class="work-row" data-card="card-1">
-                    <img src="Synthesis_Logo.png" alt="" class="work-icon" draggable="false">
-                    <span class="work-name-group"><span class="work-title">Ideate-Synthesis</span><span class="work-year">2025 – Present</span></span>
-                    <span class="work-role">Founding Designer</span>
+                  <span class="work-label">Work</span>
+
+                  <div class="work-list">
+
+                    <div class="work-row" data-card="card-10">
+                      <span class="work-icon-box"><img src="Atlas_LogoMark_.png" alt="" class="work-icon work-icon--atlas" draggable="false"></span>
+                      <span class="work-name-group"><span class="work-title">Ideate-Atlas</span><span class="work-year">2026 – Present</span></span>
+                      <span class="work-role">Founding Designer</span>
+                    </div>
+
+                    <div class="work-row" data-card="card-3">
+                      <span class="work-icon-box"><img src="sage icon.png" alt="" class="work-icon" draggable="false"></span>
+                      <span class="work-name-group"><span class="work-title">Ideate-Sage</span><span class="work-year">2025 – Present</span></span>
+                      <span class="work-role">Founding Designer</span>
+                    </div>
+
+                    <div class="work-row" data-card="card-4">
+                      <span class="work-icon-box"><img src="Achilles Icon.png" alt="" class="work-icon" draggable="false"></span>
+                      <span class="work-name-group"><span class="work-title">Achilles</span><span class="work-year">2025</span></span>
+                      <span class="work-role">Founding Designer</span>
+                    </div>
+
+                    <div class="work-row" data-card="card-2">
+                      <span class="work-icon-box"><img src="ampcontrol_io_logo 1.png" alt="" class="work-icon" draggable="false"></span>
+                      <span class="work-name-group"><span class="work-title">Ampcontrol</span><span class="work-year">2024</span></span>
+                      <span class="work-role">Product Design</span>
+                    </div>
+
+                    <div class="work-row" data-card="card-9">
+                      <span class="work-icon-box"><svg width="15" height="15" viewBox="0 0 24 24" class="work-icon work-icon--svg" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0a66c2"/></svg></span>
+                      <span class="work-name-group"><span class="work-title">LinkedIn</span><span class="work-year">2022</span></span>
+                      <span class="work-role">Under NDA</span>
+                    </div>
+
+                    <div class="work-row" data-card="card-8">
+                      <span class="work-icon-box"><img src="Apple_logo_black.svg" alt="" class="work-icon" draggable="false"></span>
+                      <span class="work-name-group"><span class="work-title">Apple</span><span class="work-year">2021</span></span>
+                      <span class="work-role">Under NDA</span>
+                    </div>
+
                   </div>
 
-                  <div class="work-row" data-card="card-4">
-                    <img src="Achilles Icon.png" alt="" class="work-icon" draggable="false">
-                    <span class="work-name-group"><span class="work-title">Achilles</span><span class="work-year">2025</span></span>
-                    <span class="work-role">Founding Designer</span>
+                  <span class="work-label">Experiments</span>
+
+                  <div class="work-list experiment-list">
+
+                    <div class="experiment-row" data-card="card-12">
+                      <span class="work-icon-box"><img src="PTPAL icon.png" alt="" class="work-icon" draggable="false"></span>
+                      <span class="work-name-group"><span class="work-title">PTPAL</span><span class="work-year">2024</span></span>
+                      <span class="work-role">Product Design</span>
+                    </div>
+
                   </div>
 
-                  <div class="work-row" data-card="card-2">
-                    <img src="ampcontrol_io_logo 1.png" alt="" class="work-icon" draggable="false">
-                    <span class="work-name-group"><span class="work-title">Ampcontrol</span><span class="work-year">2024</span></span>
-                    <span class="work-role">Product Design</span>
-                  </div>
-
-                  <div class="work-row" data-card="card-9">
-                    <svg width="15" height="15" viewBox="0 0 24 24" class="work-icon work-icon--svg" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0a66c2"/></svg>
-                    <span class="work-name-group"><span class="work-title">LinkedIn</span><span class="work-year">2022</span></span>
-                    <span class="work-role">Growth Design</span>
-                  </div>
-
-                  <div class="work-row" data-card="card-8">
-                    <svg width="13" height="15" viewBox="0 0 814 1000" class="work-icon work-icon--svg" xmlns="http://www.w3.org/2000/svg"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 491.3 8.5 357.9 8.5 226.3c0-86.1 16.9-170.2 52.4-242.1C109.5-105.5 195.2-160 289.7-160c74.2 0 133.8 50.8 177.7 50.8 42 0 109.6-53.5 193.5-53.5 34.4 0 130.9 3.2 198.5 98.5zm-234-181.5c35.8-43.8 61.5-104.4 61.5-165s-1.9-12.5-3.2-17.5c-57.8 2-126.5 38.5-168.5 87.3-33.2 37.5-61.5 97.4-61.5 160 0 6.4 1.3 12.8 1.9 14.5 3.2.6 8.4 1.3 13.6 1.3 51.6 0 115.3-35.2 156.2-80.6z" fill="currentColor"/></svg>
-                    <span class="work-name-group"><span class="work-title">Apple</span><span class="work-year">2021</span></span>
-                    <span class="work-role">UX Research + Design</span>
-                  </div>
+                  <p class="postcard-footer">Designed and built by Mita Elan, fueled by lots of coffee and Claude tokens. &copy; 2026</p>
 
                 </div>
               </div>
@@ -105,13 +118,14 @@
             </div>
           </div>
 
-          <!-- Back face -->
-          <div class="postcard-back">
-            <img src="postcard back.png" alt="Postcard back" draggable="false">
-          </div>
-
         </div>
       </div>
+
+      <button class="postcard-compress" id="postcardCompress" aria-label="Compress">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 9 20 4M15 9h4M15 9V5M9 15 4 20M9 15H5M9 15v4"/>
+        </svg>
+      </button>
 
       <!-- Open flap — triangle pointing up, sits above card -->
       <div class="env-flap">
@@ -228,11 +242,6 @@
   <!-- Project detail modal -->
   <div class="project-detail-overlay" id="projectDetailOverlay">
     <div class="project-detail-modal">
-      <button class="project-detail-expand" id="projectDetailExpand" aria-label="Expand">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <path d="M1 5V1h4M11 7v4H7M1 5l4-4M11 7l-4 4"/>
-        </svg>
-      </button>
       <button class="project-detail-close" id="projectDetailClose" aria-label="Close">✕</button>
       <div class="project-detail-image" id="projectDetailImage"></div>
       <div class="project-detail-body">
@@ -304,15 +313,23 @@
 
   <!-- ACHILLES case study template -->
   <template id="achilles-content">
-    <div class="cs-wrap">
+    <div class="cs-wrap atlas-v2">
 
       <!-- Left scroll-spy nav -->
       <nav class="cs-sidenav" aria-label="Page sections">
-        <a class="cs-nav-item" data-target="achilles-overview">Overview</a>
-        <a class="cs-nav-item" data-target="achilles-impact">Impact</a>
-        <a class="cs-nav-item" data-target="achilles-mission">Mission</a>
-        <a class="cs-nav-item" data-target="achilles-solutions">Solutions</a>
-        <a class="cs-nav-item" data-target="achilles-reflections">Reflections</a>
+        <a href="#" class="atlas-back-link atlas-eyebrow" data-atlas-back>← Back</a>
+        <div class="atlas-nav-items">
+          <a class="cs-nav-item" data-target="achilles-overview">Overview</a>
+          <a class="cs-nav-item" data-target="achilles-problem">Problem</a>
+          <a class="cs-nav-item" data-target="achilles-solution-statement">Solution</a>
+          <a class="cs-nav-item" data-target="achilles-impact">Impact</a>
+          <a class="cs-nav-item" data-target="achilles-initial-ideas">Where We Started</a>
+          <a class="cs-nav-item" data-target="achilles-research-discovery">Research Discovery</a>
+          <a class="cs-nav-item" data-target="achilles-insight-structure">The Insight Structure</a>
+          <a class="cs-nav-item" data-target="achilles-finding-testers">Finding Testers</a>
+          <a class="cs-nav-item" data-target="achilles-no-wearables">Designing Without Wearables</a>
+          <a class="cs-nav-item" data-target="achilles-reflections">Reflections</a>
+        </div>
       </nav>
 
       <!-- Main content -->
@@ -320,91 +337,189 @@
 
         <!-- Overview -->
         <div id="achilles-overview" class="cs-header">
-          <img src="Achilles Icon.png" alt="Achilles logo" class="cs-product-logo">
-          <div class="cs-header-row">
-            <div class="cs-header-left">
-              <p class="cs-title">Achilles</p>
-              <p class="cs-subtitle" style="color:#000;">Give every runner access to coaching that actually adapts to them — turning biometric data, injury history, and how you feel on any given day into guidance that gets smarter over time.</p>
+          <div class="atlas-breadcrumb-row">
+            <span class="atlas-eyebrow">Achilles • March 2025 – July 2025</span>
+          </div>
+          <h1 class="atlas-hero-title">Coaching That Adapts to<br>Every Runner</h1>
+          <div class="cs-video-wrap" style="margin-bottom: 2.5rem; border-radius: 16px; overflow: hidden; padding: 0; aspect-ratio: 3 / 2; background-image: url('achilles background.png'); background-size: cover; background-position: center; position: relative;">
+            <img src="aAchilles Hero Image.png" alt="Achilles" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 80%; max-height: 80%; object-fit: contain;">
+          </div>
+          <div class="atlas-meta-bar atlas-meta-bar--spread">
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Role</span>
+              <span class="atlas-meta-value">Founding Product<br>Designer</span>
             </div>
-            <div class="cs-header-meta">
-              <div class="cs-meta-block">
-                <span class="cs-meta-label cs-meta-label--title">Team</span>
-                <span class="cs-meta-value">1 Designer (Me)<br>CEO<br>CTO</span>
-              </div>
-              <div class="cs-meta-block">
-                <span class="cs-meta-label cs-meta-label--title">Timeline</span>
-                <span class="cs-meta-value">March 2025 – July 2025<br>Freelance</span>
-              </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Timeline</span>
+              <span class="atlas-meta-value">March 2025 – July 2025<br>Freelance</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Team</span>
+              <span class="atlas-meta-value">1 Designer (Me)<br>CEO<br>CTO</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Skills</span>
+              <span class="atlas-meta-value">User Research<br>Motion Design<br>Product Design<br>Product Strategy</span>
             </div>
           </div>
         </div>
 
-        <!-- Impact -->
-        <section id="achilles-impact" class="cs-section">
-          <span class="cs-label">Impact</span>
-          <div class="cs-impact-list">
-            <p class="cs-impact-item"><strong>50</strong> runners onboarded across NYC run club beta</p>
-            <p class="cs-impact-item"><strong>30%</strong> of beta users returned weekly for insights and recommendations</p>
-          </div>
+        <!-- Problem statement -->
+        <section id="achilles-problem" class="cs-section">
+          <h3 class="cs-solution-title">50% of runners get injured each year. Most are training alone off a generic PDF, with no one to interpret or personalize it for them. At the same time, they have more wearable data than ever — pace, heart rate, sleep — but little of it gets translated into how to actually improve performance and recovery.</h3>
+        </section>
+
+        <!-- Solution statement -->
+        <section id="achilles-solution-statement" class="cs-section">
+          <span class="cs-label">Solution</span>
+          <h3 class="cs-solution-title">An AI coach that builds personalized programming, interprets your data — including wearable metrics — and knows when to speak up, when to ask how you're feeling, and when to adjust your plan accordingly.</h3>
         </section>
 
         <!-- Section divider -->
-        <div class="cs-divider"><span>Background</span></div>
-
-        <!-- Background -->
-        <section id="achilles-mission" class="cs-section">
-          <span class="cs-label">Background</span>
-          <p class="cs-body" style="color:#000;">Half marathon finishers are up 20.9% year-on-year and Gen Z is the fastest-growing demographic. But 57.6% of runners sustain an injury within their first 1,000km — novice runners at 2.3x the rate of experienced ones.</p>
-          <p class="cs-body" style="color:#000;">Most are going it alone. They sign up for a race, get a generic PDF, and figure out the rest themselves. Good coaching exists but it's expensive and out of reach for most.</p>
-          <p class="cs-body" style="color:#000;">Achilles was built to close that gap.</p>
-        </section>
-
-
-        <!-- The Design Challenge -->
-        <section class="cs-section">
-          <span class="cs-label">The Design Challenge</span>
-          <p class="cs-body" style="color:#000;">A hard question emerged: what does it actually take to make data feel like coaching?</p>
-          <div class="cs-compare-table">
-            <div class="cs-compare-col cs-compare-col--no">
-              <p class="cs-compare-col-header">What we didn't want</p>
-              <p class="cs-compare-item">Just a dashboard that showed you numbers</p>
-              <p class="cs-compare-item">AI that completely replaces the need for coaches</p>
-            </div>
-            <div class="cs-compare-col cs-compare-col--yes">
-              <p class="cs-compare-col-header">What we wanted</p>
-              <p class="cs-compare-item">A coach that interprets your data — and knows when to speak up, when to ask a question, and when to just let you run.</p>
-            </div>
-          </div>
-          <p class="cs-body" style="color:#000;">Designing Achilles meant solving that problem across every touchpoint: how you get started, how your plan is built, how the system learns from your runs, and how it talks to you about what it finds.</p>
-        </section>
-
-        <!-- Section divider -->
-        <div class="cs-divider"><span>Solutions</span></div>
+        <div class="cs-divider"><span>Key Touchpoints</span></div>
 
         <!-- Solutions -->
         <section id="achilles-solutions" class="cs-section">
+          <!-- Previous touchpoints (hidden for now, may bring back later)
           <div class="cs-solution">
-            <span class="cs-label">From generic plan to personalized program</span>
-            <h3 class="cs-solution-title">Getting Started</h3>
-            <p class="cs-body" style="color:#000;">Most runners start with a generic PDF — mileage targets with no context for how to execute them. Achilles transforms that plan into a structured week-by-week program with real workouts and personalized pace targets. Not just '6 miles tempo run' — but exactly how to run it, and at what pace, to hit their goal.</p>
-            <div class="cs-img-placeholder"></div>
+            <h3 class="cs-solution-title">From generic plan to personalized program</h3>
+            <p class="cs-body">Most runners start with a generic PDF — mileage targets with no context for how to execute them. Achilles transforms that plan into a structured week-by-week program with real workouts and personalized pace targets. Not just '6 miles tempo run' — but exactly how to run it, and at what pace, to hit their goal.</p>
+            <div class="cs-video-wrap">
+              <video src="Getting Started-Achilles.mp4?v=20260914" style="clip-path: inset(20px);" autoplay muted loop playsinline></video>
+            </div>
           </div>
 
           <div class="cs-solution">
-            <span class="cs-label">Knowing what to say — and when not to</span>
             <h3 class="cs-solution-title">The Insight System</h3>
-            <p class="cs-body" style="color:#000;">An insight isn't a data point — it's the connection between two things a runner couldn't make themselves. Slower pace + 88°F outside = not a fitness drop. Heart rate spike + three hard days = accumulated fatigue. When the system has enough signal, it surfaces the insight. When it doesn't, it asks. The coach never guesses.</p>
-            <div class="cs-img-placeholder"></div>
+            <p class="cs-body">An insight isn't a data point — it's the connection between two things a runner couldn't make themselves. Slower pace + 88°F outside = not a fitness drop. Heart rate spike + three hard days = accumulated fatigue. When the system has enough signal, it surfaces the insight. When it doesn't, it asks. The coach never guesses.</p>
+            <div class="cs-video-wrap">
+              <video src="Insights-Achilles.mp4?v=20260914" style="clip-path: inset(20px);" autoplay muted loop playsinline></video>
+            </div>
           </div>
 
           <div class="cs-solution">
-            <span class="cs-label">Proactive care, not reactive damage control</span>
-            <h3 class="cs-solution-title">Injury and Plan Adjustment</h3>
-            <p class="cs-body" style="color:#000;">Injury is the moment a runner most needs support — and when a system can lose their trust fastest if it gets it wrong. Achilles draws on effort ratings, wearable data, and training load to catch warning signs early. And it remembers — if a runner had a prior injury and mileage spikes, it checks in. Not as a notification, but as a conversation.</p>
-            <div class="cs-img-placeholder"></div>
-            <p class="cs-body" style="color:#000; margin-top: 2rem;">When an injury is flagged, Achilles presents options — a few ways to adjust, with a clear recommendation. The runner chooses, the plan updates automatically. The system errs toward caution, but never takes the decision away from the runner.</p>
-            <div class="cs-img-placeholder"></div>
+            <h3 class="cs-solution-title">Considering Injuries and Plan Adjustments</h3>
+            <p class="cs-body">Injury is the moment a runner most needs support — and when a system can lose their trust fastest if it gets it wrong. Achilles draws on effort ratings, wearable data, and training load to catch warning signs early. And it remembers — if a runner had a prior injury and mileage spikes, it checks in. Not as a notification, but as a conversation.</p>
+            <div class="cs-video-wrap">
+              <video src="Injury-Achilles.mp4?v=20260914" style="clip-path: inset(20px);" autoplay muted loop playsinline></video>
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">When an injury is flagged, Achilles presents options — a few ways to adjust, with a clear recommendation. The runner chooses, the plan updates automatically. The system errs toward caution, but never takes the decision away from the runner.</p>
           </div>
+          -->
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Onboarding</h3>
+            <p class="cs-body">Most training apps ask a runner to answer a dozen questions before they see any value. Achilles gets them from account creation to their first real interaction fast, saving deeper personalization for once they're already in motion.</p>
+            <div class="cs-video-wrap">
+              <video src="Achilles-Setup.mp4?v=20260919" style="clip-path: inset(20px 140px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution" style="margin-top: 3.5rem;">
+            <h3 class="cs-solution-title">Training Hub: From a Generic PDF to a Real Plan</h3>
+            <p class="cs-body">Most runners already have a plan — a coach's PDF, a template — they just can't act on it day to day. The Training Hub parses what they upload into a structured week, with today's workout front and center.</p>
+            <div class="cs-video-wrap">
+              <video src="Achilles-Training hub.mp4?v=20260919" style="clip-path: inset(20px 140px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution" style="margin-top: 3.5rem;">
+            <h3 class="cs-solution-title">Daily Insights: Feedback That Actually Goes Somewhere</h3>
+            <p class="cs-body">Rating a workout shouldn't be a one-way action. Every rating feeds directly into the next insight or adjustment, so a runner can see their feedback actually shape their plan, not disappear into a log no one reads.</p>
+            <div class="cs-video-wrap">
+              <video src="Achilles-Daily Insights.mp4?v=20260919" style="clip-path: inset(20px 140px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution" style="margin-top: 3.5rem;">
+            <h3 class="cs-solution-title">Coach: A Place to Ask, Not Just Be Told</h3>
+            <p class="cs-body">Insights and plans only go so far without room for a runner to ask why, or push back. Coach is where a runner can question a recommendation, report how they're feeling, or dig into a data point directly — the same way they would with a real coach.</p>
+            <div class="cs-video-wrap">
+              <video src="Achilles-Coach.mp4?v=20260919" style="clip-path: inset(20px 140px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution" style="margin-top: 3.5rem;">
+            <h3 class="cs-solution-title">Stats: Progress You Can Actually See</h3>
+            <p class="cs-body">Personal bests, training volume, and countdown-to-race context, all in one view — so improvement isn't just implied by the plan working, it's visible.</p>
+            <div class="cs-video-wrap">
+              <img src="Achilles-Stats.png?v=20260919" alt="Stats: Progress You Can Actually See" style="width: 100%; max-height: 680px; border-radius: 8px; display: block; object-fit: contain; transform: scale(0.92); transform-origin: center;">
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Impact</span></div>
+
+        <!-- Impact -->
+        <section id="achilles-impact" class="cs-section" style="padding-top: 2rem; padding-bottom: 2rem;">
+          <div class="atlas-stat-grid">
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">50</span>
+              <span class="atlas-stat-label">runners onboarded across NYC run club beta</span>
+            </div>
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">30%</span>
+              <span class="atlas-stat-label">of beta users returned weekly for insights and recommendations</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>How I Got Here</span></div>
+
+        <!-- Where We Started -->
+        <section id="achilles-initial-ideas" class="cs-section" style="margin-bottom: 9rem;">
+          <span class="cs-label">Initial brainstorming</span>
+          <h3 class="cs-solution-title">Where We Started: Voice AI Coaching</h3>
+          <div class="cs-video-wrap">
+            <video src="Achilles-VoiceAI.mp4?v=20260922b" style="clip-path: inset(20px 200px);" controls loop playsinline data-scroll-autoplay></video>
+          </div>
+          <p class="cs-body" style="margin-top: 2rem;">We initially considered voice AI coaching, thinking it could create a more interactive experience closer to an in-person coach — and Apple announcing Workout Buddy (WWDC 2025) partway through our build seemed to back that up, though even Apple framed it as motivation, not real coaching.</p>
+          <h3 class="cs-solution-title" style="margin-top: 2.5rem;">Animation Explorations</h3>
+          <div class="cs-two-col" style="margin-top: 1.25rem;">
+            <div class="cs-video-wrap" style="padding: 20px; box-sizing: border-box;">
+              <video src="Achilles Voice AI ex1.mp4?v=20260922" autoplay muted loop playsinline></video>
+            </div>
+            <div class="cs-video-wrap" style="padding: 20px; box-sizing: border-box;">
+              <video src="Achilles Voice AI ex2.mp4?v=20260922" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+        </section>
+
+        <!-- Research Discovery -->
+        <section id="achilles-research-discovery" class="cs-section" style="margin-top: 9rem;">
+          <h3 class="cs-solution-title">But our initial survey discovered: runners didn't want an AI talking to them mid-run, disruptive regardless of framing. What they actually wanted was insight around how to improve performance/recovery after the workout.</h3>
+        </section>
+
+        <!-- Anatomy of an Insight -->
+        <section id="achilles-insight-structure" class="cs-section">
+          <h3 class="cs-solution-title">Considering the Anatomy of an Insight</h3>
+          <div class="cs-img-placeholder" style="border: none;">
+            <img src="Achilles-Anatomy of an Insight.png?v=20260919" alt="Considering the Anatomy of an Insight" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <p class="cs-body" style="margin-top: 2rem;">Every insight follows the same structure: a signal in the data, domain knowledge connecting it to a cause, and a recommendation tied to both. Slower pace on a hot day isn't a fitness drop, it's a heat effect. A heart rate spike after three hard days isn't random, it's fatigue — but only when there's enough signal to say so with confidence. When there isn't, Achilles doesn't guess. It asks.</p>
+        </section>
+
+        <!-- Finding the Right Testers -->
+        <section id="achilles-finding-testers" class="cs-section">
+          <h3 class="cs-solution-title">Finding the Right Testers</h3>
+          <!-- <div class="cs-img-placeholder"></div> (hidden for now, may bring back later) -->
+          <p class="cs-body" style="margin-top: 2rem;">We went to NYC run clubs directly and recruited runners fitting the exact problem: training for a race, on a generic plan, no coach. That specificity mattered — testing with runners who already had a coach wouldn't have told us whether the coaching held up. 50 signed up for early access and ran a TestFlight beta with real training data — real paces, weather, fatigue, not simulated scenarios.</p>
+        </section>
+
+        <!-- Designing for Runners Without Wearables -->
+        <section id="achilles-no-wearables" class="cs-section">
+          <h3 class="cs-solution-title">Edge Case: Designing for Runners Without Wearables</h3>
+          <div class="cs-two-col" style="margin-top: 1.25rem;">
+            <div class="cs-video-wrap" style="padding: 20px; box-sizing: border-box;">
+              <img src="Achilles-Edgecasept1.png?v=20260922" alt="Edge case, part 1" style="width: 100%; max-height: 680px; object-fit: contain; border-radius: 8px; display: block; transform: scale(0.9); transform-origin: center;">
+            </div>
+            <div class="cs-video-wrap" style="padding: 20px; box-sizing: border-box;">
+              <img src="Achilles-Edgecasept2.png?v=20260922" alt="Edge case, part 2" style="width: 100%; max-height: 680px; object-fit: contain; border-radius: 8px; display: block; transform: scale(0.9); transform-origin: center;">
+            </div>
+          </div>
+          <p class="cs-body" style="margin-top: 2rem;">Not every runner trains with a smartwatch — for many first-time racers, a phone is the only device they have. That meant a chunk of Achilles's richest signal (heart rate, HRV, sleep) didn't exist for them. Rather than guess at fatigue from pace alone, we leaned on what was real: a quick RPE rating and a "how did that feel" after each run. Not as rich as sensor data, but enough for some insights — while staying honest about what wasn't available without a wearable.</p>
         </section>
 
         <!-- Section divider -->
@@ -415,16 +530,16 @@
           <span class="cs-label">Reflections</span>
           <div class="cs-reflections">
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Data is only useful when it's interpreted.</h3>
-              <p class="cs-body" style="color:#000;">The design work wasn't adding more numbers — it was figuring out which signal mattered right now, for this person, and saying it in a way that felt like a coach, not a report.</p>
+              <h3 class="cs-solution-title">Data is only useful when it's interpreted.</h3>
+              <p class="cs-body">The design work wasn't adding more numbers — it was figuring out which signal mattered right now, for this person, and saying it in a way that felt like a coach, not a report.</p>
             </div>
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">The system needs to know its limits.</h3>
-              <p class="cs-body" style="color:#000;">An AI that guesses is worse than one that asks. Every time Achilles didn't have enough context, we designed it to open a conversation instead of fill in the blank. That restraint is what makes the difference between a tool runners trust and one they ignore.</p>
+              <h3 class="cs-solution-title">The system needs to know its limits.</h3>
+              <p class="cs-body">An AI that guesses is worse than one that asks. Every time Achilles didn't have enough context, we designed it to open a conversation instead of fill in the blank. That restraint is what makes the difference between a tool runners trust and one they ignore.</p>
             </div>
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Where I'd take it next.</h3>
-              <p class="cs-body" style="color:#000;">Some injuries — the ones runners downplay — need a human in the loop. The next step is connecting runners with real coaches when the system flags something serious enough to warrant it. Not replacing the AI layer, but knowing when to escalate beyond it.</p>
+              <h3 class="cs-solution-title">Where I'd take it next.</h3>
+              <p class="cs-body">Some injuries — the ones runners downplay — need a human in the loop. The next step is connecting runners with real coaches when the system flags something serious enough to warrant it. Not replacing the AI layer, but knowing when to escalate beyond it.</p>
             </div>
           </div>
         </section>
@@ -434,17 +549,6 @@
           <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
         </section>
 
-        <!-- Next -->
-        <section class="cs-section cs-next">
-          <span class="cs-label">Next</span>
-          <div class="cs-next-card" data-next-card="card-2" style="background-image: url('Chaotic Gradients - 50.jpg'); background-size: cover; background-position: center;">
-            <div class="cs-next-overlay">
-              <h3 class="cs-next-title">Ampcontrol</h3>
-              <p class="cs-next-desc">Designing operational visibility tools for EV charging management.</p>
-            </div>
-            <img src="ampcontrolheroimage.png" alt="" style="position:absolute; top:42%; left:50%; transform:translate(-50%, -50%); width:65%; object-fit:contain; pointer-events:none; z-index:1; border-radius:8px;">
-          </div>
-        </section>
 
       </div><!-- /.cs-content -->
     </div><!-- /.cs-wrap -->
@@ -452,15 +556,19 @@
 
   <!-- AMPCONTROL case study template -->
   <template id="ampcontrol-content">
-    <div class="cs-wrap">
+    <div class="cs-wrap atlas-v2">
 
       <!-- Left scroll-spy nav -->
       <nav class="cs-sidenav" aria-label="Page sections">
-        <a class="cs-nav-item" data-target="amp-overview">Overview</a>
-        <a class="cs-nav-item" data-target="amp-impact">Impact</a>
-        <a class="cs-nav-item" data-target="amp-background">Background</a>
-        <a class="cs-nav-item" data-target="amp-solutions">Solutions</a>
-        <a class="cs-nav-item" data-target="amp-reflections">Reflections</a>
+        <a href="#" class="atlas-back-link atlas-eyebrow" data-atlas-back>← Back</a>
+        <div class="atlas-nav-items">
+          <a class="cs-nav-item" data-target="amp-overview">Overview</a>
+          <a class="cs-nav-item" data-target="amp-problem">Problem</a>
+          <a class="cs-nav-item" data-target="amp-solution-statement">Solution</a>
+          <a class="cs-nav-item" data-target="amp-impact">Impact</a>
+          <a class="cs-nav-item" data-target="amp-design-process">Design Process</a>
+          <a class="cs-nav-item" data-target="amp-reflections">Reflections</a>
+        </div>
       </nav>
 
       <!-- Main content -->
@@ -468,86 +576,171 @@
 
         <!-- Overview -->
         <div id="amp-overview" class="cs-header">
-          <img src="ampcontrol_io_logo 1.png" alt="Ampcontrol logo" class="cs-product-logo">
-          <div class="cs-header-row">
-            <div class="cs-header-left">
-              <p class="cs-title">Ampcontrol</p>
-              <p class="cs-subtitle" style="color:#000;">Redesigning the landing page to serve as the single source of truth for ground operators — enabling real-time visibility across entire EV charging networks.</p>
+          <div class="atlas-breadcrumb-row">
+            <span class="atlas-eyebrow">Ampcontrol • Shipped 2024</span>
+          </div>
+          <h1 class="atlas-hero-title">Designing an Energy Management<br>Dashboard to Track and Optimize<br>EV Fleet Operations</h1>
+          <div class="cs-video-wrap" style="margin-bottom: 2.5rem; border-radius: 16px; overflow: hidden; padding: 0; aspect-ratio: 3 / 2; background-image: url('Chaotic Gradients - 98.jpg'); background-size: cover; background-position: center; position: relative;">
+            <img src="ampcontrolheroimage.png" alt="Ampcontrol" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 80%; max-height: 80%; object-fit: contain; border-radius: 8px;">
+          </div>
+          <div class="atlas-meta-bar atlas-meta-bar--spread">
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Role</span>
+              <span class="atlas-meta-value">Product Designer</span>
             </div>
-            <div class="cs-header-meta">
-              <div class="cs-meta-block">
-                <span class="cs-meta-label cs-meta-label--title">Team</span>
-                <span class="cs-meta-value">1 Designer (Me)<br>TPM<br>Engineering</span>
-              </div>
-              <div class="cs-meta-block">
-                <span class="cs-meta-label cs-meta-label--title">Timeline</span>
-                <span class="cs-meta-value">5 weeks</span>
-              </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Timeline</span>
+              <span class="atlas-meta-value">June – July<br>(5 weeks)</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Team</span>
+              <span class="atlas-meta-value">1 Designer (Me)<br>1 TPM<br>2 FE Engs<br>1 BE Eng</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Skills</span>
+              <span class="atlas-meta-value">User Research<br>Product Design</span>
             </div>
           </div>
         </div>
 
-        <!-- Impact -->
-        <section id="amp-impact" class="cs-section">
-          <span class="cs-label">Impact</span>
-          <div class="cs-impact-list">
-            <p class="cs-impact-item"><strong>—</strong> Placeholder impact stat</p>
-            <p class="cs-impact-item"><strong>—</strong> Placeholder impact stat</p>
-            <p class="cs-impact-item"><strong>—</strong> Placeholder impact stat</p>
+        <!-- Overview statement -->
+        <section id="amp-overview-statement" class="cs-section">
+          <span class="cs-label">Overview</span>
+          <h3 class="cs-solution-title">Ampcontrol is a B2B platform that helps companies that have EV fleets manage their charging infrastructure and energy use, working with operators like WattEV, First Bus, and Revel.</h3>
+          <div class="cs-two-col" style="margin-top: 1.25rem; gap: 20px;">
+            <img src="Ampcontrol-Intropt1.jpg?v=20260923" alt="Ampcontrol overview, part 1" style="width: 100%; height: 320px; object-fit: cover; border-radius: 8px; display: block;">
+            <img src="Ampcontrol-Intropt2.avif?v=20260923" alt="Ampcontrol overview, part 2" style="width: 100%; height: 320px; object-fit: cover; border-radius: 8px; display: block;">
           </div>
         </section>
 
-        <!-- Section divider -->
-        <div class="cs-divider"><span>Background</span></div>
-
-        <!-- Background -->
-        <section id="amp-background" class="cs-section">
-          <span class="cs-label">Background</span>
-          <p class="cs-body" style="color:#000;">Placeholder — add background context here.</p>
-        </section>
-
-        <!-- Design Challenge -->
-        <section class="cs-section">
-          <span class="cs-label">The Design Challenge</span>
-          <p class="cs-body" style="color:#000;">Placeholder — describe the design challenge here.</p>
-          <div class="cs-compare-table">
-            <div class="cs-compare-col cs-compare-col--no">
-              <p class="cs-compare-col-header">What we didn't want</p>
-              <p class="cs-compare-item">Placeholder item</p>
-              <p class="cs-compare-item">Placeholder item</p>
-            </div>
-            <div class="cs-compare-col cs-compare-col--yes">
-              <p class="cs-compare-col-header">What we wanted</p>
-              <p class="cs-compare-item">Placeholder item</p>
-            </div>
+        <!-- Problem statement -->
+        <section id="amp-problem" class="cs-section">
+          <h3 class="cs-solution-title">At the time, EV operators could monitor individual site activity with Ampcontrol, but lacked visibility into operations across their entire org at a glance. Operators had to manually click between screens to triage incoming issues, often missing them or delaying a response — leaving managers reacting to problems instead of catching them early.</h3>
+          <div class="cs-img-placeholder" style="border: none; padding: calc(2rem - 6px); box-sizing: border-box; display: flex; align-items: center; justify-content: center; position: relative; margin-top: 2rem;">
+            <img src="Ampcontroloriginaldashboard.png?v=20260923" alt="Original Ampcontrol dashboard" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+            <span class="cs-body" style="position: absolute; bottom: -8px; right: 16px; font-style: italic; margin-bottom: 0; color: #aaa;">Ampcontrol's original dashboard</span>
           </div>
         </section>
 
+        <!-- Solution statement -->
+        <section id="amp-solution-statement" class="cs-section">
+          <span class="cs-label">Solution</span>
+          <h3 class="cs-solution-title">A redesigned landing page that acts as the single source of truth for ground operators — giving them a global view of every site, faster issue detection, and the context to resolve problems without digging across multiple screens.</h3>
+        </section>
+
         <!-- Section divider -->
-        <div class="cs-divider"><span>Solutions</span></div>
+        <div class="cs-divider"><span>Key Touchpoints</span></div>
 
         <!-- Solutions -->
         <section id="amp-solutions" class="cs-section">
           <div class="cs-solution">
-            <span class="cs-label">Placeholder label</span>
-            <h3 class="cs-solution-title">Solution One</h3>
-            <p class="cs-body" style="color:#000;">Placeholder — describe this solution here.</p>
-            <div class="cs-img-placeholder"></div>
+            <h3 class="cs-solution-title">Global Map + List View</h3>
+            <div class="cs-video-wrap">
+              <video src="Ampcontrol-Overviewofassets.mp4?v=20260923" style="clip-path: none; border-radius: 8px;" autoplay muted loop playsinline></video>
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">A map view providing a global overview of an organization's charging networks with zoom/pan capability, alongside a detailed list view showing power utilization, asset counts, hardware issues, and more for each network.</p>
           </div>
 
           <div class="cs-solution">
-            <span class="cs-label">Placeholder label</span>
-            <h3 class="cs-solution-title">Solution Two</h3>
-            <p class="cs-body" style="color:#000;">Placeholder — describe this solution here.</p>
-            <div class="cs-img-placeholder"></div>
+            <h3 class="cs-solution-title">Sorting Capability</h3>
+            <div class="cs-video-wrap">
+              <video src="Ampcontrol-Sorting Capability.mp4?v=20260923" style="clip-path: none; border-radius: 8px;" autoplay muted loop playsinline></video>
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">The ability to sort by issues and alerts relevant to ground operators.</p>
           </div>
 
           <div class="cs-solution">
-            <span class="cs-label">Placeholder label</span>
-            <h3 class="cs-solution-title">Solution Three</h3>
-            <p class="cs-body" style="color:#000;">Placeholder — describe this solution here.</p>
-            <div class="cs-img-placeholder"></div>
+            <h3 class="cs-solution-title">Info & Asset Tags</h3>
+            <div class="cs-video-wrap">
+              <video src="Ampcontrol-Info & Asset Tags.mp4?v=20260923" style="clip-path: none; border-radius: 8px;" autoplay muted loop playsinline></video>
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">To simplify complex data presentation, I used icons for clear visual communication and integrated tags in hover and select states for added context — implemented in the list view and map pop-up modals for quick access to vehicle and charger details.</p>
           </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Alert Queue</h3>
+            <div class="cs-video-wrap">
+              <video src="Ampcontrol-Alert Queue.mp4?v=20260923" style="clip-path: none; border-radius: 8px;" autoplay muted loop playsinline></video>
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">Operators can track active hardware issues across all sites, view alerts by location, monitor progress, access details, and route issues to the right teams to keep operations running smoothly.</p>
+          </div>
+        </section>
+
+        <!-- Impact -->
+        <section id="amp-impact" class="cs-section">
+          <span class="cs-label">Impact</span>
+          <div class="atlas-stat-grid">
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">33%</span>
+              <span class="atlas-stat-label">reduction in charging downtime through improved visibility</span>
+            </div>
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">40%</span>
+              <span class="atlas-stat-label">faster hardware issue resolution for ground operators</span>
+            </div>
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">30%</span>
+              <span class="atlas-stat-label">increase in customer acquisition</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>How I Got Here</span></div>
+
+        <!-- Panel interviews -->
+        <section class="cs-section">
+          <span class="cs-label">User Research</span>
+          <p class="cs-body" style="font-size: 0.95rem; font-weight: 300;">I conducted 3 panel interviews with teams using ampcontrol and found that operators want:</p>
+          <div class="cs-two-col" style="margin-top: 2rem;">
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+              <h3 class="cs-solution-title">1. Real-time visibility into all their charging sites to manage energy consumption and avoid costly overages</h3>
+              <h3 class="cs-solution-title">3. A comprehensive asset overview of vehicles and chargers to predict charging trends, optimize operations, and scale efficiently</h3>
+            </div>
+            <h3 class="cs-solution-title">2. Quickly identify and resolve hardware issues to minimize downtime</h3>
+          </div>
+        </section>
+
+        <!-- Design Explorations -->
+        <section id="amp-design-process" class="cs-section">
+          <span class="cs-label">Design Explorations</span>
+          <h3 class="cs-solution-title">Balancing Critical KPIs Against Limited Screen Real Estate</h3>
+          <p class="cs-body">A key challenge here was selecting the most critical KPIs to help operators quickly assess site performance, while balancing screen real estate between the map and list view — surfacing meaningful insight without overwhelming users.</p>
+          <p class="cs-body" style="margin-top: 1.25rem;">A few iterations that got us there:</p>
+
+          <div class="cs-solution" style="margin-top: 2.5rem;">
+            <h3 class="cs-solution-title">The first version maximized site visibility but stripped away too much</h3>
+            <div class="cs-img-placeholder" style="border: none; display: flex; align-items: center; justify-content: center;">
+              <img src="Ampcontrol-Iteration1.avif?v=20260923" alt="Iteration 1" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">A slimmer list view lost key details — operator feedback showed metrics like faulted connectors and trip delays were essential.</p>
+          </div>
+
+          <div class="cs-solution" style="margin-top: 3.5rem;">
+            <h3 class="cs-solution-title">The second version added more data but lost scalability.</h3>
+            <div class="cs-img-placeholder" style="border: none; display: flex; align-items: center; justify-content: center;">
+              <img src="Ampcontrol-Interation2.avif?v=20260923" alt="Iteration 2" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">A table format let us show more at once, but testing showed it wasn't scalable and required too much focused reading. Color-coded map assets, meant to help, proved overwhelming without a clear hierarchy.</p>
+          </div>
+
+          <div class="cs-solution" style="margin-top: 3.5rem;">
+            <h3 class="cs-solution-title">The third version was more organized, at the cost of more clicks — a tradeoff we accepted.</h3>
+            <div class="cs-img-placeholder" style="border: none; display: flex; align-items: center; justify-content: center;">
+              <img src="Ampcontrol-Iteration3.avif?v=20260923" alt="Iteration 3" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">Splitting data into two pages showed the right amount of info per screen, but required operators to tab between charger and vehicle data. Users wanted everything visible at once — but given our timeline, showing all the necessary data, even split across tabs, mattered more than solving for zero clicks.</p>
+          </div>
+        </section>
+
+        <!-- Design challenge -->
+        <section class="cs-section">
+          <span class="cs-label">Design challenge</span>
+          <h3 class="cs-solution-title">The tradeoff: speed over a rebuild, so I refined Material UI's tokens and components.</h3>
+          <div class="cs-img-placeholder" style="border: none; display: flex; align-items: center; justify-content: center;">
+            <img src="Ampcontrol-v1vs.v2.avif?v=20260924" alt="Ampcontrol v1 vs. v2" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+          </div>
+          <p class="cs-body" style="margin-top: 2rem;">Ampcontrol was built on Material UI for ease of implementation. It wasn't the system I would have chosen, but we didn't have time to rebuild from scratch. I focused on improving color, typography, and details like cards, icons, and dropdowns to raise the level of polish without slowing down engineering.</p>
         </section>
 
         <!-- Section divider -->
@@ -558,16 +751,16 @@
           <span class="cs-label">Reflections</span>
           <div class="cs-reflections">
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Placeholder reflection title.</h3>
-              <p class="cs-body" style="color:#000;">Placeholder — add reflection here.</p>
+              <h3 class="cs-solution-title">What I learned working cross-functionally under a tight timeline</h3>
+              <p class="cs-body">This was a high-impact project I took on early at Ampcontrol, where I learned to collaborate cross-functionally, advocate for design quality, and rapidly iterate, test, and ship.</p>
             </div>
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Placeholder reflection title.</h3>
-              <p class="cs-body" style="color:#000;">Placeholder — add reflection here.</p>
+              <h3 class="cs-solution-title">Features I'd revisit with more time</h3>
+              <p class="cs-body">With more time, I would have explored deprioritized features like long-term charger health analytics, fleet-wide insights, trip feedback, accident prevention, route previews, and proactive tools like charging queues and scheduled maintenance reminders.</p>
             </div>
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Placeholder reflection title.</h3>
-              <p class="cs-body" style="color:#000;">Placeholder — add reflection here.</p>
+              <h3 class="cs-solution-title">Metrics I'd add to track long-term success</h3>
+              <p class="cs-body">I also would have tracked additional success metrics — dashboard usage frequency, on-time trip departure rate, issue detection and resolution time, fleet and asset growth rate — to evaluate long-term success.</p>
             </div>
           </div>
         </section>
@@ -577,16 +770,6 @@
           <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
         </section>
 
-        <!-- Next -->
-        <section class="cs-section cs-next">
-          <span class="cs-label">Next</span>
-          <div class="cs-next-card" data-next-card="card-3" style="background-image: url('sage background.png'); background-size: cover; background-position: center;">
-            <div class="cs-next-overlay">
-              <h3 class="cs-next-title">Ideate — Sage</h3>
-              <p class="cs-next-desc">Designing an AI assistant that lives inside the design workflow — not outside it.</p>
-            </div>
-          </div>
-        </section>
 
       </div><!-- /.cs-content -->
     </div><!-- /.cs-wrap -->
@@ -594,15 +777,21 @@
 
   <!-- SAGE case study template -->
   <template id="sage-content">
-    <div class="cs-wrap">
+    <div class="cs-wrap atlas-v2">
 
       <!-- Left scroll-spy nav -->
       <nav class="cs-sidenav" aria-label="Page sections">
-        <a class="cs-nav-item" data-target="sage-overview">Overview</a>
-        <a class="cs-nav-item" data-target="sage-impact">Impact</a>
-        <a class="cs-nav-item" data-target="sage-mission">Mission</a>
-        <a class="cs-nav-item" data-target="sage-solutions">Solutions</a>
-        <a class="cs-nav-item" data-target="sage-reflections">Reflections</a>
+        <a href="#" class="atlas-back-link atlas-eyebrow" data-atlas-back>← Back</a>
+        <div class="atlas-nav-items">
+          <a class="cs-nav-item" data-target="sage-overview">Overview</a>
+          <a class="cs-nav-item" data-target="sage-problem">Problem</a>
+          <a class="cs-nav-item" data-target="sage-solution-statement">Solution</a>
+          <a class="cs-nav-item" data-target="sage-impact">Impact</a>
+          <a class="cs-nav-item" data-target="sage-background">First Solution</a>
+          <a class="cs-nav-item" data-target="sage-mission">Pivot</a>
+          <a class="cs-nav-item" data-target="sage-technical-challenge">Design Process</a>
+          <a class="cs-nav-item" data-target="sage-reflections">Reflections</a>
+        </div>
       </nav>
 
       <!-- Main content -->
@@ -610,101 +799,70 @@
 
         <!-- Overview -->
         <div id="sage-overview" class="cs-header">
-          <img src="sage icon.png" alt="Sage logo" class="cs-product-logo">
-          <div class="cs-header-row">
-            <div class="cs-header-left">
-              <p class="cs-title">Ideate - Sage</p>
-              <p class="cs-subtitle" style="color:#000;">Designing an agentic layer that eliminates ambiguity, surfaces client context, and optimizes the creative process from first brief to final handoff.</p>
-              <p class="cs-subtitle">Currently in active development — core features are live with pilot teams, with additional capabilities shipping soon.</p>
+          <div class="atlas-breadcrumb-row">
+            <span class="atlas-eyebrow">Ideate - Sage • Shipped 2025</span>
+          </div>
+          <h1 class="atlas-hero-title">An Agentic Layer That<br>Closes the Context Gap</h1>
+          <div class="cs-video-wrap" style="margin-bottom: 2.5rem; border-radius: 16px; overflow: hidden; padding: 0; aspect-ratio: 3 / 2; background-image: url('Sage-Background.png'); background-size: cover; background-position: center; position: relative;">
+            <img src="Sage-Thumbnail2.png?v=20260918" alt="Sage" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 80%; max-height: 80%; object-fit: contain;">
+          </div>
+          <div class="atlas-meta-bar atlas-meta-bar--spread">
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Role</span>
+              <span class="atlas-meta-value">Founding Product<br>Designer</span>
             </div>
-            <div class="cs-header-meta">
-              <div class="cs-meta-block">
-                <span class="cs-meta-label cs-meta-label--title">Team</span>
-                <span class="cs-meta-value">1 Designer (Me)<br>CEO<br>CTO</span>
-              </div>
-              <div class="cs-meta-block">
-                <span class="cs-meta-value">2026 – Present</span>
-              </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Timeline</span>
+              <span class="atlas-meta-value">2025 – Present</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Team</span>
+              <span class="atlas-meta-value">1 Designer (Me)<br>CEO<br>CTO</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Skills</span>
+              <span class="atlas-meta-value">User Research<br>Product Design<br>Product Strategy</span>
             </div>
           </div>
         </div>
 
-        <!-- Impact -->
-        <section id="sage-impact" class="cs-section">
-          <span class="cs-label">Impact</span>
-          <div class="cs-impact-list">
-            <p class="cs-impact-item">+70% of Sage generated insights rated actionable by designers</p>
-            <p class="cs-impact-item">60% pilot activation rate, 3 weeks post-onboarding</p>
-          </div>
-        </section>
-
-        <!-- Section divider -->
-        <div class="cs-divider"><span>Background</span></div>
-
         <!-- Research stat -->
-        <section class="cs-section cs-section--tight">
-          <p class="cs-insight-title" style="line-height: 1.5;">Designers spend roughly 34% of total project time on client communication. The biggest time sink? Decoding vague client feedback.</p>
+        <section id="sage-problem" class="cs-section cs-section--tight" style="margin-top: 3.5rem; margin-bottom: 5.5rem;">
+          <h3 class="cs-solution-title" style="line-height: 1.5;">Designers spend roughly 34% of total project time on client communication. The biggest time sink? Decoding vague client feedback.</h3>
         </section>
 
-        <!-- Background body copy -->
-        <section class="cs-section">
-          <p class="cs-body">Designers spend too much time decoding what clients actually mean. Vague feedback, misaligned briefs, wasted revisions — it's constant friction. Research pointed to one clear fix: a feedback translator. So that's where we started.</p>
-          <p class="cs-body">But the more we built, the more a different problem surfaced.</p>
-        </section>
-
-        <!-- First version -->
-        <section class="cs-section">
-          <h3 class="cs-solution-title">First version</h3>
-          <div class="cs-img-placeholder" style="background: #f8f8f8; border: none; display: flex; align-items: center; justify-content: center; aspect-ratio: unset; padding: calc(2rem - 6px);">
-            <img src="sage first version.png" alt="Sage first version" style="width: 100%; border-radius: 8px; display: block;">
-          </div>
-          <h3 class="cs-solution-title" style="margin-top: 2rem;">The Problem We Didn't See Coming</h3>
-          <p class="cs-body">The feedback translator worked. But nobody wanted to use it the way we'd built it.</p>
-          <p class="cs-body"><span style="font-weight: 500; color: #000;">It lived on its own screen — isolated from everything else.</span> If you got a confusing client comment mid-review, you had to stop, navigate to Sage, get a response, then find your way back. The round-trip killed the value. We'd built the right thing in the wrong place.</p>
-        </section>
-
-        <!-- How Sage Evolved -->
-        <section class="cs-section" style="margin-top: 6rem;">
-          <h3 class="cs-solution-title">How Sage Evolved</h3>
-          <p class="cs-body">Once we made Sage persistent across the product suite — accessible over any tool, always there without interrupting — the question changed. It was no longer "how do we get designers to use this?" It became "what else can we do for them while we're already here?"</p>
-          <p class="cs-body">That shift <span style="font-weight: 500; color: #000;">pushed us from building a translator to building an assistant.</span> And the more we leaned into that, the more we realized the highest-value version of Sage <span style="font-weight: 500; color: #000;">wasn't one that waited to be asked — it was one that intervened at the right moment</span>, before the designer even had to think about it.</p>
-        </section>
-
-        <!-- Mission -->
-        <section id="sage-mission" class="cs-section">
-          <span class="cs-label">So the mission became</span>
-          <p class="cs-statement">Remove every layer of friction between a designer and clarity.</p>
+        <!-- Solution statement -->
+        <section id="sage-solution-statement" class="cs-section">
+          <span class="cs-label">THE SOLUTION</span>
+          <h3 class="cs-solution-title">Sage: A shared memory layer that carries client context, feedback interpretation, and preferences into every project across the suite.</h3>
         </section>
 
         <!-- Section divider -->
-        <div class="cs-divider"><span>Solutions</span></div>
+        <div class="cs-divider"><span>Key Touchpoints</span></div>
 
         <!-- Solutions -->
         <section id="sage-solutions" class="cs-section">
           <div class="cs-solution">
-            <span class="cs-label">Where it started.</span>
             <h3 class="cs-solution-title">Feedback Translation</h3>
             <p class="cs-body">Sage reads your client feedback and turns it into actionable insights and next steps — not a rewrite, an interpretation of what the client actually means. This is still the entry point for most designers. The feature that earns trust before the others can do their job.</p>
             <div class="cs-video-wrap">
-              <video src="Sage-Feedback Translator.mov" autoplay muted loop playsinline></video>
+              <video src="Sage-Feedback Translator.mp4" autoplay muted loop playsinline></video>
             </div>
           </div>
 
           <div class="cs-solution">
-            <span class="cs-label">What made it smarter over time.</span>
             <h3 class="cs-solution-title">Client Memory</h3>
             <p class="cs-body">The original plan was passive — let Sage learn through chat history. But chatbot memory has real constraints, so I designed around it instead. Designers create a client profile at the start of each project and Sage anchors every conversation to it. Each session opens with: who are you working with today? Turns out explicit context a designer builds intentionally is more reliable than anything a system tries to infer.</p>
-            <div class="cs-video-wrap cs-video-wrap--sm">
-              <video src="Sage - Client Memory.mov" autoplay muted loop playsinline></video>
+            <div class="cs-img-placeholder" style="border: none; overflow: hidden;">
+              <video src="Sage-Clientexperience.mp4?v=20260918" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; transform: scale(1.0); transform-origin: center;" autoplay muted loop playsinline></video>
             </div>
           </div>
 
           <div class="cs-solution">
-            <span class="cs-label">Proactive by design.</span>
             <h3 class="cs-solution-title">Writing Assistance</h3>
             <p class="cs-body">This is where Sage stopped being reactive. When a designer is writing a comment or drafting a brief, Sage is already reviewing it — surfacing suggestions in real time, before anything gets sent. The design challenge was restraint. Proactive AI that's too eager becomes noise, so we had to be deliberate about when it speaks up and how it shows up without making the designer feel second-guessed.</p>
             <div class="cs-video-wrap">
-              <video src="Sage - Writing Assistance.mov" autoplay muted loop playsinline></video>
+              <video src="Sage - Writing Assistance.mp4" autoplay muted loop playsinline></video>
             </div>
             <div class="cs-video-wrap">
               <video src="Sage - Proactive Assistance.mp4" autoplay muted loop playsinline></video>
@@ -712,12 +870,93 @@
           </div>
 
           <div class="cs-solution">
-            <span class="cs-label">The layer that ties it together.</span>
             <h3 class="cs-solution-title">Sage Chat</h3>
             <p class="cs-body">Persistent, context-aware, always accessible. Sage is now a presence across the entire suite — not a screen you navigate to. The chat isn't the product. It's the interface through which everything else is accessible — usable on top of any tool, without ever breaking flow.</p>
             <div class="cs-video-wrap">
-              <video src="Sage Chat.mov" autoplay muted loop playsinline></video>
+              <video src="Sage-Sage chat.mp4?v=20260918" autoplay muted loop playsinline></video>
             </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Impact</span></div>
+
+        <!-- Impact -->
+        <section id="sage-impact" class="cs-section" style="padding-top: 2rem; padding-bottom: 2rem;">
+          <div class="atlas-stat-grid">
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">+70%</span>
+              <span class="atlas-stat-label">of Sage generated insights rated actionable by designers</span>
+            </div>
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">60%</span>
+              <span class="atlas-stat-label">pilot activation rate, 3 weeks post-onboarding</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider" style="margin-top: 3.5rem;"><span>How I Got Here</span></div>
+
+        <!-- First version -->
+        <section id="sage-background" class="cs-section">
+          <span class="cs-label">First Solution</span>
+          <h3 class="cs-solution-title">Feedback Translator</h3>
+          <div class="cs-img-placeholder" style="background: #f8f8f8; border: none; display: flex; align-items: center; justify-content: center; aspect-ratio: unset; padding: calc(2rem - 6px);">
+            <img src="sage first version.png" alt="Sage first version" style="width: 100%; border-radius: 8px; display: block;">
+          </div>
+          <h3 class="cs-solution-title" style="margin-top: 2rem;">The problem we didn't see coming: Sage was siloed as its own tool, with no memory of the project behind it.</h3>
+          <p class="cs-body">The concept was simple: drop in a confusing client comment, get back an interpretation. It worked, technically — but it was guessing every time, with no context on the client or how they gave feedback. That echoed a problem designers already had: juggling multiple projects made it easy to lose track of how different clients communicate and their preferences.</p>
+        </section>
+
+
+        <!-- Mission -->
+        <section id="sage-mission" class="cs-section" style="margin-top: 10rem; margin-bottom: 10rem;">
+          <h3 class="cs-solution-title">So the mission became: give Sage memory of who the client was, how they gave feedback, and what mattered to them — shifting from a tool that just translated feedback after the fact to one that could anticipate it, context-switch cleanly across projects, and stop interpreting every comment cold.</h3>
+        </section>
+
+        <!-- Memory challenge -->
+        <section id="sage-technical-challenge" class="cs-section">
+          <span class="cs-label">A Technical Challenge along the way</span>
+          <h3 class="cs-solution-title">How Memory Limitations Shaped Sage's Design</h3>
+          <p class="cs-body" style="margin-top: 1.25rem;">A limitation while building this agent was that Sage's memory wasn't reliable if it just learned from chat history — the more a conversation grew, the more early context got lost or summarized away.</p>
+          <p class="cs-body" style="margin-top: 1.25rem;">To design around this, I created a flow to help designers set up a client profile up front, at the start of a project. Sage always checks that profile directly, rather than trying to piece things together from old messages — so the context stays intact no matter how long the project runs. A few decisions shaped how that setup actually works:</p>
+
+          <div class="cs-solution" style="margin-top: 2.5rem;">
+            <h3 class="cs-solution-title">1. Low-friction setup during onboarding</h3>
+            <div class="cs-img-placeholder" style="border: none;">
+              <img src="Sage-Low-friction setup.png?v=20260918" alt="Low-friction setup during onboarding" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">Client setup happens as part of starting a project, not a separate step to remember later.</p>
+          </div>
+
+          <div class="cs-solution" style="margin-top: 3.5rem;">
+            <h3 class="cs-solution-title">2. Contacts are tracked individually</h3>
+            <div class="cs-img-placeholder" style="border: none; overflow: hidden;">
+              <img src="Sage-IndividualClient.png?v=20260918" alt="Contacts are tracked individually" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">A founder and a marketing lead don't get flattened into one profile — Sage accounts for how each person actually gives feedback.</p>
+          </div>
+
+          <div class="cs-solution" style="margin-top: 3.5rem;">
+            <h3 class="cs-solution-title">3. Nothing Sage knows is hidden</h3>
+            <div class="cs-img-placeholder" style="border: none; overflow: hidden;">
+              <video src="Sage-Nothing Sage knows is hidden.mp4?v=20260918" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; transform: scale(1.0); transform-origin: center;" autoplay muted loop playsinline></video>
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">Designers can view and edit accumulated knowledge and past sessions within a client's profile at any time — not just set it up once and hope it stayed accurate.</p>
+          </div>
+        </section>
+
+        <!-- Edge Cases -->
+        <section class="cs-section">
+          <span class="cs-label">Edge Cases</span>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Wrong client selected, mid-conversation.</h3>
+            <div class="cs-img-placeholder" style="border: none;">
+              <video src="Sage-Midconvoswitch.mp4?v=20260918" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;" autoplay muted loop playsinline></video>
+            </div>
+            <p class="cs-body" style="margin-top: 2rem;">If a designer starts asking questions with the wrong client selected, they can just switch the client selector — the entire conversation carries over to the newly selected client's context, rather than forcing a restart.</p>
           </div>
         </section>
 
@@ -729,11 +968,11 @@
           <span class="cs-label">Reflections</span>
           <div class="cs-reflections">
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">The default AI pattern is a chatbot. That's not always wrong — but it's rarely enough.</h3>
+              <h3 class="cs-solution-title">The default AI pattern is a chatbot. That's not always wrong — but it's rarely enough.</h3>
               <p class="cs-body">When we started, a standalone chat felt like the natural shape for an AI feature. It's easy to scope, easy to ship, and it's what users expect. But easy to ship and actually useful aren't the same thing. The chatbot screen taught me that the most important design decision for an AI feature isn't what it does — it's where it lives and when it shows up.</p>
             </div>
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Constraints forced better decisions.</h3>
+              <h3 class="cs-solution-title">Constraints forced better decisions.</h3>
               <p class="cs-body">The client memory limitation was frustrating at first. We wanted passive learning; we got structured onboarding instead. But the forced explicitness turned out to produce something more reliable and more trustworthy. The designer built the context intentionally, so they trust it. That's worth more than a system that inferred something and might have gotten it wrong. I've started thinking about technical constraints less as blockers and more as redirects — they push you toward solutions you wouldn't have considered otherwise.</p>
             </div>
           </div>
@@ -744,16 +983,6 @@
           <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
         </section>
 
-        <!-- Next -->
-        <section class="cs-section cs-next">
-          <span class="cs-label">Next</span>
-          <div class="cs-next-card" data-next-card="card-1" style="background-image: url('Synthesis hero image.png'); background-size: cover; background-position: center;">
-            <div class="cs-next-overlay">
-              <h3 class="cs-next-title">Ideate - Synthesis</h3>
-              <p class="cs-next-desc">Turning a passive moodboarding / inspiration gathering tool into a collaborative, decision-making workflow for designers.</p>
-            </div>
-          </div>
-        </section>
 
       </div><!-- /.cs-content -->
     </div><!-- /.cs-wrap -->
@@ -761,17 +990,20 @@
 
   <!-- IDEATE case study template -->
   <template id="ideate-content">
-    <div class="cs-wrap">
+    <div class="cs-wrap atlas-v2">
 
       <!-- Left scroll-spy nav -->
       <nav class="cs-sidenav" aria-label="Page sections">
-        <a class="cs-nav-item" data-target="cs-overview">Overview</a>
-        <a class="cs-nav-item" data-target="cs-impact">Impact</a>
-        <a class="cs-nav-item" data-target="cs-mission">Mission</a>
-        <a class="cs-nav-item" data-target="cs-research">Research</a>
-        <a class="cs-nav-item" data-target="cs-activation">Activation</a>
-        <a class="cs-nav-item" data-target="cs-collaboration">Collaboration</a>
-        <a class="cs-nav-item" data-target="cs-reflections">Reflections</a>
+        <a href="#" class="atlas-back-link atlas-eyebrow" data-atlas-back>← Back</a>
+        <div class="atlas-nav-items">
+          <a class="cs-nav-item" data-target="cs-overview">Overview</a>
+          <a class="cs-nav-item" data-target="cs-impact">Impact</a>
+          <a class="cs-nav-item" data-target="cs-mission">Mission</a>
+          <a class="cs-nav-item" data-target="cs-research">Research</a>
+          <a class="cs-nav-item" data-target="cs-activation">Activation</a>
+          <a class="cs-nav-item" data-target="cs-collaboration">Collaboration</a>
+          <a class="cs-nav-item" data-target="cs-reflections">Reflections</a>
+        </div>
       </nav>
 
       <!-- Main content -->
@@ -779,21 +1011,23 @@
 
         <!-- Overview -->
         <div id="cs-overview" class="cs-header">
-          <img src="Synthesis_Logo.png" alt="Synthesis logo" class="cs-product-logo">
-          <div class="cs-header-row">
-            <div class="cs-header-left">
-              <p class="cs-title">Ideate - Synthesis</p>
-              <p class="cs-subtitle">Ideate is building a suite of tools for design agencies to streamline creative workflows and manage operations end-to-end, from early concepting to execution.</p>
-              <p class="cs-role-desc">I led the redesign of Synthesis as the founding designer — turning a passive moodboarding / inspiration gathering tool into a collaborative, decision-making workflow for designers.</p>
+          <div class="atlas-breadcrumb-row">
+            <span class="atlas-eyebrow">Ideate • 2025–Present</span>
+          </div>
+          <h1 class="atlas-hero-title">A Collaborative Canvas for<br>Setting Creative Direction</h1>
+          <p class="cs-body" style="max-width: 620px; margin-bottom: 2.5rem;">Ideate is building a suite of tools for design agencies to streamline creative workflows and manage operations end-to-end, from early concepting to execution. I led the redesign of Synthesis as the founding designer — turning a passive moodboarding tool into a collaborative, decision-making workflow for designers.</p>
+          <div class="atlas-meta-bar">
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Role</span>
+              <span class="atlas-meta-value">Founding Designer<br>Product + Design</span>
             </div>
-            <div class="cs-header-meta">
-              <div class="cs-meta-block">
-                <span class="cs-meta-label cs-meta-label--title">Team</span>
-                <span class="cs-meta-value">1 Designer (Me)<br>CEO<br>CTO<br>1 Design Intern</span>
-              </div>
-              <div class="cs-meta-block">
-                <span class="cs-meta-value">2025 – Present</span>
-              </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Timeline</span>
+              <span class="atlas-meta-value">2025 – Present</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Team</span>
+              <span class="atlas-meta-value">CEO, CTO,<br>1 Design Intern</span>
             </div>
           </div>
         </div>
@@ -801,10 +1035,19 @@
         <!-- Impact -->
         <section id="cs-impact" class="cs-section">
           <span class="cs-label">Impact</span>
-          <div class="cs-impact-list">
-            <p class="cs-impact-item"><strong>+40%</strong> First Board Creation</p>
-            <p class="cs-impact-item"><strong>+30%</strong> Weekly Returning Users</p>
-            <p class="cs-impact-item"><strong>4</strong> pilot agencies signed so far</p>
+          <div class="atlas-stat-grid">
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">+40%</span>
+              <span class="atlas-stat-label">First Board Creation</span>
+            </div>
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">+30%</span>
+              <span class="atlas-stat-label">Weekly Returning Users</span>
+            </div>
+            <div class="atlas-stat-block">
+              <span class="atlas-stat-number">4</span>
+              <span class="atlas-stat-label">pilot agencies signed so far</span>
+            </div>
           </div>
         </section>
 
@@ -813,8 +1056,8 @@
 
         <!-- Mission -->
         <section id="cs-mission" class="cs-section">
-          <span class="cs-label">The Mission</span>
-          <p class="cs-statement">Improve activation and retention — give designers enough structure and value to move from first session to habit. Users were dropping off early and teams weren't returning to collaborate or iterate.</p>
+          <span class="atlas-eyebrow">The Mission</span>
+          <h2 class="atlas-section-title" style="margin-top: 1.25rem;">Improve activation and retention — give designers enough structure and value to move from first session to habit. Users were dropping off early and teams weren't returning to collaborate or iterate.</h2>
           <p class="cs-body">When I joined, the team had just shipped an MVP — of the initial signups, only 32% created a board, and most dropped off before uploading content or returning to collaborate.</p>
         </section>
 
@@ -823,12 +1066,12 @@
           <div class="cs-two-col">
             <div>
               <span class="cs-label">Research Insight 1</span>
-              <h3 class="cs-insight-title">Friction to getting started</h3>
+              <h3 class="cs-solution-title">Friction to getting started</h3>
               <p class="cs-body">Between blank canvas paralysis and no built-in content discovery within Ideate, designers were defaulting to Pinterest before ever getting started.</p>
             </div>
             <div>
               <span class="cs-label">Research Insight 2</span>
-              <h3 class="cs-insight-title">Alignment happening outside</h3>
+              <h3 class="cs-solution-title">Alignment happening outside</h3>
               <p class="cs-body">Teams relied on meetings and external docs to make decisions, even after the moodboard was built.</p>
             </div>
           </div>
@@ -839,15 +1082,15 @@
 
         <!-- Improving Activation -->
         <section id="cs-activation" class="cs-section">
-          <h2 class="cs-chapter">Improving Activation</h2>
-          <p class="cs-chapter-sub">To address early drop-off, the work focused on two things: reducing the friction to getting started and helping users understand the value of the platform before they gave up on it.</p>
+          <h2 class="atlas-section-title">Improving Activation</h2>
+          <p class="cs-body" style="margin-bottom: 2.5rem;">To address early drop-off, the work focused on two things: reducing the friction to getting started and helping users understand the value of the platform before they gave up on it.</p>
 
           <div class="cs-solution">
             <span class="cs-label">Solution 1</span>
             <h3 class="cs-solution-title">Browser Extension</h3>
             <p class="cs-body">The first step was making it easier to pull content from the web without the download-and-reupload loop. A browser extension let designers grab content directly from any site, which increased uploads but also made it clear that native content within the platform was the real need.</p>
             <div class="cs-video-wrap">
-              <video src="Synthesis - Plugin.mov" autoplay muted loop playsinline></video>
+              <video src="Synthesis - Plugin.mp4" autoplay muted loop playsinline></video>
             </div>
           </div>
 
@@ -856,7 +1099,7 @@
             <h3 class="cs-solution-title">Public Feed</h3>
             <p class="cs-body">To bring content fully into the platform, a curated public feed let users discover and save inspiration without leaving Ideate. Quality was a deliberate choice — content was sourced from trusted design publications, museum archives, and public libraries, giving it a clear edge over Pinterest's repetitive algorithm.</p>
             <div class="cs-video-wrap">
-              <video src="Synthesis - Public Feed.mov" autoplay muted loop playsinline></video>
+              <video src="Synthesis - Public Feed.mp4" autoplay muted loop playsinline></video>
             </div>
           </div>
 
@@ -877,7 +1120,7 @@
               </div>
             </div>
             <div class="cs-video-wrap">
-              <video src="Synthesis - Onboarding.mov" autoplay muted loop playsinline></video>
+              <video src="Synthesis - Onboarding.mp4" autoplay muted loop playsinline></video>
             </div>
           </div>
 
@@ -888,8 +1131,8 @@
 
         <!-- Improving Collaboration -->
         <section id="cs-collaboration" class="cs-section">
-          <h2 class="cs-chapter">Improving Collaboration</h2>
-          <p class="cs-chapter-sub">Since feedback was scattered and decisions were happening outside the tool, I wanted to bring alignment directly onto the board — giving teams the tools to give feedback, track decisions, and move forward without ever leaving Ideate.</p>
+          <h2 class="atlas-section-title">Improving Collaboration</h2>
+          <p class="cs-body" style="margin-bottom: 2.5rem;">Since feedback was scattered and decisions were happening outside the tool, I wanted to bring alignment directly onto the board — giving teams the tools to give feedback, track decisions, and move forward without ever leaving Ideate.</p>
 
           <div class="cs-solution">
             <span class="cs-label">Solution 1</span>
@@ -905,7 +1148,7 @@
             <h3 class="cs-solution-title">Commenting and Activity Feed</h3>
             <p class="cs-body">A centralized feed that surfaced incoming comments and feedback in one place, helping teams spot trends, stay aligned, and respond without digging through the board.</p>
             <div class="cs-video-wrap">
-              <video src="Synthesis - Commenting.mov" autoplay muted loop playsinline></video>
+              <video src="Synthesis - Commenting.mp4" autoplay muted loop playsinline></video>
             </div>
           </div>
 
@@ -914,7 +1157,7 @@
             <h3 class="cs-solution-title">Likes and Approval Sorting</h3>
             <p class="cs-body">Liking content translated directly to approval — a core part of how design teams align. Teams could see who was approving what and sort content by most liked, making it easy to identify what to move forward with.</p>
             <div class="cs-video-wrap">
-              <video src="Synthesis - Liking & Sorting.mov" autoplay muted loop playsinline></video>
+              <video src="Synthesis - Liking & Sorting.mp4" autoplay muted loop playsinline></video>
             </div>
           </div>
 
@@ -923,7 +1166,7 @@
             <h3 class="cs-solution-title">Pinning Content</h3>
             <p class="cs-body">A dedicated top-of-board area where teams could surface priority items and create a shared focal point for what mattered most.</p>
             <div class="cs-video-wrap">
-              <video src="Synthesis - Pinning.mov" autoplay muted loop playsinline></video>
+              <video src="Synthesis - Pinning.mp4" autoplay muted loop playsinline></video>
             </div>
           </div>
 
@@ -932,7 +1175,7 @@
             <h3 class="cs-solution-title">Presentation Mode</h3>
             <p class="cs-body">A clean, distraction-free view that let teams walk clients through the board in a focused, presentation-ready format.</p>
             <div class="cs-video-wrap">
-              <video src="Synthesis - Presentation Mode.mov" autoplay muted loop playsinline></video>
+              <video src="Synthesis - Presentation Mode.mp4" autoplay muted loop playsinline></video>
             </div>
           </div>
         </section>
@@ -945,15 +1188,15 @@
           <span class="cs-label">Reflections</span>
           <div class="cs-reflections">
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Navigating ambiguity without a PM</h3>
+              <h3 class="cs-solution-title">Navigating ambiguity without a PM</h3>
               <p class="cs-body">Without a roadmap or dedicated PM, I stepped into that role — scoping features, driving prioritization, and aligning the founding team around product decisions amid a lot of competing viewpoints.</p>
             </div>
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Using AI to move faster</h3>
+              <h3 class="cs-solution-title">Using AI to move faster</h3>
               <p class="cs-body">This project pushed me to lean into AI tools to fill gaps and accelerate the process — from drafting wireframes to rapid concept testing — fundamentally changing how I approach early-stage design work.</p>
             </div>
             <div class="cs-reflection">
-              <h3 class="cs-reflection-title">Growing as a lead</h3>
+              <h3 class="cs-solution-title">Growing as a lead</h3>
               <p class="cs-body">Mentoring a marketing intern transitioning into product design helped me develop as a leader — delegating work, collaborating cross-functionally, and co-leading a redesign of our design system documentation.</p>
             </div>
           </div>
@@ -964,16 +1207,699 @@
           <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
         </section>
 
-        <!-- Next -->
-        <section class="cs-section cs-next">
-          <span class="cs-label">Next</span>
-          <div class="cs-next-card" data-next-card="card-4" style="background-image: url('achilles background.png'); background-size: cover; background-position: center;">
-            <img src="aAchilles Hero Image.png" alt="Achilles" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;height:auto;object-fit:contain;">
-            <div class="cs-next-overlay">
-              <h3 class="cs-next-title">Achilles</h3>
-              <p class="cs-next-desc">Placeholder — add a teaser for Achilles.</p>
+
+      </div><!-- /.cs-content -->
+    </div><!-- /.cs-wrap -->
+  </template>
+
+  <!-- ATLAS case study template -->
+  <template id="atlas-content">
+    <div class="cs-wrap atlas-v2">
+
+      <!-- Left scroll-spy nav -->
+      <nav class="cs-sidenav" aria-label="Page sections">
+        <a href="#" class="atlas-back-link atlas-eyebrow" data-atlas-back>← Back</a>
+        <div class="atlas-nav-items">
+          <a class="cs-nav-item" data-target="atlas-overview">Overview</a>
+          <a class="cs-nav-item" data-target="atlas-problem">Problem</a>
+          <a class="cs-nav-item" data-target="atlas-solution">The Solution</a>
+          <a class="cs-nav-item" data-target="atlas-impact">Impact</a>
+          <a class="cs-nav-item" data-target="atlas-process">Initial Hypothesis</a>
+          <a class="cs-nav-item" data-target="atlas-discovery">Why It Failed</a>
+          <a class="cs-nav-item" data-target="atlas-pivot">The Pivot</a>
+          <a class="cs-nav-item" data-target="atlas-market-research">Research</a>
+          <a class="cs-nav-item" data-target="atlas-exploration">Explorations</a>
+          <a class="cs-nav-item" data-target="atlas-final-solution">Iterations</a>
+          <a class="cs-nav-item" data-target="atlas-reflections">Reflections</a>
+        </div>
+      </nav>
+
+      <!-- Main content -->
+      <div class="cs-content">
+
+        <!-- Overview -->
+        <div id="atlas-overview" class="cs-header">
+          <div class="atlas-breadcrumb-row">
+            <span class="atlas-eyebrow">Atlas • Shipped 2026</span>
+          </div>
+          <h1 class="atlas-hero-title">A Living Canvas for<br>Tracking Creative Work</h1>
+
+          <!-- Video walkthrough -->
+          <div class="cs-video-wrap" style="margin-bottom: 2.5rem; border-radius: 16px; overflow: hidden; padding: 0; background: none;">
+            <video src="Atlas - Motion Thumbnail.mp4?v=20260914" style="clip-path: none;" autoplay muted loop playsinline></video>
+          </div>
+
+          <div class="atlas-meta-bar atlas-meta-bar--spread">
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Role</span>
+              <span class="atlas-meta-value">Founding Product<br>Designer</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Timeline</span>
+              <span class="atlas-meta-value">2026 – Present</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Team</span>
+              <span class="atlas-meta-value">1 Designer (Me)<br>CEO<br>CTO</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Skills</span>
+              <span class="atlas-meta-value">User Research<br>Product Design<br>Product Strategy</span>
             </div>
           </div>
+        </div>
+
+        <!-- Problem -->
+        <section id="atlas-problem" class="cs-section">
+          <h2 class="atlas-section-title">Design work is scattered across files, feedback, and endless tools. For agencies juggling multiple projects, that fragmentation slows everything down — turning small delays into missed deadlines and lost client trust.</h2>
+        </section>
+
+        <!-- The Solution -->
+        <section id="atlas-solution" class="cs-section">
+          <span class="atlas-eyebrow">The Solution</span>
+          <h2 class="atlas-section-title" style="margin-top: 1.25rem;">Atlas: A living canvas that keeps a project's files, feedback, and ops data in one connected space.</h2>
+
+          <div class="cs-divider" style="margin-top: 8rem;"><span>Key Features</span></div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Host third-party files right on the canvas — Figma files and other external work live alongside everything else, instead of sitting in a separate tab.</h3>
+            <div class="cs-video-wrap">
+              <video src="Atlas-3rd party files.mp4?v=20260911" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Track to-dos, version history, and status on every node — the canvas always shows a project's current, correct state.</h3>
+            <div class="cs-video-wrap">
+              <video src="Atlas - Canvas Node.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Set creative direction with moodboards and presentations built right into the canvas — no separate tool needed to align before work begins.</h3>
+            <div class="cs-video-wrap">
+              <video src="Atlas - Moodboarding.mp4?v=20260912" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Sage: AI-assisted feedback and generation, embedded in the workspace</h3>
+            <div class="cs-video-wrap">
+              <video src="Atlas - Sage + Gen AI.mp4?v=20260913" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">See ops data at a glance with Pulse — surfacing what needs attention without leaving the canvas</h3>
+            <div class="cs-video-wrap">
+              <video src="Atlas - Pulse.mp4?v=20260914" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+        </section>
+
+        <!-- Impact -->
+        <section id="atlas-impact" class="cs-section">
+          <span class="cs-label">Impact</span>
+          <div class="cs-two-col" style="align-items: center;">
+            <img src="impact image.jpg?v=2" alt="Impact" style="width: 100%; border-radius: 10px;">
+            <div class="atlas-stat-grid" style="flex-direction: column; gap: 2rem;">
+              <div class="atlas-stat-block">
+                <span class="atlas-stat-number">6</span>
+                <span class="atlas-stat-label">pilot agencies signed so far.</span>
+              </div>
+              <div class="atlas-stat-block">
+                <span class="atlas-stat-number">44%</span>
+                <span class="atlas-stat-label">of users who tried the canvas view returned to use it again within a week.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>How I Got Here</span></div>
+
+        <!-- Current Design Process -->
+        <section id="atlas-process" class="cs-section">
+          <span class="atlas-eyebrow">Our Initial Hypothesis</span>
+          <div class="cs-img-placeholder" style="border: none; padding: 0; margin-top: 1.25rem; aspect-ratio: 2.75 / 1; overflow: hidden; position: relative;">
+            <img src="Atlas-Designteam process.png" alt="Current design process" style="width: 100%; height: 100%; object-fit: contain; border-radius: 16px; transform: scale(1.14);">
+            <span class="cs-body" style="position: absolute; bottom: 16px; right: 16px; font-style: italic; margin-bottom: 0; color: #aaa;">The current design process for agencies</span>
+          </div>
+          <h3 class="cs-solution-title" style="margin-top: 1.25rem;">Fix fragmentation at the source: moodboarding is a key step in shaping creative direction, making it the highest-leverage place to keep decisions and context connected downstream.</h3>
+        </section>
+
+        <!-- First Solution: Synthesis -->
+        <section id="atlas-synthesis" class="cs-section">
+          <span class="cs-label">First Solution</span>
+          <h3 class="cs-solution-title">Synthesis: A standalone tool for setting creative direction, built to solve fragmentation before it starts.</h3>
+          <p class="cs-body">Synthesis let teams build mood boards from curated content or their own Agency Libraries, gather async client feedback directly on the board, and present and hand off without leaving the tool.</p>
+          <div class="cs-video-wrap">
+            <video src="Atlas-Synthesis Walthrough.mp4?v=20260913" autoplay muted loop playsinline></video>
+          </div>
+          <a href="#" data-open-case="card-1" class="cs-body" style="display: inline-block; margin-top: 1rem; text-decoration: underline;">Read the full Synthesis case study →</a>
+        </section>
+
+        <!-- Second Solution: Sage (temporarily removed, may bring back later)
+        <section id="atlas-sage" class="cs-section">
+          <span class="cs-label">Second Solution</span>
+          <h3 class="cs-solution-title">Sage: A persistent AI layer, onboarded at the start of every project to hold client context as it grows.</h3>
+          <p class="cs-body">In parallel, Sage started as a feedback translator — designers could drop in ambiguous client language and get back something actionable, then grew into a strategically-trained assistant built for how design agencies actually work. It solved a real pain point, but it was also sitting apart from the work itself, one more surface to check.</p>
+          <div class="cs-video-wrap">
+            <video src="Sage Chat.mp4" autoplay muted loop playsinline></video>
+          </div>
+        </section>
+        -->
+
+        <!-- Why It Failed -->
+        <section id="atlas-discovery" class="cs-section">
+          <span class="atlas-eyebrow">Why it failed</span>
+          <h2 class="atlas-section-title" style="margin-top: 1.25rem;">We fixed the highest-leverage step and it still failed — because it lived apart from everything else. Solving one piece of a scattered workflow just adds to the scatter.</h2>
+          <p class="cs-body">We saw a high drop-off rate once a board was created — boards weren't sticky, with no week-over-week return. Digging into it surfaced two distinct problems:</p>
+          <span class="atlas-eyebrow" style="margin-top: 3.5rem;">Pain Points</span>
+          <div class="cs-two-col" style="margin-top: 1.25rem;">
+            <div>
+              <h3 class="cs-solution-title">1. No content on the platform</h3>
+              <p class="cs-body">Unlike Pinterest, Synthesis didn't offer content — designers had nowhere to start from. We built Agency Libraries and a public feed to close this gap, which improved traction but not enough.</p>
+            </div>
+            <div>
+              <h3 class="cs-solution-title">2. Still a siloed tool</h3>
+              <p class="cs-body">Even with better collaboration than alternatives, Synthesis was one more tool to adopt. Teams could get away with Figma instead.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>The Pivot</span></div>
+
+        <!-- The Pivot: Atlas -->
+        <section id="atlas-pivot" class="cs-section">
+          <h3 class="cs-solution-title">Atlas</h3>
+          <p class="cs-body">That insight is what led to Atlas — Atlas is a living canvas — a single spatial surface where a project's files, version history, status, and assets converge, built around how design work actually moves. It replaces a scatter of disconnected tools with one unified hub.</p>
+          <div class="cs-img-placeholder" style="aspect-ratio: 1728 / 1117; border: none; padding: 40px; display: flex; align-items: center; justify-content: center;">
+            <img src="Atlas-Thumbnail.png?v=20260913" alt="Atlas canvas" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+        </section>
+
+        <!-- Design Process Intro -->
+        <!-- Market Research -->
+        <section id="atlas-market-research" class="cs-section">
+          <span class="atlas-eyebrow">Market Research</span>
+          <p class="cs-body" style="margin-top: 1.25rem;">Existing tools force a tradeoff: Figma and Miro offer visual flexibility with no structure, while Asana and Monday offer structure with none of the visual flexibility design work needs. Atlas is a solution that delivers both.</p>
+          <div class="cs-img-placeholder" style="border: none; padding: 0; margin-top: 1.25rem; aspect-ratio: 1309 / 1056; overflow: hidden;">
+            <img src="Atlas-Market Research.png" alt="Market research" style="width: 100%; height: 100%; object-fit: contain; border-radius: 16px;">
+          </div>
+        </section>
+
+        <section id="atlas-process-intro" class="cs-section" style="margin-bottom: 10rem;">
+          <span class="atlas-eyebrow">User Research Findings</span>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 1.25rem;">
+            <div>
+              <h3 class="cs-solution-title">1. Design work lives in files, not tasks</h3>
+              <p class="cs-body">They need a tool that works in a messy, fluid environment and considers fault tolerance</p>
+            </div>
+            <div>
+              <h3 class="cs-solution-title">2. Designers don't always need more structure</h3>
+              <p class="cs-body">They want a system that reflects how creative work actually unfolds, not a linear task pipeline.</p>
+            </div>
+            <div>
+              <h3 class="cs-solution-title">3. PM tools create overhead</h3>
+              <p class="cs-body">(Manual tools like Excel, Google Sheets, etc reduce this)<br>The moment a tool adds more process than value, designers switch to the simplest option.</p>
+            </div>
+          </div>
+
+          <!-- Digging into why designers resisted traditional PM tools surfaced these patterns — they enforce linear workflows, prioritize data over visuals, and feel rigid and corporate. Designers needed a system that reflected how creative work actually happens: messy, iterative, multi-touchpoint, and visual. (temporarily removed, may bring back later) -->
+          <h2 class="atlas-section-title" style="margin-top: 10rem;">How might we build a single workspace that holds everything a project needs — files, feedback, and ops data — without flattening how design work actually moves?</h2>
+        </section>
+
+        <!-- Exploration -->
+        <section id="atlas-exploration" class="cs-section">
+          <span class="atlas-eyebrow">Explorations</span>
+
+          <div class="cs-solution" style="margin-top: 1.25rem;">
+            <h3 class="cs-solution-title">1. What a node tracks</h3>
+            <p class="cs-body">Every touchpoint on the canvas — files, moodboards, to-dos, ops data — lives inside a node.</p>
+            <p class="cs-body" style="margin-top: 1.25rem;">The first question was what a node needed to hold at rest versus on interaction — what's visible at a glance, and what only surfaces on hover. We didn't want to bombard users with fields to manually maintain, so we landed on three things a node can track, all optional depending on node type:</p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 3rem; row-gap: 1.25rem; margin-top: 1.25rem;">
+              <div>
+                <div class="cs-img-placeholder" style="margin-top: 0; margin-bottom: 1.25rem; padding: 12px; border: none;">
+                  <img src="Atlas-versionhistory.png?v=20260914" alt="Version history" style="width: 100%; height: 100%; object-fit: contain; object-position: center; border-radius: 8px; transform: scale(0.9);">
+                </div>
+                <h3 class="cs-solution-title">Version history</h3>
+                <p class="cs-body">For a design file, re-uploading a version (after editing elsewhere, like Figma) keeps a running history without manual logging.</p>
+              </div>
+              <div>
+                <div class="cs-img-placeholder" style="margin-top: 0; margin-bottom: 1.25rem; padding: 12px; border: none;">
+                  <img src="Atlas-To-Do's.png" alt="To-do's" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; transform: scale(0.8);">
+                </div>
+                <h3 class="cs-solution-title">To-do's</h3>
+                <p class="cs-body">For tracking changes or discussion happening outside the node's source file.</p>
+              </div>
+              <div>
+                <div class="cs-img-placeholder" style="margin-top: 0; margin-bottom: 1.25rem; padding: 12px; border: none;">
+                  <img src="Atlas-Status.png" alt="Status" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; transform: scale(0.76);">
+                </div>
+                <h3 class="cs-solution-title">Status</h3>
+                <p class="cs-body">A simple dropdown (in progress, in review, done), Kanban-style.</p>
+              </div>
+            </div>
+            <div class="cs-img-placeholder" style="margin-top: 3.5rem; padding: calc(2rem - 6px); border: none; box-sizing: border-box;">
+              <img src="Atlas-Node Connectors (Cut).png?v=20260909b" alt="Node connectors (cut)" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
+            </div>
+            <h3 class="cs-solution-title" style="margin-top: 1.25rem;">Connectors (cut out)</h3>
+            <p class="cs-body">Considered and cut. Early on, we experimented with making every node connectable, to show a general path of how work moved across the canvas. We cut this for general use — it made more sense as a targeted interaction pattern for specific flows (presentations, the AI generation flow, and grouping nodes into moodboards) than as a default behavior every node needed.</p>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">2. Bringing Sage into the canvas</h3>
+            <p class="cs-body">Sage began as a feedback translator in Synthesis, then grew into a persistent context layer — tracking clients, their working styles, and preferences. <a href="#" data-open-case="card-3" style="text-decoration: underline;">Read the full Sage case study →</a></p>
+            <div class="cs-img-placeholder" style="margin-top: 1.25rem; padding: calc(2rem - 6px); border: none; box-sizing: border-box;">
+              <img src="Atlas -Sage before vs after.png?v=20260914" alt="Sage before vs. after" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
+            </div>
+            <h3 class="cs-solution-title" style="margin-top: 1.25rem;">Nodes vs. Modal</h3>
+            <p class="cs-body">The team pushed for Sage to live as nodes on the canvas — each conversation its own object, letting users ask one-off questions, make changes, and use the node as a kind of change log. I prototyped it, but my initial hypothesis held: user research showed these nodes scattered across the canvas and became hard to track. We moved back to a side-panel chat instead.</p>
+            <div class="cs-img-placeholder" style="margin-top: 3.5rem; padding: 0; border: none; aspect-ratio: 1738 / 986; overflow: hidden;">
+              <video src="Atlas-NewGen AI.mp4?v=20260914b" style="width: 100%; height: calc(100% + 8px); object-fit: cover; object-position: center -10px; border-radius: 16px; transform: scale(0.85); transform-origin: center; clip-path: inset(0 0 22px 0);" autoplay muted loop playsinline></video>
+            </div>
+            <h3 class="cs-solution-title" style="margin-top: 1.25rem;">Feedback, then generation</h3>
+            <p class="cs-body">User research showed demand for AI-generated mockups and the ability to string together presentations quickly. Since Sage already had project and client context, its output could be more relevant than a generic third-party tool — and it meant one less tool to juggle. So we built generation in directly.</p>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">3. Making ops data scannable for designers, but effective for PMs (Still in Progress)</h3>
+
+            <div class="cs-two-col" style="margin-top: 1.25rem;">
+              <div>
+                <p class="cs-body">Designers need</p>
+                <ul class="cs-bullet-list" style="margin-top: 0.75rem;">
+                  <li>A fast, non-judgmental scan — status, not a score</li>
+                  <li>Ops data that doesn't break creative flow or feel like a foreign PM tool</li>
+                </ul>
+              </div>
+              <div>
+                <p class="cs-body">PMs need</p>
+                <ul class="cs-bullet-list" style="margin-top: 0.75rem;">
+                  <li>Enough granularity to actually catch and act on blockers</li>
+                  <li>Confidence to trust an auto-suggested schedule shift, not just a flag</li>
+                </ul>
+              </div>
+            </div>
+
+            <!--
+            <div class="cs-solution" style="margin-top: 3.5rem;">
+              <h3 class="cs-solution-title">1. Project Pulse explorations</h3>
+              <p class="cs-body">A color-coded daily timeline on the home screen, flagging what needs to be triaged and the overall health status of the day across active projects.</p>
+              <div class="cs-img-placeholder"></div>
+            </div>
+            -->
+
+            <div class="cs-solution" style="margin-top: 3.5rem; margin-bottom: 1.5rem;">
+              <h3 class="cs-solution-title">1. Ops data cards explorations</h3>
+              <p class="cs-body">Financial, capacity, and health data surfaced directly on the canvas itself, alongside the creative work for that specific project.</p>
+              <div class="cs-img-placeholder" style="border: none;">
+                <img src="Atlas-Ops cards.png?v=20260914" alt="Ops data cards explorations" style="width: 100%; height: 100%; object-fit: contain; transform: scale(0.7); transform-origin: center;">
+              </div>
+            </div>
+
+            <p class="cs-body" style="margin-top: 2rem;">What we're testing:</p>
+            <ul class="cs-bullet-list" style="margin-top: 0.5rem;">
+              <li>Do the ops cards feel native to the canvas, or bolted on?</li>
+              <li>Does surfacing this data at a glance read as status, or as a hidden performance score?</li>
+              <li>Does surfacing blockers this visibly change designer behavior in unwanted ways?</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Iterations -->
+        <section id="atlas-final-solution" class="cs-section">
+          <span class="atlas-eyebrow">Iterations</span>
+
+          <div class="cs-solution" style="margin-top: 1.25rem;">
+            <h3 class="cs-solution-title">1. Initial designs</h3>
+            <p class="cs-body">Before any code, I mapped out what the canvas needed to hold and how it would look</p>
+            <div class="cs-img-placeholder" style="border: none;">
+              <img src="Atlas-Initial Designs.png?v=20260914" alt="Initial designs" style="width: 100%; height: 100%; object-fit: contain; object-position: center; border-radius: 8px; transform: scale(0.8); transform-origin: center;">
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">2. Vibe-coded prototype</h3>
+            <p class="cs-body">Since we were pivoting drastically, I wanted quick feedback before building it out fully — so I built a working version with Claude, deployed on Vercel, to get the canvas in front of real users fast.</p>
+            <div class="cs-video-wrap">
+              <video src="Atlas - Vibe coded prototype.mp4" style="clip-path: inset(4px round 8px);" autoplay muted loop playsinline></video>
+            </div>
+            <span class="atlas-eyebrow" style="margin-top: 1.25rem;">Outcomes</span>
+            <p class="cs-body" style="margin-top: 1.25rem;">Used in demos for all 5 pilot agencies to showcase what was coming next, ahead of a polished build. A real, working canvas — not static mockups — gave pilots a tangible sense of direction and helped move sign-on conversations forward.</p>
+          </div>
+        </section>
+
+        <!-- What's Coming Next (temporarily hidden, may bring back later)
+        <section id="atlas-whats-next" class="cs-section">
+          <span class="atlas-eyebrow">What's Coming Next?</span>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 1.25rem;">
+            <div>
+              <h3 class="cs-solution-title">1. Full ops data suite</h3>
+              <p class="cs-body">Financial Performance and Capacity & Resourcing cards — the pieces of the dashboard that didn't make it into the Solution section because they're still thin. Pulse got the deep dive; these are the natural next layer.</p>
+            </div>
+            <div>
+              <h3 class="cs-solution-title">1. Time tracking</h3>
+            </div>
+            <div>
+              <h3 class="cs-solution-title">2. Deeper Sage capabilities</h3>
+            </div>
+          </div>
+        </section>
+        -->
+
+        <!-- Key Touchpoints (temporarily removed, may bring back later)
+        <div class="cs-divider"><span>Key Touchpoints</span></div>
+
+        <section id="atlas-touchpoints" class="cs-section">
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">The Canvas</h3>
+            <p class="cs-body">Internal work and third-party files live side by side on the same surface, instead of scattered across whatever tools a team happens to use.</p>
+            <div class="cs-video-wrap">
+              <video src="Atlas - Canvas.mp4?v=20260902" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Moodboarding &amp; Presentations</h3>
+            <p class="cs-body">The moodboarding tool we originally built standalone is now part of Atlas — same collaborative tools for landing on a direction, without leaving the canvas. Presentations work the same way, built by stringing nodes together.</p>
+            <div class="cs-video-wrap">
+              <video src="Atlas - Moodboarding.mp4?v=20260912" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Generation On Canvas</h3>
+            <p class="cs-body">Mockups and collateral are generated directly on the canvas using Sage, with easy tweaks from there — version history tracked automatically. Those same generated assets pull straight into presentations, without recreating or re-uploading anything.</p>
+            <div class="cs-video-wrap">
+              <video src="Atlas - Sage + Gen AI.mp4?v=20260913" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+        </section>
+        -->
+
+        <!-- What This Taught Me -->
+        <section id="atlas-reflections" class="cs-section">
+          <span class="cs-label">Reflections</span>
+          <div class="cs-reflections">
+            <div class="cs-reflection">
+              <h3 class="cs-solution-title">Building a case to validate the pivot</h3>
+              <p class="cs-body">When I joined, the CEO had a vision for a suite of tools to tackle the gap we'd found, starting with Synthesis. I was doubtful, but didn't have a clear enough read to push back on gut feel alone — so I spent time actually validating it: digging into behavioral data in PostHog to find where users were dropping off, and talking to them directly to understand where the tool fell short. That combination is what built the case to pivot to Atlas.</p>
+            </div>
+            <div class="cs-reflection">
+              <h3 class="cs-solution-title">Vibe-coding to validate faster</h3>
+              <p class="cs-body">After already sinking time into building Synthesis, I didn't want to lose that momentum waiting on the usual design-to-dev handoff before we knew if the new concept held up. So I vibe-coded a working prototype to test it quickly and get concrete feedback on what didn't feel intuitive — giving us something real to react to before we committed to building it properly. That process ended up cutting through a lot of the normal design cycle for me, and I've stayed more involved in the front end since, making changes and pushing PRs myself.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="cs-section cs-closing">
+          <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
+        </section>
+
+
+      </div><!-- /.cs-content -->
+    </div><!-- /.cs-wrap -->
+  </template>
+
+  <!-- PTPAL case study template -->
+  <template id="ptpal-content">
+    <div class="cs-wrap atlas-v2">
+
+      <!-- Left scroll-spy nav -->
+      <nav class="cs-sidenav" aria-label="Page sections">
+        <a href="#" class="atlas-back-link atlas-eyebrow" data-atlas-back>← Back</a>
+        <div class="atlas-nav-items">
+          <a class="cs-nav-item" data-target="ptpal-overview">Overview</a>
+          <a class="cs-nav-item" data-target="ptpal-problem">Problem</a>
+          <a class="cs-nav-item" data-target="ptpal-solution-statement">Solution</a>
+          <a class="cs-nav-item" data-target="ptpal-research">Research</a>
+          <!-- <a class="cs-nav-item" data-target="ptpal-goals">Design Goals</a> -->
+          <a class="cs-nav-item" data-target="ptpal-iterations">Iterations</a>
+          <a class="cs-nav-item" data-target="ptpal-demo">Product Demo</a>
+          <a class="cs-nav-item" data-target="ptpal-reflections">Reflections</a>
+        </div>
+      </nav>
+
+      <!-- Main content -->
+      <div class="cs-content">
+
+        <!-- Overview -->
+        <div id="ptpal-overview" class="cs-header">
+          <div class="atlas-breadcrumb-row">
+            <span class="atlas-eyebrow">PT-PAL • Concept 2023</span>
+          </div>
+          <h1 class="atlas-hero-title">An at-home PT system that guides patients through recovery with real-time form feedback.</h1>
+          <div class="cs-video-wrap" style="margin-bottom: 2.5rem; border-radius: 16px; overflow: hidden; padding: 0; aspect-ratio: 3 / 2; background-image: url('PTPAL-thumbnail background.png'); background-size: cover; background-position: center; position: relative;">
+            <img src="PTPAL-Thumbnail.png" alt="PTPAL" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 80%; max-height: 80%; object-fit: contain;">
+          </div>
+          <div class="atlas-meta-bar atlas-meta-bar--spread">
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Role</span>
+              <span class="atlas-meta-value">Product Builder</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Timeline</span>
+              <span class="atlas-meta-value">Jan – May<br>(4 months)</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Team</span>
+              <span class="atlas-meta-value">UCSF & Columbia<br>School of PT</span>
+            </div>
+            <div class="atlas-meta-field">
+              <span class="atlas-eyebrow">Skills</span>
+              <span class="atlas-meta-value">UX Research<br>Product Design<br>Product Strategy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem statement -->
+        <section id="ptpal-problem" class="cs-section">
+          <h3 class="cs-solution-title">Most physical therapy happens at home, between sessions, with no one watching. Once patients start feeling &ldquo;normal,&rdquo; motivation drops and they fall off their programs, prolonging recovery. They&rsquo;re unsure whether they&rsquo;re doing exercises correctly, and therapists have little visibility into what happens between visits.</h3>
+        </section>
+
+        <!-- Solution statement -->
+        <section id="ptpal-solution-statement" class="cs-section">
+          <span class="cs-label">Solution</span>
+          <h3 class="cs-solution-title">An end-to-end system that pairs a phone, TV, and motion-tracking camera to guide patients through exercises with real-time form feedback, track their progress, and keep them connected to their provider between sessions.</h3>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Key Touchpoints</span></div>
+
+        <!-- Solutions -->
+        <section id="ptpal-solutions" class="cs-section">
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Onboarding</h3>
+            <p class="cs-body">Members are invited by their provider to join PTPAL, verify their identity, and are welcomed with a concise overview of the platform's features and usage.</p>
+            <div class="cs-video-wrap">
+              <video src="PTPAL-Onboarding.mp4?v=20260924" style="width: auto; max-width: 100%; margin: 0 auto; clip-path: inset(8px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">TV Pairing</h3>
+            <p class="cs-body">Members can pair the app with their TV for a more immersive workout experience, improving visibility and focus on proper form during exercises.</p>
+            <div class="cs-video-wrap">
+              <video src="PTPAL-TV Pairing.mp4?v=20260924" style="width: auto; max-width: 100%; margin: 0 auto; clip-path: inset(8px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Guided Workouts</h3>
+            <p class="cs-body">Members can follow guided exercise videos to ensure they perform exercises correctly at home.</p>
+            <div class="cs-video-wrap">
+              <video src="PTPAL-Guidedworkouts.mp4?v=20260930" style="width: auto; max-width: 100%; margin: 0 auto; clip-path: inset(8px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Mirrored Workouts</h3>
+            <p class="cs-body">Members receive visual cues, track sets and reps, and get real-time audio feedback for corrections during exercises.</p>
+            <div class="cs-video-wrap">
+              <video src="PTPAL-Mirrored Workouts.mp4?v=20260930" style="width: auto; max-width: 100%; margin: 0 auto; clip-path: inset(8px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Exercise Details</h3>
+            <p class="cs-body">Members can log workout details, such as reps and pain levels, to share with their provider.</p>
+            <div class="cs-video-wrap">
+              <video src="PTPAL-Exercise Details.mp4?v=20260924" style="width: auto; max-width: 100%; margin: 0 auto; clip-path: inset(8px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Exercise Submissions</h3>
+            <p class="cs-body">After workouts, members can leave feedback, share videos for review, and message their provider anytime using the in-app messaging service to stay connected.</p>
+            <div class="cs-video-wrap">
+              <video src="PTPAL-Exercise Submissions.mp4?v=20260924b" style="width: auto; max-width: 100%; margin: 0 auto; clip-path: inset(8px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Progress Overview</h3>
+            <p class="cs-body">Over time, members can track recovery progress, review achievements, and monitor goal-based improvements.</p>
+            <div class="cs-video-wrap">
+              <video src="PTPAL-Progress Overview.mp4?v=20260925" style="width: auto; max-width: 100%; margin: 0 auto; clip-path: inset(8px);" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>How I Got Here</span></div>
+
+        <!-- Research -->
+        <section id="ptpal-research" class="cs-section">
+          <h2 class="atlas-section-title">The motivation came from my own experience with rehab.</h2>
+          <p class="cs-body">In the winter of 2021, I had a major knee injury that shaped much of my college experience. I eventually recovered with help from my physicians and physical therapists, but the journey was hard, with a lengthy recovery, confusion over exercises, and anxiety from inconsistent programming. It showed me real gaps in how patients are supported between sessions.</p>
+          <div class="cs-img-placeholder" style="border: none; display: flex; align-items: center; justify-content: center;">
+            <img src="PTPAL-Initia lQuestions.png?v=20260930" alt="PTPAL initial questions" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+          </div>
+          <p class="cs-body" style="margin-top: 2rem;">In addition, in 2023, <strong>the physical therapy software market was valued at USD 1.1 billion</strong>. With few well-designed solutions offering real-time guidance between PT sessions, I expected my product to make a significant impact within this market.</p>
+
+          <span class="cs-label" style="margin-top: 6rem;">Research</span>
+          <h3 class="cs-solution-title">I interviewed patients and physical therapists to understand why at-home PT falls apart and found:</h3>
+          <div class="cs-two-col" style="margin-top: 3.5rem;">
+            <div>
+              <h3 class="cs-solution-title">01. Motivation drops once patients start feeling better.</h3>
+              <p class="cs-body">Therapists see motivation plateau when patients&rsquo; bodies start feeling &ldquo;normal,&rdquo; which disrupts their programs and prolongs recovery.</p>
+            </div>
+            <div>
+              <h3 class="cs-solution-title">02. There&rsquo;s no accountability between sessions.</h3>
+              <p class="cs-body">Therapists want to track progress outside sessions, but patients lack a simple way to log and report workouts, so consistency slips.</p>
+            </div>
+            <div>
+              <h3 class="cs-solution-title">03. Patients aren&rsquo;t confident doing exercises alone.</h3>
+              <p class="cs-body">Patients want more guidance and feedback at home to make sure their form is right.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Problem statement -->
+        <section class="cs-section" style="padding-block: 2rem;">
+          <span class="cs-label">Design Goal</span>
+          <h3 class="cs-solution-title">How might we educate patients on the value of Physical Therapy and help them stay motivated and accountable with their exercise programming throughout their recovery?</h3>
+        </section>
+
+        <!-- Design Goals (hidden — remove this comment wrapper to restore)
+        <section id="ptpal-goals" class="cs-section">
+          <span class="cs-label">Design Goals</span>
+          <h3 class="cs-solution-title">How did I get started with designs?</h3>
+          <p class="cs-body">I brainstormed key features for the ideal experience and used a prioritization matrix to evaluate them based on impact and effort. This helped me define design goals to focus on for the MVP.</p>
+          <div class="cs-img-placeholder"></div>
+          <p class="cs-body" style="margin-top: 2rem;"><strong>01.</strong> Enable patients to view their daily exercises in a concise manner</p>
+          <p class="cs-body" style="margin-top: 1.25rem;"><strong>02.</strong> Enable PTs to track their patients' workout consistency</p>
+          <p class="cs-body" style="margin-top: 1.25rem;"><strong>03.</strong> Enable patients to receive detailed info on how to perform their exercises at home (e.g., exercise details, audio guidance, etc.)</p>
+          <p class="cs-body" style="margin-top: 1.25rem;"><strong>04.</strong> Enable patients to input performance feedback on workouts (e.g., report sets, reps, discomfort, etc.)</p>
+          <p class="cs-body" style="margin-top: 1.25rem;"><strong>05.</strong> Enable patients to track their recovery over time to have a better understanding of how they are progressing</p>
+        </section>
+        -->
+
+        <!-- Section divider -->
+        <div class="cs-divider"><span>Iterations</span></div>
+
+        <!-- Iterations -->
+        <section id="ptpal-iterations" class="cs-section">
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Version 1: Mobile App + Watch</h3>
+            <p class="cs-body">The first version featured a mobile app paired with an Apple Watch app to provide users more autonomy while following the app's guidance.</p>
+            <div class="cs-img-placeholder" style="border: none; display: flex; align-items: center; justify-content: center;">
+              <img src="PTPAL-Design Iteration 1.png?v=20260925" alt="PTPAL design iteration 1 — Version 1: Mobile App + Watch" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+            </div>
+            <p class="cs-body" style="margin-top: 2rem; font-weight: 500; color: #000;">Feedback & Insights</p>
+            <div class="cs-two-col" style="margin-top: 1.5rem;">
+              <div>
+                <h3 class="cs-solution-title">The watch felt redundant.</h3>
+                <p class="cs-body">It wasn&rsquo;t clear the watch added enough to justify keeping it in sync with the mobile app.</p>
+              </div>
+              <div>
+                <h3 class="cs-solution-title">Screens were too cluttered.</h3>
+                <p class="cs-body">Pop-ups for guided videos and exercise details lacked hierarchy, overwhelming users with too many tabs and inputs.</p>
+              </div>
+              <div>
+                <h3 class="cs-solution-title">Videos weren&rsquo;t enough to build confidence.</h3>
+                <p class="cs-body">Videos helped patients remember exercises, but they weren&rsquo;t sure they were doing them correctly and wanted real-time feedback.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-divider-plain"></div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Version 2: TV</h3>
+            <p class="cs-body">Based on feedback, I tested a new version of the concept on a TV interface, allowing patients to watch themselves perform exercises in real time alongside guided videos.</p>
+            <div class="cs-img-placeholder" style="border: none; display: flex; align-items: center; justify-content: center;">
+              <img src="PTPAL-Design Iteration 2.png?v=20260925" alt="PTPAL design iteration 2 — Version 2: TV" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+            </div>
+            <p class="cs-body" style="margin-top: 2rem; font-weight: 500; color: #000;">Feedback & Insights</p>
+            <div class="cs-two-col" style="margin-top: 1.5rem;">
+              <div>
+                <h3 class="cs-solution-title">Co-designing real-time form tracking with PTs.</h3>
+                <p class="cs-body">I worked with physical therapists on a concept that uses AI and 3D projections to track exercises and give real-time feedback, making at-home training more accurate.</p>
+              </div>
+              <div>
+                <h3 class="cs-solution-title">The UI felt like a touchscreen, not a TV.</h3>
+                <p class="cs-body">Some participants said the interface resembled a tablet, so I reworked it around TV UI guidelines.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-divider-plain"></div>
+
+          <div class="cs-solution">
+            <h3 class="cs-solution-title">Final Version</h3>
+            <p class="cs-body">I designed an experience using existing home technologies, combining three devices: a motion-tracking camera with lidar sensors, a mobile phone for feedback, and a TV to display video footage of the patient.</p>
+            <div class="cs-img-placeholder" style="border: none; display: flex; align-items: center; justify-content: center;">
+              <img src="PTPAL-Iteration3.png?v=20260930" alt="PTPAL final version wireframes" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+            </div>
+            <p class="cs-body" style="margin-top: 1rem; font-style: italic; color: #aaa;">A few of the wireframes from the final version</p>
+          </div>
+        </section>
+
+        <!-- Design System -->
+        <section id="ptpal-system" class="cs-section">
+          <h3 class="cs-solution-title">Mapping out the system</h3>
+          <p class="cs-body">With core interactions defined, I mapped out the final version of PTPAL, including key features like onboarding, home page, exercise details, TV workouts, and progress summaries for wireframing.</p>
+          <div class="cs-img-placeholder" style="border: none; display: flex; align-items: center; justify-content: center; padding: 3rem 0;">
+            <img src="PTPAL-Final Info Arch.avif?v=20260930" alt="PTPAL final information architecture" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+          </div>
+        </section>
+
+        <!-- Product Demo -->
+        <section id="ptpal-demo" class="cs-section">
+          <h3 class="cs-solution-title">Product Demo</h3>
+          <div class="cs-img-placeholder" data-no-expand style="aspect-ratio: 16 / 9; border: none; display: flex; align-items: center; justify-content: center;">
+            <img src="PTPAL-FinalDemo.avif?v=20260930" alt="PTPAL final product demo" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;">
+          </div>
+          <p class="cs-body" style="margin-top: 1rem;"><a href="https://youtu.be/UAA6jgID4V4?si=jMO831dxMqkcPqjO" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Click here to watch the final product demo</a></p>
+        </section>
+
+        <!-- Reflections -->
+        <section id="ptpal-reflections" class="cs-section">
+          <h3 class="cs-solution-title">Reflections</h3>
+          <div class="cs-two-col" style="margin-top: 1.5rem;">
+            <div class="cs-reflection">
+              <h3 class="cs-solution-title">The project that shaped how I design.</h3>
+              <p class="cs-body">It was the most challenging and rewarding project of my undergraduate career, and it sparked my interest in how interaction design can foster connection.</p>
+            </div>
+            <div class="cs-reflection">
+              <h3 class="cs-solution-title">Next step: testing it in the real world.</h3>
+              <p class="cs-body">I'd track engagement, exercise adherence, confidence in form after real-time feedback, and recovery outcomes to see how it truly impacts patients.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="cs-section cs-closing">
+          <p class="cs-body">This is just a snapshot of the entire design process.<br>Reach out to <span style="font-weight: 500;">mitaelan07@gmail.com</span> for the full story!</p>
         </section>
 
       </div><!-- /.cs-content -->
@@ -985,9 +1911,10 @@
     <button class="cs-video-lightbox-close" id="csVideoLightboxClose" aria-label="Close">✕</button>
     <div class="cs-video-lightbox-block">
       <video id="csVideoLightboxVideo" autoplay muted loop playsinline></video>
+      <img id="csVideoLightboxImage" alt="" style="display: none;">
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260930d"></script>
 </body>
 </html>

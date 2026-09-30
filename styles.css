@@ -6,6 +6,27 @@
 }
 
 @font-face {
+  font-family: 'PP Eiko';
+  src: url('PPEiko-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display';
+  src: url('neuehaasgrotdisp-45light-trial.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display';
+  src: url('neuehaasgrotdisp-55roman-trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'TT Commons';
   src: url('TT Commons Regular.otf') format('opentype');
   font-weight: 400;
@@ -123,6 +144,7 @@ body.cursor-hover .cursor-ring {
 }
 
 .cursor-dot {
+  font-family: 'Neue Haas Grotesk Display', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   width: 6px;
   height: 6px;
   background: var(--text);
@@ -152,7 +174,7 @@ body.cursor-hover .cursor-dot {
   border-radius: 999px;
   background: transparent;
   border: 1.5px solid var(--text);
-  font-size: 0.7rem;
+  font-size: 0.45rem;
   color: var(--text);
   letter-spacing: 0.04em;
   font-weight: 500;
@@ -160,9 +182,9 @@ body.cursor-hover .cursor-dot {
 
 
 body {
-  font-family: "TT Commons", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 15px;
+  font-family: 'PP Eiko', 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 100;
+  font-size: 11px;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.5;
@@ -207,7 +229,7 @@ body.is-dark .site-header {
 }
 
 .site-nav a {
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   color: var(--text-muted);
   transition: color var(--transition);
 }
@@ -237,7 +259,7 @@ body.is-dark .site-header {
   left: 1.75rem;
   z-index: 200;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: normal;
   color: var(--text);
   transition: color var(--transition-long);
@@ -274,7 +296,7 @@ body.is-dark .site-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.6rem;
+  font-size: 0.35rem;
   font-weight: 600;
   color: #000;
   letter-spacing: 0.05em;
@@ -311,7 +333,7 @@ body.is-dark .site-header {
   background: rgba(255,255,255,0.15);
   border: 1px solid rgba(255,255,255,0.25);
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -365,6 +387,10 @@ body.is-dark .site-header {
   pointer-events: all;
 }
 
+#projectDetailCustom {
+  font-family: 'Neue Haas Grotesk Display', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
 .project-detail-modal {
   background: var(--bg);
   border: 1px solid var(--border);
@@ -372,7 +398,7 @@ body.is-dark .site-header {
   width: 92%;
   max-width: 1000px;
   height: 85vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   position: relative;
   transform: translateY(16px) scale(0.97);
   transition: transform 0.3s ease;
@@ -386,30 +412,12 @@ body.is-dark .site-header {
   transform: translateY(0) scale(1);
 }
 
-.project-detail-expand {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--border);
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  transition: background var(--transition);
-}
-
-.project-detail-expand:hover { background: rgba(255, 255, 255, 0.2); }
-
 .project-detail-modal.is-expanded {
   width: 100%;
   max-width: 100%;
   height: 100vh;
   border-radius: 0;
+  border: none;
 }
 
 .project-detail-modal.is-expanded .project-detail-image {
@@ -438,7 +446,7 @@ body.is-dark .site-header {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid var(--border);
   color: var(--text);
-  font-size: 0.7rem;
+  font-size: 0.45rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -464,14 +472,14 @@ body.is-dark .site-header {
 }
 
 .project-detail-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   line-height: 1.2;
 }
 
 .project-detail-desc {
-  font-size: 0.9rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 2rem;
@@ -493,7 +501,7 @@ body.is-dark .site-header {
 }
 
 .project-stat-label {
-  font-size: 0.7rem;
+  font-size: 0.45rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -501,7 +509,7 @@ body.is-dark .site-header {
 }
 
 .project-stat-value {
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   color: var(--text);
 }
 
@@ -526,14 +534,14 @@ body.is-dark .site-header {
 }
 
 .impact-stat {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--text);
   line-height: 1;
 }
 
 .impact-desc {
-  font-size: 0.8rem;
+  font-size: 0.55rem;
   color: var(--text-muted);
   line-height: 1.5;
 }
@@ -544,7 +552,7 @@ body.is-dark .site-header {
 
 .project-hmw-text {
   font-style: italic;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   line-height: 1.4;
   color: var(--text);
   text-align: center;
@@ -553,14 +561,14 @@ body.is-dark .site-header {
 
 .section-heading-large {
   font-style: italic;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: normal;
   color: var(--text);
   margin-bottom: 1.5rem;
 }
 
 .subsection-title {
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -592,14 +600,14 @@ body.is-dark .site-header {
 
 .design-exp-num {
   font-style: italic;
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: var(--text-muted);
   line-height: 1;
   margin-bottom: 0.5rem;
 }
 
 .constraints-subheading {
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: var(--text);
   margin-top: 2.5rem;
@@ -619,7 +627,7 @@ body.is-dark .site-header {
 }
 
 .constraints-version-label {
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -660,7 +668,7 @@ body.is-dark .site-header {
 }
 
 .research-list li {
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   color: var(--text);
   line-height: 1.6;
   padding-left: 1rem;
@@ -696,14 +704,14 @@ body.is-dark .site-header {
 }
 
 .feature-title {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 600;
   margin-bottom: 0.4rem;
   color: var(--text);
 }
 
 .feature-desc {
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   color: var(--text-muted);
   line-height: 1.7;
 }
@@ -721,7 +729,7 @@ body.is-dark .site-header {
 
 .feature-video::after {
   content: 'Video walkthrough';
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   color: var(--text-muted);
   letter-spacing: 0.04em;
 }
@@ -731,7 +739,7 @@ body.is-dark .site-header {
 }
 
 .project-detail-section-title {
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -740,7 +748,7 @@ body.is-dark .site-header {
 }
 
 .project-detail-section-text {
-  font-size: 0.9rem;
+  font-size: 0.65rem;
   color: var(--text);
   line-height: 1.75;
   margin-bottom: 1rem;
@@ -780,7 +788,7 @@ body.is-dark .site-header {
 }
 
 .cs-nav-item {
-  font-size: 0.8125rem;
+  font-size: 0.5625rem;
   color: var(--text-muted);
   line-height: 1;
   padding: 0.4rem 0 0.4rem 0.875rem;
@@ -830,7 +838,7 @@ body.is-dark .site-header {
 }
 
 .cs-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 1rem;
@@ -839,7 +847,7 @@ body.is-dark .site-header {
 }
 
 .cs-subtitle {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   color: #666;
   line-height: 1.75;
   margin-bottom: 0.75rem;
@@ -847,7 +855,7 @@ body.is-dark .site-header {
 }
 
 .cs-role-desc {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   color: #000;
   line-height: 1.75;
   font-weight: 500;
@@ -867,7 +875,7 @@ body.is-dark .site-header {
 }
 
 .cs-meta-label {
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -875,7 +883,7 @@ body.is-dark .site-header {
 }
 
 .cs-meta-label--title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #000;
   text-transform: none;
@@ -885,7 +893,7 @@ body.is-dark .site-header {
 }
 
 .cs-meta-value {
-  font-size: 1.0625rem;
+  font-size: 0.8125rem;
   color: #000;
   line-height: 1.75;
   font-weight: 500;
@@ -915,11 +923,26 @@ body.is-dark .site-header {
 }
 
 .cs-divider span {
-  font-size: 0.8125rem;
+  font-size: 0.5625rem;
   color: #aaa;
   font-weight: 400;
   white-space: nowrap;
   letter-spacing: 0.04em;
+}
+
+.cs-divider-plain {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 4rem 0;
+}
+
+/* Keep spacing above a plain divider equal to the spacing below it */
+.cs-solution:has(+ .cs-divider-plain) {
+  margin-bottom: 0;
+}
+
+.cs-solution:has(+ .cs-divider-plain) .cs-two-col .cs-body:last-child {
+  margin-bottom: 0;
 }
 
 .cs-section--bg {
@@ -930,7 +953,7 @@ body.is-dark .site-header {
 
 .cs-label {
   display: block;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0;
   text-transform: none;
@@ -945,7 +968,7 @@ body.is-dark .site-header {
 }
 
 .cs-impact-item {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   color: #000;
   line-height: 1.8;
   font-weight: 500;
@@ -956,7 +979,7 @@ body.is-dark .site-header {
 }
 
 .cs-statement {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: #000;
   line-height: 1.2;
@@ -964,11 +987,20 @@ body.is-dark .site-header {
 }
 
 .cs-body {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   color: #666;
   line-height: 1.8;
   margin-bottom: 0.75rem;
   font-weight: 400;
+}
+
+.cs-bullet-list {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.8;
+  font-weight: 400;
+  margin: 0;
+  padding-left: 1.25rem;
 }
 
 .cs-two-col {
@@ -978,7 +1010,7 @@ body.is-dark .site-header {
 }
 
 .cs-insight-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: #000;
   margin-bottom: 0.75rem;
@@ -986,7 +1018,7 @@ body.is-dark .site-header {
 }
 
 .cs-chapter {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 500;
   color: var(--text);
   margin-bottom: 0;
@@ -996,7 +1028,7 @@ body.is-dark .site-header {
 }
 
 .cs-chapter-sub {
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   color: #666;
   line-height: 1.75;
   text-align: center;
@@ -1010,14 +1042,14 @@ body.is-dark .site-header {
 }
 
 .cs-stat {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--text);
   line-height: 1.5;
 }
 
 .cs-solution-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: var(--text);
   margin-bottom: 0.6rem;
@@ -1056,7 +1088,7 @@ body.is-dark .site-header {
 .cs-carousel-btn {
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   padding: 0.25rem 0.5rem;
   transition: color var(--transition);
@@ -1156,13 +1188,41 @@ body.is-dark .site-header {
   max-width: 1200px;
 }
 
-.cs-video-lightbox-block video {
+.cs-video-lightbox-block video,
+.cs-video-lightbox-block img {
   width: 100%;
   max-height: 80vh;
   border-radius: 8px;
   object-fit: contain;
   display: block;
-  clip-path: inset(4px);
+  clip-path: inset(4px round 8px);
+}
+
+.cs-img-placeholder {
+  position: relative;
+}
+
+.cs-img-placeholder:hover .cs-img-expand {
+  opacity: 1;
+}
+
+.cs-img-expand {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 2;
+  padding: 0;
 }
 
 .cs-video-lightbox-close {
@@ -1175,7 +1235,7 @@ body.is-dark .site-header {
   background: rgba(255, 255, 255, 0.15);
   border: none;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.75rem;
   cursor: pointer !important;
   display: flex;
   align-items: center;
@@ -1218,7 +1278,7 @@ body.is-dark .site-header {
 }
 
 .cs-compare-col-header {
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1233,7 +1293,7 @@ body.is-dark .site-header {
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   color: #000;
   line-height: 1.5;
   margin-bottom: 0.75rem;
@@ -1243,7 +1303,7 @@ body.is-dark .site-header {
 
 .cs-compare-item::before {
   content: '✕';
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   color: #000;
   flex-shrink: 0;
   margin-top: 0.2rem;
@@ -1276,7 +1336,7 @@ body.is-dark .site-header {
 }
 
 .cs-design-decision {
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   color: #666;
   line-height: 1.8;
   padding: 0 0 0 1rem;
@@ -1298,7 +1358,7 @@ body.is-dark .site-header {
 }
 
 .cs-reflection-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--text);
   margin-bottom: 0.5rem;
@@ -1336,16 +1396,232 @@ body.is-dark .site-header {
 }
 
 .cs-next-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.4rem;
 }
 
 .cs-next-desc {
-  font-size: 1.0625rem;
+  font-size: 0.8125rem;
   line-height: 1.2;
   opacity: 0.85;
   font-weight: 400;
+}
+
+/* ── Atlas case study — custom typographic system ─────────
+   Scoped entirely under .atlas-v2 so no other case study
+   (Sage/Achilles/Ampcontrol/Synthesis) is affected. ──── */
+
+.atlas-v2 .cs-header {
+  padding-top: 24px;
+  padding-bottom: 4rem;
+}
+
+/* Nav restructure: <nav> stays the sole grid child (untouched
+   .cs-wrap grid, still exactly 2 top-level children), but stops
+   being sticky itself so the back link (its first, normal-flow
+   child) scrolls away naturally. Stretching <nav> to the full
+   grid-row height gives the nested .atlas-nav-items wrapper a
+   full-page-tall containing block to stick within — preserving
+   the nav list's existing full-scroll sticky behavior. */
+.project-detail-modal.is-expanded .atlas-v2 .cs-sidenav {
+  position: static;
+  align-self: stretch;
+  padding-top: 24px;
+}
+
+.atlas-nav-items {
+  position: sticky;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.atlas-breadcrumb-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Back link intentionally carries no typography of its own —
+   it shares .atlas-eyebrow's font/size/weight/color/letter-spacing
+   directly so the two stay in sync. Only hover behavior and its
+   own spacing (stacked above the nav list, not in a flex row) live here. */
+.atlas-back-link {
+  position: sticky;
+  top: 24px;
+  display: block;
+  margin-bottom: 1rem;
+  transition: color var(--transition);
+}
+
+.atlas-back-link:hover {
+  color: var(--text);
+}
+
+.atlas-eyebrow {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.atlas-hero-title {
+  font-family: 'PP Eiko', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.4;
+  color: #000;
+  max-width: 34ch;
+  margin-bottom: 2.5rem;
+}
+
+.atlas-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2.5rem;
+}
+
+/* Spread fields across the full width with equal space between them */
+.atlas-meta-bar--spread {
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.atlas-meta-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.atlas-meta-field .atlas-eyebrow {
+  margin-bottom: 0.1rem;
+}
+
+.atlas-meta-value {
+  font-size: 0.875rem;
+  color: #000;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.atlas-body-lead {
+  font-size: 0.95rem;
+  color: #000;
+  line-height: 1.75;
+  font-weight: 500;
+  max-width: 560px;
+}
+
+.atlas-v2 .cs-nav-item {
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  padding: 0.15rem 0 0.15rem 0.875rem;
+  color: #666;
+}
+
+.atlas-v2 .cs-nav-item.is-active {
+  color: var(--text);
+}
+
+/* Section eyebrow + serif heading pairing, replacing the old
+   plain .cs-label and divider-based section breaks */
+.atlas-v2 .cs-label {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.atlas-v2 .cs-solution-title,
+.atlas-section-title {
+  font-family: 'PP Eiko', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 100;
+}
+
+.atlas-v2 .cs-solution-title {
+  font-size: 1.75rem;
+  line-height: 1.4;
+  color: #000;
+  margin-bottom: 1.25rem;
+}
+
+.atlas-section-title {
+  display: block;
+  font-size: 1.75rem;
+  line-height: 1.4;
+  color: #000;
+  margin-bottom: 1.25rem;
+}
+
+/* Impact stats as standalone number blocks */
+.atlas-stat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.atlas-stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.atlas-stat-number {
+  font-family: 'PP Eiko', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 3rem;
+  line-height: 1;
+  color: #000;
+}
+
+.atlas-stat-label {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  max-width: 22ch;
+  line-height: 1.5;
+}
+
+/* Normalize all non-eyebrow sans-serif text on the page to one
+   dark grey — eyebrows keep their own small/uppercase/letter-spaced
+   treatment, untouched. */
+.atlas-v2 .cs-body,
+.atlas-v2 .cs-statement,
+.atlas-body-lead,
+.atlas-meta-value,
+.atlas-stat-label,
+.atlas-v2 .cs-bullet-list {
+  color: #666;
+}
+
+/* Body/paragraph copy specifically — smaller than the general
+   sans-serif size used for labels and short values. */
+.atlas-v2 .cs-body,
+.atlas-v2 .cs-statement,
+.atlas-body-lead,
+.atlas-v2 .cs-bullet-list {
+  font-size: 0.85rem;
+}
+
+.atlas-meta-value {
+  font-size: 0.85rem;
+}
+
+.atlas-stat-label {
+  font-size: 0.95rem;
 }
 
 /* ── About modal ─────────────────────────────────────── */
@@ -1395,7 +1671,7 @@ body.is-dark .site-header {
   border-radius: 50%;
   width: 28px;
   height: 28px;
-  font-size: 0.7rem;
+  font-size: 0.45rem;
   color: var(--text-muted);
   display: flex;
   align-items: center;
@@ -1436,18 +1712,18 @@ body.is-dark .site-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #000;
 }
 
 .about-name {
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   font-weight: 600;
 }
 
 .about-bio {
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   color: #000;
   line-height: 1.65;
   max-width: 320px;
@@ -1460,7 +1736,7 @@ body.is-dark .site-header {
 }
 
 .about-links a {
-  font-size: 0.8rem;
+  font-size: 0.55rem;
   color: var(--text-muted);
   transition: color var(--transition);
 }
@@ -1470,6 +1746,10 @@ body.is-dark .site-header {
 /* ── Envelope Homepage ───────────────────────────────── */
 body {
   overflow: auto;
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 .env-page {
@@ -1503,21 +1783,21 @@ body {
 
 /* ── Headline ─────────────────────────────────────────── */
 .env-headline {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 400;
   color: #3a3530;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   margin-bottom: 5rem;
   text-align: center;
-  line-height: 1;
-  opacity: 0;
-  animation: headlineFadeIn 0.8s ease forwards;
-  animation-delay: 1.5s;
+  line-height: 1.4;
+  opacity: 1;
+  clip-path: inset(0 100% 0 0);
+  animation: headlineReveal 1.2s ease forwards;
+  animation-delay: 0.3s;
 }
 
-@keyframes headlineFadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+@keyframes headlineReveal {
+  to { clip-path: inset(0 0% 0 0); }
 }
 
 /* ── Stage ───────────────────────────────────────────── */
@@ -1535,7 +1815,7 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(800px) rotate(-6deg);
   width: 58vw;
-  height: 560px;
+  height: auto;
   z-index: 3;
   background: transparent;
   overflow: visible;
@@ -1551,21 +1831,12 @@ body {
 .postcard-flipper {
   position: relative;
   width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.postcard.is-flipped .postcard-flipper {
-  transform: rotateX(180deg);
+  height: auto;
 }
 
 /* ── Front face ───────────────────────────────────────── */
 .postcard-front {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  position: relative;
 }
 
 .postcard-front::before {
@@ -1580,31 +1851,6 @@ body {
   z-index: -1;
 }
 
-/* ── Back face ────────────────────────────────────────── */
-.postcard-back {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: rotateX(180deg);
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #e0dbd2;
-  box-shadow: 0 2px 12px rgba(60,40,20,0.10);
-  background: #ffffff;
-  padding: 32px 0;
-  display: flex;
-  align-items: center;
-}
-
-.postcard-back img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  flex: 1;
-}
-
 /* Top bar */
 .postcard-topbar {
   display: flex;
@@ -1615,7 +1861,7 @@ body {
 }
 
 .postcard-topbar-label {
-  font-size: 0.5rem;
+  font-size: 0.25rem;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -1626,7 +1872,7 @@ body {
 .postcard-body {
   display: flex;
   height: 100%;
-  padding: 48px 32px 32px 16px;
+  padding: 48px 48px 32px 48px;
   gap: 0;
 }
 
@@ -1644,7 +1890,7 @@ body {
 }
 
 .pc-photo {
-  width: 75%;
+  width: 92%;
   aspect-ratio: 1 / 1;
   height: auto;
   background: #d4cfc8;
@@ -1702,19 +1948,19 @@ body {
 }
 
 .pc-address-line {
-  font-size: 19px;
+  font-size: 15px;
   color: #888;
 }
 
 .pc-address-label {
-  font-size: 15px;
+  font-size: 11px;
 }
 
 .pc-message {
-  font-size: 19px;
+  font-size: 14px;
   color: #555;
   line-height: 1.55;
-  width: 75%;
+  width: 92%;
   margin-top: 20px;
 }
 
@@ -1730,10 +1976,15 @@ body {
 .postcard-right {
   flex: 1;
   min-width: 0;
-  padding-left: 1rem;
   padding-top: 0;
   display: flex;
   flex-direction: column;
+}
+
+.profile-content {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
 }
 
 .pc-name-row {
@@ -1744,39 +1995,53 @@ body {
 }
 
 .postcard-name {
-  font-size: 22px;
-  font-weight: 400;
+  font-family: 'Neue Haas Grotesk Display', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
   color: #1a1a1a;
   display: block;
   margin-bottom: 0.3rem;
   letter-spacing: -0.01em;
 }
 
+/* Intro column: shares the work list's left edge, capped for readable lines */
+.pc-intro {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 660px;
+  text-align: left;
+}
+
 .postcard-intro {
-  font-size: 19px;
-  color: #555;
-  line-height: 1.5;
+  font-family: 'Neue Haas Grotesk Display', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
   font-weight: 400;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
 }
 
-.stamp-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1.5px solid #ccc8c0;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.postcard-footer {
+  font-family: 'Neue Haas Grotesk Display', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 5rem;
 }
 
-.stamp-box::after {
-  content: '';
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #dedad4;
+.postcard-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.postcard-link:hover {
+  text-decoration-color: currentColor;
 }
 
 .postcard-divider {
@@ -1786,11 +2051,13 @@ body {
 }
 
 .work-label {
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-family: 'Neue Haas Grotesk Display', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #c8c0b4;
+  color: #9a9a9a;
+  margin-top: 1rem;
   margin-bottom: 0.2rem;
   display: block;
 }
@@ -1798,77 +2065,132 @@ body {
 .work-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
 }
 
 .work-row {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.22rem 0.35rem;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.75rem 0.35rem;
+  line-height: 1.2;
+  border-bottom: 1px solid #e5e7eb;
   border-radius: 4px;
   cursor: pointer !important;
   transition: background 0.15s;
   margin: 0 -0.35rem;
 }
 
+.work-row:last-child { border-bottom: none; }
+
 .work-row:hover { background: #f6f2ec; }
 
-.work-icon {
-  width: 14px;
-  height: 14px;
-  object-fit: contain;
+.experiment-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  min-height: 32px;
+  padding: 0.75rem 0.35rem;
+  line-height: 1.2;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 4px;
+  cursor: pointer !important;
+  transition: background 0.15s;
+  margin: 0 -0.35rem;
+}
+
+.experiment-row:hover { background: #f6f2ec; }
+
+.experiment-placeholder {
+  font-size: 13px;
+  font-style: italic;
+  color: #b8b2a8;
+}
+
+.about-me-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 0.6em;
+}
+
+.about-me-text:last-child {
+  margin-bottom: 0;
+}
+
+.work-icon-box {
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
-  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-icon {
+  max-width: 20px;
+  max-height: 20px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .work-icon--svg {
   color: #1a1a1a;
-  flex-shrink: 0;
-  width: auto;
-  height: 15px;
+  width: 16px;
+  height: auto;
+  max-height: 18px;
+}
+
+.work-icon--atlas {
+  max-width: 16px;
+  max-height: 16px;
 }
 
 .work-name-group {
   flex: 1;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.4rem;
   min-width: 0;
 }
 
 .work-title {
-  font-size: 19px;
-  color: #222;
+  font-size: 15px;
+  color: #000;
   font-weight: 500;
 }
 
 .work-year {
-  font-size: 19px;
+  font-size: 15px;
   color: #c0b8ae;
 }
 
 .work-role {
-  font-size: 19px;
+  font-size: 15px;
   color: #aaa49e;
   text-align: right;
   margin-left: auto;
   flex-shrink: 0;
+  align-self: center;
 }
 
 .stamp-box {
-  width: 44px;
-  height: 56px;
-  border: 1.5px solid #ddd8ce;
-  border-radius: 2px;
+  width: 90px;
+  height: 64px;
   margin-bottom: 1rem;
   flex-shrink: 0;
-  /* Perforated edge effect */
-  background:
-    radial-gradient(circle at 0 50%, #fffef9 4px, transparent 4px),
-    radial-gradient(circle at 100% 50%, #fffef9 4px, transparent 4px),
-    radial-gradient(circle at 50% 0, #fffef9 4px, transparent 4px),
-    radial-gradient(circle at 50% 100%, #fffef9 4px, transparent 4px);
+  transform: rotate(4deg);
+}
+
+.stamp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .address-lines {
@@ -1901,39 +2223,155 @@ body {
   pointer-events: all;
 }
 
+/* ── Postcard compress button (shown only when expanded) ── */
+.postcard-compress {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #999;
+  cursor: pointer !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, color 0.15s ease;
+}
 
-/* ── Postcard expanded state ─────────────────────────── */
+.postcard-compress:hover {
+  color: #555;
+}
+
+.postcard-compress.is-visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+/* ── Postcard expanded state (full screen) ────────────── */
 @keyframes postcardEmerge {
-  from { transform: translateX(-50%) translateY(-15%) rotate(-6deg) scale(0.88); opacity: 0; }
-  to   { transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(1);     opacity: 1; }
+  from { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+  to   { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
 }
 
 @keyframes postcardRecede {
-  from { transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(1);     opacity: 1; }
-  to   { transform: translateX(-50%) translateY(-15%) rotate(-6deg) scale(0.88); opacity: 0; }
+  from { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+  to   { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
 }
 
 .postcard.is-expanded {
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
-  width: 58vw !important;
-  height: 560px !important;
+  width: 100vw !important;
+  height: 100vh !important;
   z-index: 102 !important;
   transition: none !important;
-  animation: postcardEmerge 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: postcardEmerge 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   cursor: default !important;
+  overflow-y: auto !important;
+}
+
+/* Full-screen: solid white edge to edge — drop the torn-paper edge, border and shadow */
+.postcard.is-expanded {
+  background: #fff !important;
+  scrollbar-width: none; /* hide scrollbar, keep scrolling */
+}
+
+.postcard.is-expanded::-webkit-scrollbar {
+  display: none;
+}
+
+.postcard.is-expanded .postcard-front::before {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  filter: none;
+}
+
+.postcard.is-expanded .work-label {
+  margin-top: 3rem;
+}
+
+.postcard.is-expanded .pc-name-row {
+  margin-bottom: 0.5rem;
+}
+
+/* Extra bio, only shown once the postcard is expanded */
+.postcard-bio {
+  font-family: 'Neue Haas Grotesk Display', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  display: none;
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.postcard-bio p + p {
+  margin-top: 1rem;
+}
+
+.postcard.is-expanded .postcard-bio {
+  display: block;
+  opacity: 0;
+  animation: postcardBioIn 0.4s ease 0.3s forwards;
+}
+
+@media (max-width: 640px) {
+  .postcard.is-expanded .postcard-body {
+    padding: 32px 20px 24px;
+  }
+}
+
+@keyframes postcardBioIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .postcard.is-collapsing {
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
-  width: 58vw !important;
-  height: 560px !important;
+  width: 100vw !important;
+  height: 100vh !important;
   z-index: 102 !important;
   transition: none !important;
-  animation: postcardRecede 0.38s cubic-bezier(0.4, 0, 1, 1) forwards;
+  animation: postcardRecede 0.35s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.postcard.is-collapsing .postcard-front::before {
+  border-radius: 0;
+}
+
+/* ── Work row hover preview ──────────────────────────── */
+.work-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 240px;
+  border-radius: 8px;
+  background-color: #f0ece4;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 8px 28px rgba(60,40,20,0.22);
+  border: 1px solid rgba(224,219,210,0.8);
+  z-index: 150;
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: top left;
+  transform: scale(0.94);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.work-preview.is-visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* ── Envelope gussets (side panels, in front of card) ── */
@@ -1944,6 +2382,10 @@ body {
   height: 875px;
   z-index: 4;
   pointer-events: none;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: envelopePartFadeIn 0.7s ease forwards;
+  animation-delay: 1.5s;
 }
 .env-gusset--left  { left: 0; }
 .env-gusset--right { right: 0; }
@@ -1958,6 +2400,10 @@ body {
   height: 350px;
   z-index: 2;
   pointer-events: none;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: envelopePartFadeIn 0.7s ease forwards;
+  animation-delay: 1.5s;
 }
 
 .env-flap svg {
@@ -1977,6 +2423,14 @@ body {
   z-index: 1;
   pointer-events: none;
   filter: drop-shadow(0 8px 32px rgba(80,60,30,0.22));
+  opacity: 0;
+  transform: translateY(16px);
+  animation: envelopePartFadeIn 0.7s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes envelopePartFadeIn {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .env-body-svg {
@@ -2068,7 +2522,7 @@ body.is-dark .canvas-viewport {
   top: 390px;
   transform: translate(-50%, -50%);
   font-style: italic;
-  font-size: 48px;
+  font-size: 44px;
   font-weight: normal;
   color: var(--text);
   line-height: 1.15;
@@ -2126,7 +2580,7 @@ body.is-dark .card-image { background: #333; }
 
 
 .card-title {
-  font-size: 0.9rem;
+  font-size: 0.65rem;
   font-weight: 600;
   line-height: 1.3;
   color: var(--text);
@@ -2134,7 +2588,7 @@ body.is-dark .card-image { background: #333; }
 }
 
 .card-desc {
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   color: var(--text-muted);
   line-height: 1.4;
   margin-bottom: 0.5rem;
@@ -2147,7 +2601,7 @@ body.is-dark .card-image { background: #333; }
 }
 
 .tag {
-  font-size: 0.65rem;
+  font-size: 0.4rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   background: var(--surface);
