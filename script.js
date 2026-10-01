@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'card-10': {
       heroImage: '',
-      previewImage: 'Chaotic Gradients - 66.png',
+      previewImage: 'Chaotic Gradients - 66.jpg',
       previewOverlayImage: 'Atlas-Thumbnail.png',
       templateId: 'atlas-content',
     },
@@ -66,13 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'card-3': {
       heroImage: '',
-      previewImage: 'Sage-Background.png',
+      previewImage: 'Sage-Background.webp',
       previewOverlayImage: 'Sage-Thumbnail2.png',
       templateId: 'sage-content',
     },
     'card-4': {
       heroImage: '',
-      previewImage: 'achilles background.png',
+      previewImage: 'achilles background.jpg',
       previewOverlayImage: 'aAchilles Hero Image.png',
       templateId: 'achilles-content',
     },
@@ -82,16 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
     'card-8': {
       title: 'Apple',
       desc: 'A short description of what this project is about.',
-      previewImage: 'Apple-Thumbnail.png',
+      previewImage: 'Apple-Thumbnail.webp',
     },
     'card-9': {
       title: 'LinkedIn',
       desc: 'A short description of what this project is about.',
-      previewImage: 'LinkedIn-thumbnail.png',
+      previewImage: 'LinkedIn-thumbnail.webp',
     },
     'card-12': {
       heroImage: '',
-      previewImage: 'PTPAL-thumbnail background.png',
+      previewImage: 'PTPAL-thumbnail background.jpg',
       previewOverlayImage: 'PTPAL-Thumbnail.png',
       templateId: 'ptpal-content',
     },
