@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.work-row, .experiment-row').forEach(el => {
     el.addEventListener('mouseenter', () => {
-      dot.textContent = 'View';
+      const locked = ['card-8', 'card-9'].includes(el.dataset.card); // Apple, LinkedIn
+      dot.textContent = locked ? 'Locked' : 'View';
       document.body.classList.add('cursor-hover');
     });
     el.addEventListener('mouseleave', () => {
@@ -32,18 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ring.style.top  = ringY + 'px';
     requestAnimationFrame(animateRing);
   })();
-
-  // ── About modal ─────────────────────────────────────
-  const avatarBtn    = document.getElementById('avatarBtn');
-  const aboutOverlay = document.getElementById('aboutOverlay');
-  const aboutClose   = document.getElementById('aboutClose');
-
-  const openAbout = () => aboutOverlay.classList.add('is-open');
-  if (avatarBtn) avatarBtn.addEventListener('click', openAbout);
-  aboutClose.addEventListener('click', () => aboutOverlay.classList.remove('is-open'));
-  aboutOverlay.addEventListener('click', e => {
-    if (e.target === aboutOverlay) aboutOverlay.classList.remove('is-open');
-  });
 
   // Project/hobby data for detail modal
   const cardData = {
